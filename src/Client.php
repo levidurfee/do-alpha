@@ -37,8 +37,9 @@ class Client implements ClientInterface
     /**
      * Post to the API.
      *
-     * @param string         $action
+     * @param string $action
      * @param ModelInterface $model
+     * @return mixed|\Psr\Http\Message\ResponseInterface
      */
     public function post(string $action, ModelInterface $model)
     {
@@ -46,13 +47,15 @@ class Client implements ClientInterface
             'auth' => [$this->apiToken, ':'],
             'json' => $model->return(),
         ]);
-        var_dump($response);
+
+        return $response;
     }
 
     /**
      * Send a get request to the API.
      *
      * @param string $action
+     * @return mixed|\Psr\Http\Message\ResponseInterface
      */
     public function get(string $action)
     {
@@ -63,9 +66,8 @@ class Client implements ClientInterface
                 'Content-Type' => 'application/json',
             ]
         ]);
-        //var_dump($response->getBody()->getContents());
-        $data = serialize($response->getBody()->getContents());
-        file_put_contents('output.json', $data);
+
+        return $response;
     }
 
     /**
@@ -74,6 +76,7 @@ class Client implements ClientInterface
      * @param string $action
      * @param ModelInterface $model
      * @param string $method
+     * @return mixed|\Psr\Http\Message\ResponseInterface
      */
     public function delete(string $action, ModelInterface $model, string $method)
     {
@@ -81,7 +84,8 @@ class Client implements ClientInterface
             'auth' => [$this->apiToken, ':'],
             'json' => $model->return(),
         ]);
-        var_dump($response);
+
+        return $response;
     }
 
     /**
