@@ -2,12 +2,13 @@
 
 namespace wappr\DigitalOcean\Actions;
 
-use wappr\DigitalOcean\Contracts\Models\Create\CreateDropletInterface;
-use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
+use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
+use wappr\DigitalOcean\Contracts\Models\Create\CreateDropletInterface;
+use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
 
 /**
@@ -20,7 +21,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function getAll(ClientInterface $client)
+    public function getAll(ClientInterface $client): ResponseInterface
     {
         return $client->get('droplets');
     }
@@ -31,7 +32,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function create(ClientInterface $client, CreateDropletInterface $droplet = null)
+    public function create(ClientInterface $client, CreateDropletInterface $droplet = null): ResponseInterface
     {
         if ($droplet == null) {
             throw new \InvalidArgumentException('Create Droplet model required.');
@@ -46,7 +47,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function delete(ClientInterface $client, DeleteDropletInterface $droplet = null)
+    public function delete(ClientInterface $client, DeleteDropletInterface $droplet = null): ResponseInterface
     {
         if ($droplet == null) {
             throw new \InvalidArgumentException('Delete Droplet model required.');
@@ -61,7 +62,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function retrieve(ClientInterface $client, RetrieveDropletInterface $droplet = null)
+    public function retrieve(ClientInterface $client, RetrieveDropletInterface $droplet = null): ResponseInterface
     {
         if ($droplet == null) {
             throw new \InvalidArgumentException('Retrieve Droplet model required.');

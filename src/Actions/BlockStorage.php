@@ -2,6 +2,7 @@
 
 namespace wappr\DigitalOcean\Actions;
 
+use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Models\Create\CreateBlockStorageInterface;
 use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
@@ -11,12 +12,12 @@ use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageInterface;
 
 class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterface
 {
-    public function getAll(ClientInterface $client)
+    public function getAll(ClientInterface $client): ResponseInterface
     {
         // TODO: Implement getAll() method.
     }
 
-    public function create(ClientInterface $client, CreateBlockStorageInterface $blockStorage = null)
+    public function create(ClientInterface $client, CreateBlockStorageInterface $blockStorage = null): ResponseInterface
     {
         // TODO: Implement create() method.
         if ($blockStorage == null) {
@@ -24,7 +25,7 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
         }
     }
 
-    public function delete(ClientInterface $client, DeleteBlockStorageInterface $deleteBlockStorage = null)
+    public function delete(ClientInterface $client, DeleteBlockStorageInterface $deleteBlockStorage = null): ResponseInterface
     {
         if ($deleteBlockStorage == null) {
             throw new \InvalidArgumentException('Delete Block Storage model required.');
@@ -33,7 +34,7 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
         $client->delete('volumes', $deleteBlockStorage, 'getDriveId');
     }
 
-    public function retrieve(ClientInterface $client)
+    public function retrieve(ClientInterface $client): ResponseInterface
     {
         // TODO: Implement retrieve() method.
     }

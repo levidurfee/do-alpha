@@ -2,8 +2,8 @@
 
 namespace wappr\DigitalOcean\Models\Delete;
 
-use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
 use wappr\DigitalOcean\Contracts\ModelInterface;
+use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 class DeleteDropletModel extends ModelMethods implements ModelInterface, DeleteDropletInterface

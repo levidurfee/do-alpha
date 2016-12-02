@@ -2,8 +2,8 @@
 
 namespace wappr\DigitalOcean\Models\Create;
 
-use wappr\DigitalOcean\Contracts\Models\Create\CreateDropletInterface;
 use wappr\DigitalOcean\Contracts\ModelInterface;
+use wappr\DigitalOcean\Contracts\Models\Create\CreateDropletInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 class CreateDropletModel extends ModelMethods implements ModelInterface, CreateDropletInterface

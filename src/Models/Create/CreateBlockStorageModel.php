@@ -2,8 +2,8 @@
 
 namespace wappr\DigitalOcean\Models\Create;
 
-use wappr\DigitalOcean\Contracts\Models\Create\BlockStorageInterface;
 use wappr\DigitalOcean\Contracts\ModelInterface;
+use wappr\DigitalOcean\Contracts\Models\Create\BlockStorageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 class CreateBlockStorageModel extends ModelMethods implements ModelInterface, BlockStorageInterface
