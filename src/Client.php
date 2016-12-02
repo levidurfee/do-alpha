@@ -42,7 +42,6 @@ class Client implements ClientInterface
      */
     public function post(string $action, ModelInterface $model)
     {
-        var_dump($model->return());
         $response = $this->httpClient->request('POST', $action, [
             'auth' => [$this->apiToken, ':'],
             'json' => $model->return(),
@@ -64,7 +63,23 @@ class Client implements ClientInterface
                 'Content-Type' => 'application/json',
             ]
         ]);
-        var_dump($response->getBody()->getContents());
+        //var_dump($response->getBody()->getContents());
+        $data = serialize($response->getBody()->getContents());
+        file_put_contents('output.json', $data);
+    }
+
+    /**
+     * @param string $action
+     * @param ModelInterface $model
+     * @param string $method
+     */
+    public function delete(string $action, ModelInterface $model, string $method)
+    {
+        $response = $this->httpClient->request('DELETE', $action.'/'.$model->{$method}(), [
+            'auth' => [$this->apiToken, ':'],
+            'json' => $model->return(),
+        ]);
+        var_dump($response);
     }
 
     /**

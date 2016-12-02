@@ -9,5 +9,5 @@ interface DeleteBlockStorageInterface
     /**
      * @return int
      */
-    public function getDriveId(): int;
+    public function getId(): int;
 }

@@ -13,7 +13,6 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
 {
     public function getAll(ClientInterface $client)
     {
-        // TODO: Implement getAll() method.
         $client->get('droplets');
     }
 
@@ -31,6 +30,8 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
         if ($droplet == null) {
             throw new \InvalidArgumentException('Delete Droplet model required.');
         }
+
+        $client->delete('droplets', $droplet, 'getId');
     }
 
     public function retrieve(ClientInterface $client)

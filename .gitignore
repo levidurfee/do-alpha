@@ -2,3 +2,4 @@ vendor/*
 .idea/*
 .env
 example.php
+/output.json

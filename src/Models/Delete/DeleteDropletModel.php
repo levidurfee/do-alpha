@@ -21,7 +21,7 @@ class DeleteDropletModel extends ModelMethods implements ModelInterface, DeleteD
     /**
      * @return int
      */
-    public function getDropletId(): int
+    public function getId(): int
     {
         return $this->droplet_id;
     }
