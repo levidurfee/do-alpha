@@ -3,9 +3,13 @@
 namespace wappr\DigitalOcean;
 
 use GuzzleHttp\Client as Guzzle;
+use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
+/**
+ * Class Client.
+ */
 class Client implements ClientInterface
 {
     /**
@@ -37,11 +41,12 @@ class Client implements ClientInterface
     /**
      * Post to the API.
      *
-     * @param string $action
+     * @param string         $action
      * @param ModelInterface $model
+     *
      * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function post(string $action, ModelInterface $model)
+    public function post(string $action, ModelInterface $model): ResponseInterface
     {
         $response = $this->httpClient->request('POST', $action, [
             'auth' => [$this->apiToken, ':'],
@@ -55,30 +60,32 @@ class Client implements ClientInterface
      * Send a get request to the API.
      *
      * @param string $action
+     *
      * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function get(string $action)
+    public function get(string $action): ResponseInterface
     {
         $response = $this->httpClient->request('GET', $action, [
             'auth' => [$this->apiToken, ':'],
             'query' => ['page' => 1, 'per_page' => 50],
             'headers' => [
                 'Content-Type' => 'application/json',
-            ]
+            ],
         ]);
 
         return $response;
     }
 
     /**
-     * Send a delete request to the API url
+     * Send a delete request to the API url.
      *
-     * @param string $action
+     * @param string         $action
      * @param ModelInterface $model
-     * @param string $method
+     * @param string         $method
+     *
      * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function delete(string $action, ModelInterface $model, string $method)
+    public function delete(string $action, ModelInterface $model, string $method): ResponseInterface
     {
         $response = $this->httpClient->request('DELETE', $action.'/'.$model->{$method}(), [
             'auth' => [$this->apiToken, ':'],

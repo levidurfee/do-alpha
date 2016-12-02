@@ -8,7 +8,7 @@ use wappr\DigitalOcean\Contracts\ClientInterface;
 class Regions implements ListInterface
 {
     /**
-     * List all of the regions that are available
+     * List all of the regions that are available.
      *
      * @param ClientInterface $client
      */
