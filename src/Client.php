@@ -47,6 +47,18 @@ class Client implements ClientInterface
         var_dump($response);
     }
 
+    public function get(string $action)
+    {
+        $response = $this->httpClient->request('GET', $action, [
+            'auth' => [$this->apiToken, ':'],
+            'query' => ['page' => 1, 'per_page' => 50],
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ]
+        ]);
+        var_dump($response->getBody()->getContents());
+    }
+
     public function setHttpClient($client)
     {
         $this->httpClient = $client;

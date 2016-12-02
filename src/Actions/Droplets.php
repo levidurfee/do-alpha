@@ -14,6 +14,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
     public function getAll(ClientInterface $client)
     {
         // TODO: Implement getAll() method.
+        $client->get('droplets');
     }
 
     public function create(ClientInterface $client, CreateDropletInterface $droplet = null)
