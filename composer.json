@@ -1,0 +1,17 @@
+{
+  "name": "wappr/digitalocean",
+  "description": "PHP Library for the DigitalOcean API",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": ["digitalocean", "vps"],
+  "autoload": {
+    "psr-4": {
+      "wappr\\DigitalOcean\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.6",
+    "guzzlehttp/guzzle": "~6.0",
+    "vlucas/phpdotenv": "^2.4"
+  }
+}
