@@ -1,4 +1,4 @@
 vendor/*
 .idea/*
 .env
-test.php
+example.php
