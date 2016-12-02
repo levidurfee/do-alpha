@@ -20,6 +20,13 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
         // TODO: Implement create() method.
     }
 
+    /**
+     * This method will need to pass a more verbose method to Client->delete since the API URL
+     * is /v2/domains/$DOMAIN_NAME/records/$RECORD_ID The DeleteDomainRecordsModel will need to
+     * return the domain and the record id.
+     *
+     * @param ClientInterface $client
+     */
     public function delete(ClientInterface $client)
     {
         // TODO: Implement delete() method.

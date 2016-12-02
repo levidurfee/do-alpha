@@ -69,6 +69,8 @@ class Client implements ClientInterface
     }
 
     /**
+     * Send a delete request to the API url
+     *
      * @param string $action
      * @param ModelInterface $model
      * @param string $method
