@@ -8,6 +8,7 @@ use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
+use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
 
 class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
 {
@@ -34,8 +35,12 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
         $client->delete('droplets', $droplet, 'getDropletId');
     }
 
-    public function retrieve(ClientInterface $client)
+    public function retrieve(ClientInterface $client, RetrieveDropletInterface $droplet = null)
     {
-        // TODO: Implement retrieve() method.
+        if ($droplet == null) {
+            throw new \InvalidArgumentException('Retrieve Droplet model required.');
+        }
+
+        $client->get('droplets/'.$droplet->getDropletId());
     }
 }
