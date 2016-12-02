@@ -31,7 +31,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
             throw new \InvalidArgumentException('Delete Droplet model required.');
         }
 
-        $client->delete('droplets', $droplet, 'getId');
+        $client->delete('droplets', $droplet, 'getDropletId');
     }
 
     public function retrieve(ClientInterface $client)

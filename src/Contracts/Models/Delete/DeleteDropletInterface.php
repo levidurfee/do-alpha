@@ -9,5 +9,5 @@ interface DeleteDropletInterface
     /**
      * @return int
      */
-    public function getId(): int;
+    public function getDropletId(): int;
 }

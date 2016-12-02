@@ -26,10 +26,11 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
 
     public function delete(ClientInterface $client, DeleteBlockStorageInterface $deleteBlockStorage = null)
     {
-        // TODO: Implement delete() method.
         if ($deleteBlockStorage == null) {
             throw new \InvalidArgumentException('Delete Block Storage model required.');
         }
+
+        $client->delete('volumes', $deleteBlockStorage, 'getDriveId');
     }
 
     public function retrieve(ClientInterface $client)
