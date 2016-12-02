@@ -9,6 +9,6 @@ class Regions implements ListInterface
 {
     public function getAll(ClientInterface $client)
     {
-        // TODO: Implement getAll() method.
+        $client->get('regions');
     }
 }
