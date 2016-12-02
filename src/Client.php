@@ -2,7 +2,6 @@
 
 namespace wappr\DigitalOcean;
 
-use Dotenv\Dotenv;
 use GuzzleHttp\Client as Guzzle;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\ModelInterface;
@@ -19,15 +18,19 @@ class Client implements ClientInterface
      */
     protected $apiVersion = '2';
 
+    /**
+     * @var Guzzle http client
+     */
     protected $httpClient;
 
+    /**
+     * @var string DigitalOcean API Token
+     */
     protected $apiToken;
 
     public function __construct()
     {
         $this->httpClient = new Guzzle(['base_uri' => $this->url.'/v'.$this->apiVersion.'/']);
-        $dotenv = new Dotenv(dirname(__DIR__));
-        $dotenv->load();
         $this->apiToken = getenv('DO_API_TOKEN');
     }
 
