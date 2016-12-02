@@ -50,6 +50,11 @@ class Client implements ClientInterface
         var_dump($response);
     }
 
+    /**
+     * Send a get request to the API.
+     *
+     * @param string $action
+     */
     public function get(string $action)
     {
         $response = $this->httpClient->request('GET', $action, [
@@ -62,6 +67,11 @@ class Client implements ClientInterface
         var_dump($response->getBody()->getContents());
     }
 
+    /**
+     * Set the http client. This will clients other than Guzzle.
+     *
+     * @param $client
+     */
     public function setHttpClient($client)
     {
         $this->httpClient = $client;
