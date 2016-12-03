@@ -6,6 +6,7 @@ A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle]
 
 * [Droplets](docs/droplets.md)
 * [Images](docs/images.md)
+* [Account](docs/account.md)
 
 ## Todo
 
