@@ -96,6 +96,23 @@ class Client implements ClientInterface
     }
 
     /**
+     * @param string         $action
+     * @param ModelInterface $model
+     * @param string         $method
+     *
+     * @return ResponseInterface
+     */
+    public function put(string $action, ModelInterface $model, string $method): ResponseInterface
+    {
+        $response = $this->httpClient->request('PUT', $action.'/'.$model->{$method}(), [
+            'auth' => [$this->apiToken, ':'],
+            'json' => $model->return(),
+        ]);
+
+        return $response;
+    }
+
+    /**
      * Set the http client. This will clients other than Guzzle.
      *
      * @param $client
