@@ -11,13 +11,18 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveActionInterface;
 class Actions implements ListInterface, RetrieveInterface
 {
     /**
+     * @var string $action The action that you are requesting.
+     */
+    protected $action = 'actions';
+
+    /**
      * @param ClientInterface $client
      *
      * @return ResponseInterface
      */
     public function getAll(ClientInterface $client): ResponseInterface
     {
-        return $client->get('actions');
+        return $client->get($this->action);
     }
 
     /**
@@ -32,6 +37,6 @@ class Actions implements ListInterface, RetrieveInterface
             throw new \InvalidArgumentException('Retrieve Action model required.');
         }
 
-        return $client->get('actions/'.$action->getActionId());
+        return $client->get($this->action.'/'.$action->getActionId());
     }
 }

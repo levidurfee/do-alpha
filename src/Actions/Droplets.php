@@ -16,6 +16,8 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
  */
 class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
 {
+    protected $action = 'droplets';
+
     /**
      * @param ClientInterface $client
      *
@@ -23,7 +25,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
      */
     public function getAll(ClientInterface $client): ResponseInterface
     {
-        return $client->get('droplets');
+        return $client->get($this->action);
     }
 
     /**
@@ -38,7 +40,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
             throw new \InvalidArgumentException('Create Droplet model required.');
         }
 
-        return $client->post('droplets', $droplet);
+        return $client->post($this->action, $droplet);
     }
 
     /**
@@ -53,7 +55,7 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
             throw new \InvalidArgumentException('Delete Droplet model required.');
         }
 
-        return $client->delete('droplets', $droplet, 'getDropletId');
+        return $client->delete($this->action, $droplet, 'getDropletId');
     }
 
     /**
@@ -68,6 +70,6 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
             throw new \InvalidArgumentException('Retrieve Droplet model required.');
         }
 
-        return $client->get('droplets/'.$droplet->getDropletId());
+        return $client->get($this->action.'/'.$droplet->getDropletId());
     }
 }

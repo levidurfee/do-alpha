@@ -13,6 +13,8 @@ use wappr\DigitalOcean\Contracts\Models\Update\UpdateImageInterface;
 
 class Images implements ListInterface, RetrieveInterface, UpdateInterface
 {
+    protected $action = 'images';
+
     /**
      * List all the images.
      *
@@ -22,7 +24,7 @@ class Images implements ListInterface, RetrieveInterface, UpdateInterface
      */
     public function getAll(ClientInterface $client): ResponseInterface
     {
-        return $client->get('images');
+        return $client->get($this->action);
     }
 
     /**
@@ -39,7 +41,7 @@ class Images implements ListInterface, RetrieveInterface, UpdateInterface
             throw new \InvalidArgumentException('Retrieve image model required.');
         }
 
-        return $client->get('images/'.$image->getImageId());
+        return $client->get($this->action.'/'.$image->getImageId());
     }
 
     /**
@@ -56,7 +58,7 @@ class Images implements ListInterface, RetrieveInterface, UpdateInterface
             throw new \InvalidArgumentException('Update image model required.');
         }
 
-        return $client->put('images', $image, 'getImageId');
+        return $client->put($this->action, $image, 'getImageId');
     }
 
     /**
@@ -73,6 +75,6 @@ class Images implements ListInterface, RetrieveInterface, UpdateInterface
             throw new \InvalidArgumentException('Delete image model required.');
         }
 
-        return $client->delete('images', $image, 'getImageId');
+        return $client->delete($this->action, $image, 'getImageId');
     }
 }
