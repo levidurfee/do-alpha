@@ -18,7 +18,7 @@ use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Actions;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveActionModel;
 
-var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1234))->getBody()->getContents());
+var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1))->getBody()->getContents());
 ```
 
 [DigitalOcean API documentation.](https://developers.digitalocean.com/documentation/v2/)
