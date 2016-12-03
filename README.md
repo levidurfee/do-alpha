@@ -4,19 +4,11 @@ A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle]
 
 ## Example Usage
 
-### Creating a droplet
+* [Droplets](docs/droplets.md)
+* [Images](docs/images.md)
 
-```php
-<?php
+## Todo
 
-require_once 'vendor/autoload.php';
-
-use wappr\DigitalOcean\Actions\Droplets;
-use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Models\Create\CreateDropletModel;
-
-$client = new Client();
-$droplets = new Droplets();
-$droplet = new CreateDropletModel('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
-$droplets->create($client, $droplet);
-```
+* Write units tests for existing actions
+* Basic functionality for other actions
+* Continue to update docs as I proceed
