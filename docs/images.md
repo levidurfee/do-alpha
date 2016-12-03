@@ -4,12 +4,6 @@ Below are basic examples of interacting with images. Each example assumes you ar
 
 ## Listing droplets
 
-use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Images;
-use wappr\DigitalOcean\Models\Delete\DeleteImageModel;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveImageModel;
-use wappr\DigitalOcean\Models\Update\UpdateImageModel;
-
 ```php
 <?php
 use wappr\DigitalOcean\Client;
