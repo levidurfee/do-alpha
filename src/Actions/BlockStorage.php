@@ -13,12 +13,13 @@ use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageInterface;
 class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterface
 {
     /**
-     * @var string $action The action that you are requesting.
+     * @var string The action that you are requesting
      */
     protected $action = 'volumes';
 
     /**
      * @param ClientInterface $client
+     *
      * @return ResponseInterface
      */
     public function getAll(ClientInterface $client): ResponseInterface

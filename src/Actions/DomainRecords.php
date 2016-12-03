@@ -27,6 +27,7 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
      * return the domain and the record id.
      *
      * @param ClientInterface $client
+     *
      * @return ResponseInterface
      */
     public function delete(ClientInterface $client): ResponseInterface

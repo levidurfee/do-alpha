@@ -11,7 +11,7 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveActionInterface;
 class Actions implements ListInterface, RetrieveInterface
 {
     /**
-     * @var string $action The action that you are requesting.
+     * @var string The action that you are requesting
      */
     protected $action = 'actions';
 

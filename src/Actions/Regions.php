@@ -12,6 +12,7 @@ class Regions implements ListInterface
      * List all of the regions that are available.
      *
      * @param ClientInterface $client
+     *
      * @return ResponseInterface
      */
     public function getAll(ClientInterface $client): ResponseInterface
