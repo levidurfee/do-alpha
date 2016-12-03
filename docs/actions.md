@@ -35,3 +35,29 @@ $retrieveAction = new RetrieveActionModel(1234);
 $response = $actions->retrieve($client, $retrieveAction);
 var_dump($response->getBody()->getContents());
 ```
+
+The example above could also be trimmed a couple lines as shown in the example below.
+
+```php
+<?php
+use wappr\DigitalOcean\Client;
+use wappr\DigitalOcean\Actions\Actions;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveActionModel;
+
+$actions = new Actions;
+$response = $actions->retrieve(new Client, new RetrieveActionModel(1234));
+var_dump($response->getBody()->getContents());
+```
+
+Even that could be simplified into one line (excluding the imports).
+
+```php
+<?php
+use wappr\DigitalOcean\Client;
+use wappr\DigitalOcean\Actions\Actions;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveActionModel;
+
+var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1234))->getBody()->getContents());
+```
+
+Feel free to use the verbose or succinct way of calling the client API.
