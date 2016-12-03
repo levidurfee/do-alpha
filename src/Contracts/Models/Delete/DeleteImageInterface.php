@@ -6,6 +6,7 @@ interface DeleteImageInterface
 {
     /**
      * DeleteImageInterface constructor.
+     *
      * @param $image_id
      */
     public function __construct($image_id);

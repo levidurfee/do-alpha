@@ -6,6 +6,7 @@ interface UpdateImageInterface
 {
     /**
      * UpdateImageInterface constructor.
+     *
      * @param $image_id int
      * @param $name string
      */

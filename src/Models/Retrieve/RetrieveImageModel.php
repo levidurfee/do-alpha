@@ -15,6 +15,7 @@ class RetrieveImageModel extends ModelMethods implements ModelInterface, Retriev
 
     /**
      * RetrieveImageModel constructor.
+     *
      * @param $image_id int
      */
     public function __construct($image_id)
