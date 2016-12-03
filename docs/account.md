@@ -8,7 +8,7 @@ use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Account;
 
 $client = new Client;
-$account = new Account();
+$account = new Account;
 $response = $account->retrieve($client);
 var_dump($response->getBody()->getContents());
 ```

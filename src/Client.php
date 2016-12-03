@@ -67,7 +67,7 @@ class Client implements ClientInterface
     {
         $response = $this->httpClient->request('GET', $action, [
             'auth' => [$this->apiToken, ':'],
-            'query' => ['page' => 1, 'per_page' => 50],
+            'query' => ['page' => 1, 'per_page' => 500],
             'headers' => [
                 'Content-Type' => 'application/json',
             ],

@@ -2,19 +2,36 @@
 
 namespace wappr\DigitalOcean\Actions;
 
+use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveActionInterface;
 
 class Actions implements ListInterface, RetrieveInterface
 {
-    public function getAll(ClientInterface $client)
+    /**
+     * @param ClientInterface $client
+     *
+     * @return ResponseInterface
+     */
+    public function getAll(ClientInterface $client): ResponseInterface
     {
-        // TODO: Implement getAll() method.
+        return $client->get('actions');
     }
 
-    public function retrieve(ClientInterface $client)
+    /**
+     * @param ClientInterface              $client
+     * @param RetrieveActionInterface|null $action
+     *
+     * @return ResponseInterface
+     */
+    public function retrieve(ClientInterface $client, RetrieveActionInterface $action = null): ResponseInterface
     {
-        // TODO: Implement retrieve() method.
+        if ($action == null) {
+            throw new \InvalidArgumentException('Retrieve Action model required.');
+        }
+
+        return $client->get('actions/'.$action->getActionId());
     }
 }
