@@ -32,7 +32,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
 
         $handler = HandlerStack::create($mock);
 
-        $client = new DoClient();
+        $this->client = new DoClient();
         $this->client->setHttpClient(
             new Client(['handler' => $handler])
         );
