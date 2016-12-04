@@ -21,10 +21,10 @@ You can set additional properties when creating new droplets.
 
 ## Methods
 
-* setSshKeys(array $ssh_keys)
-* setBackups(bool $backups)
-* setIpv6(bool $ipv6)
-* setPrivateNetworking(bool $private_networking)
-* setUserData(string $user_data)
-* setVolumes(array $volumes)
-* setTags(array $tags)
+* `setSshKeys(array $ssh_keys)`
+* `setBackups(bool $backups)`
+* `setIpv6(bool $ipv6)`
+* `setPrivateNetworking(bool $private_networking)`
+* `setUserData(string $user_data)`
+* `setVolumes(array $volumes)`
+* `setTags(array $tags)`
