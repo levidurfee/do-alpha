@@ -32,6 +32,11 @@ class Client implements ClientInterface
      */
     protected $apiToken;
 
+    /**
+     * @var bool Debug Guzzle
+     */
+    protected $debug = false;
+
     public function __construct()
     {
         $this->httpClient = new Guzzle(['base_uri' => $this->url.'/v'.$this->apiVersion.'/']);
@@ -51,6 +56,7 @@ class Client implements ClientInterface
         $response = $this->httpClient->request('POST', $action, [
             'auth' => [$this->apiToken, ':'],
             'json' => $model->return(),
+            'debug' => $this->debug,
         ]);
 
         return $response;
@@ -71,6 +77,7 @@ class Client implements ClientInterface
             'headers' => [
                 'Content-Type' => 'application/json',
             ],
+            'debug' => $this->debug,
         ]);
 
         return $response;
@@ -90,6 +97,7 @@ class Client implements ClientInterface
         $response = $this->httpClient->request('DELETE', $action.'/'.$model->{$method}(), [
             'auth' => [$this->apiToken, ':'],
             'json' => $model->return(),
+            'debug' => $this->debug,
         ]);
 
         return $response;
@@ -107,6 +115,7 @@ class Client implements ClientInterface
         $response = $this->httpClient->request('PUT', $action.'/'.$model->{$method}(), [
             'auth' => [$this->apiToken, ':'],
             'json' => $model->return(),
+            'debug' => $this->debug,
         ]);
 
         return $response;
@@ -120,5 +129,13 @@ class Client implements ClientInterface
     public function setHttpClient($client)
     {
         $this->httpClient = $client;
+    }
+
+    /**
+     * @param boolean $debug
+     */
+    public function setDebug(bool $debug)
+    {
+        $this->debug = $debug;
     }
 }
