@@ -132,7 +132,7 @@ class Client implements ClientInterface
     }
 
     /**
-     * @param boolean $debug
+     * @param bool $debug
      */
     public function setDebug(bool $debug)
     {
