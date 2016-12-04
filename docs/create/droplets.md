@@ -1,6 +1,18 @@
-# Droplets
+# Creating Droplets
 
-You can set additional properties when creating new droplets.
+## Creating a droplet
+
+```php
+<?php
+use wappr\DigitalOcean\Client;
+use wappr\DigitalOcean\Actions\Droplets;
+use wappr\DigitalOcean\Models\Create\CreateDropletModel;
+
+$client = new Client();
+$droplets = new Droplets();
+$droplet = new CreateDropletModel('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
+$droplets->create($client, $droplet);
+```
 
 ## Construct requires
 
@@ -10,6 +22,8 @@ You can set additional properties when creating new droplets.
 * Image
 
 ## Additional properties
+
+You can set additional properties when creating new droplets.
 
 * SSH Keys
 * Backups
