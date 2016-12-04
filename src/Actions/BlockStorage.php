@@ -9,7 +9,11 @@ use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageInterface;
 
+/**
+ * Class BlockStorage.
+ */
 class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterface
 {
     /**
@@ -27,25 +31,48 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
         return $client->get($this->action);
     }
 
+    /**
+     * @param ClientInterface                  $client
+     * @param CreateBlockStorageInterface|null $blockStorage
+     *
+     * @return ResponseInterface
+     */
     public function create(ClientInterface $client, CreateBlockStorageInterface $blockStorage = null): ResponseInterface
     {
-        // TODO: Implement create() method.
         if ($blockStorage == null) {
             throw new \InvalidArgumentException('Block Storage model required.');
         }
+
+        return $client->post($this->action, $blockStorage);
     }
 
+    /**
+     * @param ClientInterface                  $client
+     * @param DeleteBlockStorageInterface|null $deleteBlockStorage
+     *
+     * @return ResponseInterface
+     */
     public function delete(ClientInterface $client, DeleteBlockStorageInterface $deleteBlockStorage = null): ResponseInterface
     {
         if ($deleteBlockStorage == null) {
             throw new \InvalidArgumentException('Delete Block Storage model required.');
         }
 
-        $client->delete($this->action, $deleteBlockStorage, 'getDriveId');
+        return $client->delete($this->action, $deleteBlockStorage, 'getDriveId');
     }
 
-    public function retrieve(ClientInterface $client): ResponseInterface
+    /**
+     * @param ClientInterface                    $client
+     * @param RetrieveBlockStorageInterface|null $blockStorage
+     *
+     * @return ResponseInterface
+     */
+    public function retrieve(ClientInterface $client, RetrieveBlockStorageInterface $blockStorage = null): ResponseInterface
     {
-        // TODO: Implement retrieve() method.
+        if ($blockStorage == null) {
+            throw new \InvalidArgumentException('Retrieve Block Storage model required.');
+        }
+
+        return $client->get($this->action.'/'.$blockStorage->getId());
     }
 }

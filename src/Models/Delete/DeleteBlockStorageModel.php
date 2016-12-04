@@ -10,15 +10,15 @@ class DeleteBlockStorageModel extends ModelMethods implements ModelInterface, De
 {
     protected $drive_id;
 
-    public function __construct($drive_id)
+    public function __construct(string $drive_id)
     {
         $this->drive_id = $drive_id;
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getDriveId(): int
+    public function getDriveId(): string
     {
         return $this->drive_id;
     }

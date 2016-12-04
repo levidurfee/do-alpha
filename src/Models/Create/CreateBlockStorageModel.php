@@ -3,10 +3,10 @@
 namespace wappr\DigitalOcean\Models\Create;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Create\BlockStorageInterface;
+use wappr\DigitalOcean\Contracts\Models\Create\CreateBlockStorageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
-class CreateBlockStorageModel extends ModelMethods implements ModelInterface, BlockStorageInterface
+class CreateBlockStorageModel extends ModelMethods implements ModelInterface, CreateBlockStorageInterface
 {
     /**
      * @var int Required
@@ -34,15 +34,19 @@ class CreateBlockStorageModel extends ModelMethods implements ModelInterface, Bl
     protected $snapshot_id;
 
     /**
-     * BlockStorage constructor.
+     * CreateBlockStorageModel constructor.
      *
      * @param int    $size_gigabytes
      * @param string $name
+     * @param string $description
+     * @param string $region
      */
-    public function __construct($size_gigabytes, $name)
+    public function __construct(int $size_gigabytes, string $name, string $description, string $region)
     {
         $this->size_gigabytes = $size_gigabytes;
         $this->name = $name;
+        $this->description = $description;
+        $this->region = $region;
     }
 
     /**

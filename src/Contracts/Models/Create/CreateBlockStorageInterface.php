@@ -2,15 +2,20 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Create;
 
+/**
+ * Interface CreateBlockStorageInterface.
+ */
 interface CreateBlockStorageInterface
 {
     /**
-     * BlockStorage constructor.
+     * CreateBlockStorageInterface constructor.
      *
-     * @param int    $size_gigabytes
-     * @param string $name
+     * @param $size_gigabytes int
+     * @param $name string
+     * @param $description string
+     * @param $region string
      */
-    public function __construct($size_gigabytes, $name);
+    public function __construct(int $size_gigabytes, string $name, string $description, string $region);
 
     /**
      * @param string $description
