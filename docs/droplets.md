@@ -28,6 +28,8 @@ $droplet = new CreateDropletModel('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64'
 $droplets->create($client, $droplet);
 ```
 
+[Additional options](create/droplets.md).
+
 ## Retrieving information on a single droplet
 
 ```php

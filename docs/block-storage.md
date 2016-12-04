@@ -28,7 +28,7 @@ $response = $blockStorage->create($client, $newBlockStorage);
 var_dump($response->getBody()->getContents());
 ```
 
-[Additional options](properties/block-storage.md).
+[Additional options](create/block-storage.md).
 
 ## Retrieving block storage
 

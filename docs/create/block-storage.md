@@ -11,4 +11,8 @@ You can set additional properties when creating new block storage.
 
 ## Additional properties
 
-* setSnapshotId(string $snapshot_id)
+* Snapshot ID
+
+## Methods
+
+* setSnapshotId accepts a string
