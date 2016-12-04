@@ -9,9 +9,12 @@ use wappr\DigitalOcean\Client as DoClient;
 
 class AccountTest extends PHPUnit_Framework_TestCase
 {
-    public function testGetAccountInfo()
+    protected $mockResponse;
+    protected $client;
+
+    public function setUp()
     {
-        $mockResponse = '{
+        $this->mockResponse = '{
           "account": {
             "droplet_limit": 25,
             "floating_ip_limit": 5,
@@ -24,17 +27,21 @@ class AccountTest extends PHPUnit_Framework_TestCase
         }';
 
         $mock = new MockHandler([
-            new Response(200, [], $mockResponse),
+            new Response(200, [], $this->mockResponse),
         ]);
 
         $handler = HandlerStack::create($mock);
 
         $client = new DoClient();
-        $client->setHttpClient(
+        $this->client->setHttpClient(
             new Client(['handler' => $handler])
         );
+    }
+
+    public function testGetAccountInfo()
+    {
         $account = new Account;
-        $response = $account->retrieve($client);
+        $response = $account->retrieve($this->client);
         $json = json_decode($response->getBody()->getContents());
         $this->assertTrue($json->account->email_verified);
         $this->assertEquals($response->getStatusCode(), 200);
