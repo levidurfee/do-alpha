@@ -2,10 +2,12 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Retrieve;
 
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
 /**
  * Interface RetrieveBlockStorageInterface.
  */
-interface RetrieveBlockStorageInterface
+interface RetrieveBlockStorageInterface extends ModelInterface
 {
     /**
      * RetrieveBlockStorageInterface constructor.

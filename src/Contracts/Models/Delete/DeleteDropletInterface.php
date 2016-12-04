@@ -2,8 +2,18 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Delete;
 
-interface DeleteDropletInterface
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
+/**
+ * Interface DeleteDropletInterface.
+ */
+interface DeleteDropletInterface extends ModelInterface
 {
+    /**
+     * DeleteDropletInterface constructor.
+     *
+     * @param $droplet_id
+     */
     public function __construct($droplet_id);
 
     /**

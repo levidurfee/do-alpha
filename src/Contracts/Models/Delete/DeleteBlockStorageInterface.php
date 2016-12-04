@@ -2,10 +2,12 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Delete;
 
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
 /**
  * Interface DeleteBlockStorageInterface.
  */
-interface DeleteBlockStorageInterface
+interface DeleteBlockStorageInterface extends ModelInterface
 {
     /**
      * DeleteBlockStorageInterface constructor.

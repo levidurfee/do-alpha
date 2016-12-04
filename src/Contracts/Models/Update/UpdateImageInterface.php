@@ -2,7 +2,12 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Update;
 
-interface UpdateImageInterface
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
+/**
+ * Interface UpdateImageInterface.
+ */
+interface UpdateImageInterface extends ModelInterface
 {
     /**
      * UpdateImageInterface constructor.

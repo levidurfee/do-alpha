@@ -2,10 +2,12 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Create;
 
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
 /**
  * Interface CreateBlockStorageInterface.
  */
-interface CreateBlockStorageInterface
+interface CreateBlockStorageInterface extends ModelInterface
 {
     /**
      * CreateBlockStorageInterface constructor.

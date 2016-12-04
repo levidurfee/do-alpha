@@ -2,7 +2,12 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Retrieve;
 
-interface RetrieveActionInterface
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
+/**
+ * Interface RetrieveActionInterface.
+ */
+interface RetrieveActionInterface extends ModelInterface
 {
     /**
      * RetrieveActionInterface constructor.

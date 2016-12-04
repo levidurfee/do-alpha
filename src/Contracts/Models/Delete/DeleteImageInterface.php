@@ -2,7 +2,12 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Delete;
 
-interface DeleteImageInterface
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
+/**
+ * Interface DeleteImageInterface.
+ */
+interface DeleteImageInterface extends ModelInterface
 {
     /**
      * DeleteImageInterface constructor.

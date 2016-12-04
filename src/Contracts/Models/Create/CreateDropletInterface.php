@@ -2,7 +2,12 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Create;
 
-interface CreateDropletInterface
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
+/**
+ * Interface CreateDropletInterface.
+ */
+interface CreateDropletInterface extends ModelInterface
 {
     /**
      * Droplet constructor.
