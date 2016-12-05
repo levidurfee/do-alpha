@@ -2,7 +2,14 @@
 
 namespace wappr\DigitalOcean\Contracts\Models\Create;
 
-interface CreateDomainInterface
-{
+use wappr\DigitalOcean\Contracts\ModelInterface;
 
+/**
+ * Interface CreateDomainInterface.
+ */
+interface CreateDomainInterface extends ModelInterface
+{
+    public function __construct(string $name, string $ip_address);
+    public function getName(): string;
+    public function getIpAddress(): string;
 }
