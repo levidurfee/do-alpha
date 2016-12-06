@@ -6,6 +6,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveImageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
+/**
+ * Class RetrieveImageModel.
+ */
 class RetrieveImageModel extends ModelMethods implements ModelInterface, RetrieveImageInterface
 {
     /**

@@ -8,6 +8,9 @@ use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 
+/**
+ * Class FloatingIPs.
+ */
 class FloatingIPs implements ListInterface, ResourceInterface, RetrieveInterface
 {
     public function getAll(ClientInterface $client): ResponseInterface

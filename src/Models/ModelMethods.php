@@ -2,6 +2,9 @@
 
 namespace wappr\DigitalOcean\Models;
 
+/**
+ * Class ModelMethods.
+ */
 abstract class ModelMethods
 {
     /**

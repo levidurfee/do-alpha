@@ -6,6 +6,9 @@ use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 
+/**
+ * Class Regions.
+ */
 class Regions implements ListInterface
 {
     /**

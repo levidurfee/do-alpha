@@ -6,6 +6,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteImageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
+/**
+ * Class DeleteImageModel.
+ */
 class DeleteImageModel extends ModelMethods implements ModelInterface, DeleteImageInterface
 {
     /**

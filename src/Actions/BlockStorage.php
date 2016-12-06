@@ -36,6 +36,8 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * @param CreateBlockStorageInterface|null $blockStorage
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function create(ClientInterface $client, CreateBlockStorageInterface $blockStorage = null): ResponseInterface
     {
@@ -51,6 +53,8 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * @param DeleteBlockStorageInterface|null $deleteBlockStorage
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function delete(ClientInterface $client, DeleteBlockStorageInterface $deleteBlockStorage = null): ResponseInterface
     {
@@ -66,6 +70,8 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * @param RetrieveBlockStorageInterface|null $blockStorage
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function retrieve(ClientInterface $client, RetrieveBlockStorageInterface $blockStorage = null): ResponseInterface
     {

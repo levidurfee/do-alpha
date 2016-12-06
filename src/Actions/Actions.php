@@ -26,10 +26,14 @@ class Actions implements ListInterface, RetrieveInterface
     }
 
     /**
+     * @since 0.1.1
+     *
      * @param ClientInterface              $client
      * @param RetrieveActionInterface|null $action
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function retrieve(ClientInterface $client, RetrieveActionInterface $action = null): ResponseInterface
     {

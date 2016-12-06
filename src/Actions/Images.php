@@ -11,12 +11,17 @@ use wappr\DigitalOcean\Contracts\Models\Delete\DeleteImageInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveImageInterface;
 use wappr\DigitalOcean\Contracts\Models\Update\UpdateImageInterface;
 
+/**
+ * Class Images.
+ */
 class Images implements ListInterface, RetrieveInterface, UpdateInterface
 {
     protected $action = 'images';
 
     /**
      * List all the images.
+     *
+     * @since 0.1.1
      *
      * @param ClientInterface $client
      *
@@ -28,12 +33,14 @@ class Images implements ListInterface, RetrieveInterface, UpdateInterface
     }
 
     /**
-     * Retrieve information about an image.
+     * @since 0.1.1
      *
      * @param ClientInterface             $client
      * @param RetrieveImageInterface|null $image
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function retrieve(ClientInterface $client, RetrieveImageInterface $image = null): ResponseInterface
     {
@@ -45,12 +52,14 @@ class Images implements ListInterface, RetrieveInterface, UpdateInterface
     }
 
     /**
-     * Update the name of an image.
+     * @since 0.1.1
      *
      * @param ClientInterface           $client
      * @param UpdateImageInterface|null $image
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function update(ClientInterface $client, UpdateImageInterface $image = null): ResponseInterface
     {
@@ -62,12 +71,14 @@ class Images implements ListInterface, RetrieveInterface, UpdateInterface
     }
 
     /**
-     * Delete an image.
+     * @since 0.1.1
      *
      * @param ClientInterface           $client
      * @param DeleteImageInterface|null $image
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function delete(ClientInterface $client, DeleteImageInterface $image = null): ResponseInterface
     {

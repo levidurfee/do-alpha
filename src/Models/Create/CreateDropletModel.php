@@ -6,6 +6,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Create\CreateDropletInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
+/**
+ * Class CreateDropletModel.
+ */
 class CreateDropletModel extends ModelMethods implements ModelInterface, CreateDropletInterface
 {
     /**

@@ -16,9 +16,16 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
  */
 class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
 {
+    /**
+     * @since 0.1.1
+     *
+     * @var string action
+     */
     protected $action = 'droplets';
 
     /**
+     * @since 0.1.1
+     *
      * @param ClientInterface $client
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -29,10 +36,14 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
     }
 
     /**
+     * @since 0.1.1
+     *
      * @param ClientInterface             $client
      * @param CreateDropletInterface|null $droplet
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function create(ClientInterface $client, CreateDropletInterface $droplet = null): ResponseInterface
     {
@@ -44,10 +55,14 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
     }
 
     /**
+     * @since 0.1.1
+     *
      * @param ClientInterface             $client
      * @param DeleteDropletInterface|null $droplet
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function delete(ClientInterface $client, DeleteDropletInterface $droplet = null): ResponseInterface
     {
@@ -59,10 +74,14 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
     }
 
     /**
+     * @since 0.1.1
+     *
      * @param ClientInterface               $client
      * @param RetrieveDropletInterface|null $droplet
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function retrieve(ClientInterface $client, RetrieveDropletInterface $droplet = null): ResponseInterface
     {

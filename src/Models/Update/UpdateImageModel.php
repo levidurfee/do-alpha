@@ -6,6 +6,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Update\UpdateImageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
+/**
+ * Class UpdateImageModel.
+ */
 class UpdateImageModel extends ModelMethods implements ModelInterface, UpdateImageInterface
 {
     /**

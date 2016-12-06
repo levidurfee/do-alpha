@@ -9,6 +9,12 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
  * Class Client.
+ *
+ * @version 0.1.1
+ *
+ * @author Levi Durfee <levi.durfee@gmail.com>
+ *
+ * @todo catch possible exceptions from guzzle
  */
 class Client implements ClientInterface
 {
@@ -37,6 +43,9 @@ class Client implements ClientInterface
      */
     protected $debug = false;
 
+    /**
+     * Client constructor.
+     */
     public function __construct()
     {
         $this->httpClient = new Guzzle(['base_uri' => $this->url.'/v'.$this->apiVersion.'/']);
@@ -49,7 +58,7 @@ class Client implements ClientInterface
      * @param string         $action
      * @param ModelInterface $model
      *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
     public function post(string $action, ModelInterface $model): ResponseInterface
     {
@@ -67,7 +76,7 @@ class Client implements ClientInterface
      *
      * @param string $action
      *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
     public function get(string $action): ResponseInterface
     {
@@ -90,7 +99,7 @@ class Client implements ClientInterface
      * @param ModelInterface $model
      * @param string         $method
      *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
     public function delete(string $action, ModelInterface $model, string $method): ResponseInterface
     {
@@ -104,6 +113,8 @@ class Client implements ClientInterface
     }
 
     /**
+     * Send an update request to the API.
+     *
      * @param string         $action
      * @param ModelInterface $model
      * @param string         $method

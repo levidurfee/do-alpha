@@ -6,6 +6,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Create\CreateBlockStorageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
+/**
+ * Class CreateBlockStorageModel.
+ */
 class CreateBlockStorageModel extends ModelMethods implements ModelInterface, CreateBlockStorageInterface
 {
     /**

@@ -19,6 +19,8 @@ class BlockStorageActions implements ListInterface, RetrieveInterface
     protected $action = 'volumes';
 
     /**
+     * @since 0.1.1
+     *
      * @param ClientInterface $client
      *
      * @return ResponseInterface
@@ -29,10 +31,14 @@ class BlockStorageActions implements ListInterface, RetrieveInterface
     }
 
     /**
+     * @since 0.1.1
+     *
      * @param ClientInterface                           $client
      * @param RetrieveBlockStorageActionsInterface|null $blockStorageActions
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function retrieve(
         ClientInterface $client,

@@ -22,7 +22,9 @@ class Domains implements ListInterface, ResourceInterface, RetrieveInterface
     protected $action = 'domains';
 
     /**
-     * To retrieve a list of all of the domains in your account.
+     * @since 0.1.1
+     *
+     * To retrieve a list of all of the domains in your account
      *
      * @param ClientInterface $client
      *
@@ -38,6 +40,8 @@ class Domains implements ListInterface, ResourceInterface, RetrieveInterface
      * @param CreateDomainInterface|null $createDomain
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function create(ClientInterface $client, CreateDomainInterface $createDomain = null): ResponseInterface
     {
@@ -53,6 +57,8 @@ class Domains implements ListInterface, ResourceInterface, RetrieveInterface
      * @param DeleteDomainInterface|null $deleteDomain
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function delete(ClientInterface $client, DeleteDomainInterface $deleteDomain = null): ResponseInterface
     {
@@ -68,6 +74,8 @@ class Domains implements ListInterface, ResourceInterface, RetrieveInterface
      * @param RetrieveDomainInterface|null $retrieveDomain
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
     public function retrieve(ClientInterface $client, RetrieveDomainInterface $retrieveDomain = null): ResponseInterface
     {

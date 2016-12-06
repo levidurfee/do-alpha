@@ -6,6 +6,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
+/**
+ * Class RetrieveBlockStorageActionsModel.
+ */
 class RetrieveBlockStorageActionsModel extends ModelMethods implements ModelInterface, RetrieveBlockStorageActionsInterface
 {
     /**

@@ -12,9 +12,9 @@ interface RetrieveDropletInterface extends ModelInterface
     /**
      * RetrieveDropletInterface constructor.
      *
-     * @param $droplet_id
+     * @param int $droplet_id
      */
-    public function __construct($droplet_id);
+    public function __construct(int $droplet_id);
 
     /**
      * @return int

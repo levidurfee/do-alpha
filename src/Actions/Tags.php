@@ -9,6 +9,9 @@ use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\Actions\UpdateInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 
+/**
+ * Class Tags.
+ */
 class Tags implements ListInterface, ResourceInterface, RetrieveInterface, UpdateInterface
 {
     public function getAll(ClientInterface $client): ResponseInterface
