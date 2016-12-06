@@ -3,6 +3,8 @@
 namespace wappr\DigitalOcean;
 
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\TransferException;
 use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\ModelInterface;
@@ -62,11 +64,15 @@ class Client implements ClientInterface
      */
     public function post(string $action, ModelInterface $model): ResponseInterface
     {
-        $response = $this->httpClient->request('POST', $action, [
-            'auth' => [$this->apiToken, ':'],
-            'json' => $model->return(),
-            'debug' => $this->debug,
-        ]);
+        try {
+            $response = $this->httpClient->request('POST', $action, [
+                'auth' => [$this->apiToken, ':'],
+                'json' => $model->return(),
+                'debug' => $this->debug,
+            ]);
+        } catch(RequestException $e) {
+            $response = $e->getResponse();
+        }
 
         return $response;
     }
@@ -80,14 +86,18 @@ class Client implements ClientInterface
      */
     public function get(string $action): ResponseInterface
     {
-        $response = $this->httpClient->request('GET', $action, [
-            'auth' => [$this->apiToken, ':'],
-            'query' => ['page' => 1, 'per_page' => 500],
-            'headers' => [
-                'Content-Type' => 'application/json',
-            ],
-            'debug' => $this->debug,
-        ]);
+        try {
+            $response = $this->httpClient->request('GET', $action, [
+                'auth' => [$this->apiToken, ':'],
+                'query' => ['page' => 1, 'per_page' => 500],
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                ],
+                'debug' => $this->debug,
+            ]);
+        } catch(RequestException $e) {
+            $response = $e->getResponse();
+        }
 
         return $response;
     }
@@ -103,11 +113,15 @@ class Client implements ClientInterface
      */
     public function delete(string $action, ModelInterface $model, string $method): ResponseInterface
     {
-        $response = $this->httpClient->request('DELETE', $action.'/'.$model->{$method}(), [
-            'auth' => [$this->apiToken, ':'],
-            'json' => $model->return(),
-            'debug' => $this->debug,
-        ]);
+        try {
+            $response = $this->httpClient->request('DELETE', $action.'/'.$model->{$method}(), [
+                'auth' => [$this->apiToken, ':'],
+                'json' => $model->return(),
+                'debug' => $this->debug,
+            ]);
+        } catch(RequestException $e) {
+            $response = $e->getResponse();
+        }
 
         return $response;
     }
@@ -123,11 +137,15 @@ class Client implements ClientInterface
      */
     public function put(string $action, ModelInterface $model, string $method): ResponseInterface
     {
-        $response = $this->httpClient->request('PUT', $action.'/'.$model->{$method}(), [
-            'auth' => [$this->apiToken, ':'],
-            'json' => $model->return(),
-            'debug' => $this->debug,
-        ]);
+        try {
+            $response = $this->httpClient->request('PUT', $action.'/'.$model->{$method}(), [
+                'auth' => [$this->apiToken, ':'],
+                'json' => $model->return(),
+                'debug' => $this->debug,
+            ]);
+        } catch(RequestException $e) {
+            $response = $e->getResponse();
+        }
 
         return $response;
     }
@@ -136,6 +154,8 @@ class Client implements ClientInterface
      * Set the http client. This will clients other than Guzzle.
      *
      * @param $client
+     *
+     * @return void
      */
     public function setHttpClient($client)
     {
@@ -144,6 +164,8 @@ class Client implements ClientInterface
 
     /**
      * @param bool $debug
+     *
+     * @return void
      */
     public function setDebug(bool $debug)
     {

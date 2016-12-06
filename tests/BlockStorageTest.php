@@ -14,9 +14,6 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
 {
     protected $client;
 
-    /**
-     * @expectedException GuzzleHttp\Exception\ClientException
-     */
     public function testListAllVolumes()
     {
         $mockResponse = '{

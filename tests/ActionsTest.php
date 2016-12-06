@@ -104,9 +104,6 @@ class ActionsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($response->getStatusCode(), 200);
     }
 
-    /**
-     * @expectedException GuzzleHttp\Exception\ClientException
-     */
     public function testFourOhFourError()
     {
         $this->mockResponse = '{
