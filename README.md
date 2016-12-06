@@ -11,6 +11,7 @@ A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle]
 * [Account](docs/account.md)
 * [Actions](docs/actions.md)
 * [Block Storage](docs/block-storage.md)
+* [Domains](docs/domains.md)
 
 Most of the example usage will display the verbose way of accomplishing each action. If you would like a more
 succinct example, see the one below, as some of these actions can be called in one line (excluding the imports).
