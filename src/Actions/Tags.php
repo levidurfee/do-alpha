@@ -14,9 +14,19 @@ use wappr\DigitalOcean\Contracts\ClientInterface;
  */
 class Tags implements ListInterface, ResourceInterface, RetrieveInterface, UpdateInterface
 {
+    /**
+     * @var string
+     */
+    protected $action = 'floating_ips';
+
+    /**
+     * @param ClientInterface $client
+     *
+     * @return ResponseInterface
+     */
     public function getAll(ClientInterface $client): ResponseInterface
     {
-        // TODO: Implement getAll() method.
+        return $client->get($this->action);
     }
 
     public function create(ClientInterface $client): ResponseInterface
