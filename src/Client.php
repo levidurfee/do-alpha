@@ -11,11 +11,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 /**
  * Class Client.
  *
- * @version 0.1.1
+ * @version 0.2.0
  *
  * @author Levi Durfee <levi.durfee@gmail.com>
- *
- * @todo catch possible exceptions from guzzle
  */
 class Client implements ClientInterface
 {
@@ -161,17 +159,25 @@ class Client implements ClientInterface
      * Set the http client. This will clients other than Guzzle.
      *
      * @param $client
+     *
+     * @return bool
      */
     public function setHttpClient($client)
     {
         $this->httpClient = $client;
+
+        return true;
     }
 
     /**
      * @param bool $debug
+     *
+     * @return bool
      */
     public function setDebug(bool $debug)
     {
         $this->debug = $debug;
+
+        return true;
     }
 }
