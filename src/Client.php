@@ -46,10 +46,18 @@ class Client implements ClientInterface
 
     /**
      * Client constructor.
+     *
+     * @param string $apiToken
      */
-    public function __construct()
+    public function __construct($apiToken = null)
     {
         $this->httpClient = new Guzzle(['base_uri' => $this->url.'/v'.$this->apiVersion.'/']);
+        if (isset($apiToken)) {
+            $this->apiToken = $apiToken;
+
+            return;
+        }
+
         $this->apiToken = getenv('DO_API_TOKEN');
     }
 

@@ -35,6 +35,7 @@ class Tags implements ListInterface, ResourceInterface, RetrieveInterface, Updat
      * @param CreateTagInterface|null $createTag
      *
      * @return ResponseInterface
+     *
      * @throws \InvalidArgumentException
      */
     public function create(ClientInterface $client, CreateTagInterface $createTag = null): ResponseInterface
