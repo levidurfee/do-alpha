@@ -4,7 +4,6 @@ namespace wappr\DigitalOcean;
 
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\TransferException;
 use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\ModelInterface;
@@ -70,7 +69,7 @@ class Client implements ClientInterface
                 'json' => $model->return(),
                 'debug' => $this->debug,
             ]);
-        } catch(RequestException $e) {
+        } catch (RequestException $e) {
             $response = $e->getResponse();
         }
 
@@ -95,7 +94,7 @@ class Client implements ClientInterface
                 ],
                 'debug' => $this->debug,
             ]);
-        } catch(RequestException $e) {
+        } catch (RequestException $e) {
             $response = $e->getResponse();
         }
 
@@ -119,7 +118,7 @@ class Client implements ClientInterface
                 'json' => $model->return(),
                 'debug' => $this->debug,
             ]);
-        } catch(RequestException $e) {
+        } catch (RequestException $e) {
             $response = $e->getResponse();
         }
 
@@ -143,7 +142,7 @@ class Client implements ClientInterface
                 'json' => $model->return(),
                 'debug' => $this->debug,
             ]);
-        } catch(RequestException $e) {
+        } catch (RequestException $e) {
             $response = $e->getResponse();
         }
 
@@ -154,8 +153,6 @@ class Client implements ClientInterface
      * Set the http client. This will clients other than Guzzle.
      *
      * @param $client
-     *
-     * @return void
      */
     public function setHttpClient($client)
     {
@@ -164,8 +161,6 @@ class Client implements ClientInterface
 
     /**
      * @param bool $debug
-     *
-     * @return void
      */
     public function setDebug(bool $debug)
     {

@@ -8,6 +8,7 @@ use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\Actions\UpdateInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
+use wappr\DigitalOcean\Contracts\Models\Create\CreateTagInterface;
 
 /**
  * Class Tags.
@@ -17,7 +18,7 @@ class Tags implements ListInterface, ResourceInterface, RetrieveInterface, Updat
     /**
      * @var string
      */
-    protected $action = 'floating_ips';
+    protected $action = 'tags';
 
     /**
      * @param ClientInterface $client
@@ -29,9 +30,20 @@ class Tags implements ListInterface, ResourceInterface, RetrieveInterface, Updat
         return $client->get($this->action);
     }
 
-    public function create(ClientInterface $client): ResponseInterface
+    /**
+     * @param ClientInterface         $client
+     * @param CreateTagInterface|null $createTag
+     *
+     * @return ResponseInterface
+     * @throws \InvalidArgumentException
+     */
+    public function create(ClientInterface $client, CreateTagInterface $createTag = null): ResponseInterface
     {
-        // TODO: Implement create() method.
+        if ($createTag == null) {
+            throw new \InvalidArgumentException('Create Tag model required.');
+        }
+
+        return $client->post($this->action, $createTag);
     }
 
     public function delete(ClientInterface $client): ResponseInterface
