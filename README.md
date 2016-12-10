@@ -31,6 +31,7 @@ var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1))->getBod
 
 ## Todo
 
+* Change Models to Requests (ex. `CreateBlockStorageModel` would be come `CreateBlockStorageRequest`)
 * Write units tests for existing actions
 * Basic functionality for other actions
 * Continue to update docs as I proceed
