@@ -3,9 +3,9 @@
 namespace wappr\DigitalOcean\Contracts\Models\Retrieve;
 
 /**
- * Interface ListDomainRecordsInterface.
+ * Interface RetrieveDomainRecordsInterface.
  */
-interface ListDomainRecordsInterface
+interface RetrieveDomainRecordsInterface
 {
     /**
      * @return string

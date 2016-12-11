@@ -8,15 +8,24 @@ use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\Actions\UpdateInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
+use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDomainRecordsInterface;
 
 /**
  * Class DomainRecords.
  */
 class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterface, UpdateInterface
 {
-    public function getAll(ClientInterface $client): ResponseInterface
+    protected $action = 'domains';
+
+    public function getAll(ClientInterface $client, RetrieveDomainRecordsInterface $domainRecords = null): ResponseInterface
     {
-        // TODO: Implement getAll() method.
+        if ($domainRecords == null) {
+            throw new \InvalidArgumentException('Retrieve Domain Records model required.');
+        }
+
+        echo '-- '.$this->action.'/'.$domainRecords->getDomain().'/records --';
+
+        return $client->get($this->action.'/'.$domainRecords->getDomain().'/records');
     }
 
     public function create(ClientInterface $client): ResponseInterface

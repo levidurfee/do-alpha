@@ -144,7 +144,7 @@ class CreateDropletModel extends ModelMethods implements ModelInterface, CreateD
     }
 
     /**
-     * @param boolean $install_agent
+     * @param bool $install_agent
      */
     public function setInstallAgent(bool $install_agent)
     {
