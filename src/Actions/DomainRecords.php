@@ -8,6 +8,7 @@ use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\Actions\UpdateInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
+use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDomainRecordInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDomainRecordsInterface;
 use wappr\DigitalOcean\Contracts\Models\Update\UpdateDomainRecordInterface;
 use wappr\DigitalOcean\Models\Create\CreateDomainRecordRequest;
@@ -38,17 +39,21 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
     }
 
     /**
-     * This method will need to pass a more verbose method to Client->delete since the API URL
-     * is /v2/domains/$DOMAIN_NAME/records/$RECORD_ID The DeleteDomainRecordsModel will need to
-     * return the domain and the record id.
-     *
-     * @param ClientInterface $client
+     * @param ClientInterface                  $client
+     * @param DeleteDomainRecordInterface|null $deleteDomainRecord
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
-    public function delete(ClientInterface $client): ResponseInterface
+    public function delete(ClientInterface $client, DeleteDomainRecordInterface $deleteDomainRecord = null): ResponseInterface
     {
-        // TODO: Implement delete() method.
+        if ($deleteDomainRecord == null) {
+            throw new \InvalidArgumentException('Delete Domain model required');
+        }
+
+        // /v2/domains/$DOMAIN_NAME/records/$RECORD_ID
+        return $client->delete($this->action, $deleteDomainRecord, 'getSegments');
     }
 
     public function retrieve(ClientInterface $client): ResponseInterface
