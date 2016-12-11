@@ -143,9 +143,9 @@ class Client implements ClientInterface
     public function put(string $action, ModelInterface $model, string $method): ResponseInterface
     {
         try {
-            $response = $this->httpClient->request('PUT', $action.'/'.$model->{$method}(), [
+            $response = $this->httpClient->request('PUT', $action, [
                 'auth' => [$this->apiToken, ':'],
-                'json' => $model->return(),
+                'json' => $model->{$method}(),
                 'debug' => $this->debug,
             ]);
         } catch (RequestException $e) {

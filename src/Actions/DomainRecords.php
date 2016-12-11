@@ -9,6 +9,7 @@ use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\Actions\UpdateInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDomainRecordsInterface;
+use wappr\DigitalOcean\Contracts\Models\Update\UpdateDomainRecordInterface;
 
 /**
  * Class DomainRecords.
@@ -22,8 +23,6 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
         if ($domainRecords == null) {
             throw new \InvalidArgumentException('Retrieve Domain Records model required.');
         }
-
-        echo '-- '.$this->action.'/'.$domainRecords->getDomain().'/records --';
 
         return $client->get($this->action.'/'.$domainRecords->getDomain().'/records');
     }
@@ -52,8 +51,18 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
         // TODO: Implement retrieve() method.
     }
 
-    public function update(ClientInterface $client): ResponseInterface
+    public function update(ClientInterface $client, UpdateDomainRecordInterface $domainRecord = null): ResponseInterface
     {
-        // TODO: Implement update() method.
+        if ($domainRecord == null) {
+            throw new \InvalidArgumentException('Update Domain Record model required.');
+        }
+
+        var_dump($domainRecord->return());
+
+        return $client->put(
+            $this->action.'/'.$domainRecord->getDomain().'/records/'.$domainRecord->getRecordId(),
+            $domainRecord,
+            'return'
+        );
     }
 }
