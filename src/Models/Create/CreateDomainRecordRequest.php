@@ -1,15 +1,12 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Update;
+namespace wappr\DigitalOcean\Models\Create;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Update\UpdateDomainRecordInterface;
+use wappr\DigitalOcean\Contracts\Models\Create\CreateDomainRecordInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
-/**
- * Class UpdateDomainRecordRequest.
- */
-class UpdateDomainRecordRequest extends ModelMethods implements ModelInterface, UpdateDomainRecordInterface
+class CreateDomainRecordRequest extends ModelMethods implements ModelInterface, CreateDomainRecordInterface
 {
     /**
      * @var string
@@ -47,22 +44,19 @@ class UpdateDomainRecordRequest extends ModelMethods implements ModelInterface, 
     protected $domain;
 
     /**
-     * @var int
-     */
-    protected $record_id;
-
-    /**
-     * UpdateDomainRecordRequest constructor.
+     * CreateDomainRecordRequest constructor.
      *
      * @param string $domain
-     * @param int    $record_id
      * @param string $type
+     * @param string $name
+     * @param string $data
      */
-    public function __construct(string $domain, int $record_id, string $type)
+    public function __construct(string $domain, string $type, string $name, string $data)
     {
         $this->type = $type;
         $this->domain = $domain;
-        $this->record_id = $record_id;
+        $this->name = $name;
+        $this->data = $data;
     }
 
     /**
@@ -111,13 +105,5 @@ class UpdateDomainRecordRequest extends ModelMethods implements ModelInterface, 
     public function getDomain(): string
     {
         return $this->domain;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRecordId(): int
-    {
-        return $this->record_id;
     }
 }

@@ -10,6 +10,7 @@ use wappr\DigitalOcean\Contracts\Actions\UpdateInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDomainRecordsInterface;
 use wappr\DigitalOcean\Contracts\Models\Update\UpdateDomainRecordInterface;
+use wappr\DigitalOcean\Models\Create\CreateDomainRecordRequest;
 
 /**
  * Class DomainRecords.
@@ -27,9 +28,13 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
         return $client->get($this->action.'/'.$domainRecords->getDomain().'/records');
     }
 
-    public function create(ClientInterface $client): ResponseInterface
+    public function create(ClientInterface $client, CreateDomainRecordRequest $createDomainRecordRequest = null): ResponseInterface
     {
-        // TODO: Implement create() method.
+        if ($createDomainRecordRequest == null) {
+            throw new \InvalidArgumentException('Create Domain Record model required.');
+        }
+
+        return $client->post($this->action.'/'.$createDomainRecordRequest->getDomain().'/records', $createDomainRecordRequest);
     }
 
     /**
