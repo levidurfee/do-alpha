@@ -57,8 +57,6 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
             throw new \InvalidArgumentException('Update Domain Record model required.');
         }
 
-        var_dump($domainRecord->return());
-
         return $client->put(
             $this->action.'/'.$domainRecord->getDomain().'/records/'.$domainRecord->getRecordId(),
             $domainRecord,
