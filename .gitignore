@@ -3,3 +3,4 @@ vendor/*
 .env
 example.php
 /output.json
+e/*

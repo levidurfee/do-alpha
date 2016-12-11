@@ -67,6 +67,11 @@ class CreateDropletModel extends ModelMethods implements ModelInterface, CreateD
     protected $tags;
 
     /**
+     * @var bool Optional
+     */
+    protected $install_agent;
+
+    /**
      * Droplet constructor.
      *
      * @param string $name
@@ -136,5 +141,13 @@ class CreateDropletModel extends ModelMethods implements ModelInterface, CreateD
     public function setTags(array $tags)
     {
         $this->tags = $tags;
+    }
+
+    /**
+     * @param boolean $install_agent
+     */
+    public function setInstallAgent(bool $install_agent)
+    {
+        $this->install_agent = $install_agent;
     }
 }
