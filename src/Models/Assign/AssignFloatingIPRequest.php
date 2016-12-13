@@ -11,7 +11,7 @@ class AssignFloatingIPRequest extends ModelMethods implements ModelInterface, As
     /**
      * @var int
      */
-    protected $dropletId;
+    protected $droplet_id;
     /**
      * @var string
      */
@@ -25,13 +25,13 @@ class AssignFloatingIPRequest extends ModelMethods implements ModelInterface, As
      * AssignFloatingIPRequest constructor.
      *
      * @param string $type
-     * @param int    $dropletId
+     * @param int    $droplet_id
      * @param string $ip
      */
-    public function __construct(string $type, int $dropletId, string $ip)
+    public function __construct(string $type, int $droplet_id, string $ip)
     {
         $this->type = $type;
-        $this->dropletId = $dropletId;
+        $this->droplet_id = $droplet_id;
         $this->ip = $ip;
     }
 
