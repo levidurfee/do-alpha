@@ -34,7 +34,7 @@ class FloatingIPActions implements ListInterface, RetrieveInterface
         return $client->post($this->action.'/'.$assignFloatingIPRequest->getIp().'/actions', $assignFloatingIPRequest);
     }
 
-    public function unassign(ClientInterface $client): ResponseInterface
+    public function unAssign(ClientInterface $client): ResponseInterface
     {
     }
 }
