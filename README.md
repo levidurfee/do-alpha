@@ -13,6 +13,7 @@ A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle]
 * [Actions](docs/actions.md)
 * [Block Storage](docs/block-storage.md)
 * [Domains](docs/domains.md)
+* [Floating IP Actions](docs/floating-ip-actions.md)
 * [Tags](docs/tags.md)
 
 Most of the example usage will display the verbose way of accomplishing each action. If you would like a more

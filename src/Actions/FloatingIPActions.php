@@ -6,10 +6,10 @@ use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
+use wappr\DigitalOcean\Contracts\Models\Assign\AssignFloatingIPInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveFloatingIPActionInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveFloatingIPActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\UnAssign\UnAssignFloatingIPActionInterface;
-use wappr\DigitalOcean\Models\Assign\AssignFloatingIPRequest;
 
 /**
  * Class FloatingIPActions.
@@ -56,14 +56,14 @@ class FloatingIPActions implements ListInterface, RetrieveInterface
     }
 
     /**
-     * @param ClientInterface              $client
-     * @param AssignFloatingIPRequest|null $assignFloatingIPRequest
+     * @param ClientInterface                $client
+     * @param AssignFloatingIPInterface|null $assignFloatingIPRequest
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function assign(ClientInterface $client, AssignFloatingIPRequest $assignFloatingIPRequest = null): ResponseInterface
+    public function assign(ClientInterface $client, AssignFloatingIPInterface $assignFloatingIPRequest = null): ResponseInterface
     {
         if ($assignFloatingIPRequest == null) {
             throw new \InvalidArgumentException('Assign Floating IP Request model required.');
