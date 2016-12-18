@@ -72,6 +72,14 @@ class FloatingIPActions implements ListInterface, RetrieveInterface
         return $client->post($this->action.'/'.$assignFloatingIPRequest->getIp().'/actions', $assignFloatingIPRequest);
     }
 
+    /**
+     * @param ClientInterface                        $client
+     * @param UnAssignFloatingIPActionInterface|null $unAssignFloatingIPAction
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
     public function unAssign(ClientInterface $client, UnAssignFloatingIPActionInterface $unAssignFloatingIPAction = null): ResponseInterface
     {
         if ($unAssignFloatingIPAction == null) {
