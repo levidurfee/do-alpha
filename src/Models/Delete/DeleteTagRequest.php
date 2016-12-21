@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Delete;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteTagInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class DeleteTagRequest.
  */
-class DeleteTagRequest extends ModelMethods implements ModelInterface, DeleteTagInterface
+class DeleteTagRequest extends RequestModel implements ModelInterface, DeleteTagInterface
 {
     /**
      * @var string

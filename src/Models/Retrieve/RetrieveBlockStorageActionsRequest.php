@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Retrieve;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class RetrieveBlockStorageActionsRequest.
  */
-class RetrieveBlockStorageActionsRequest extends ModelMethods implements ModelInterface, RetrieveBlockStorageActionsInterface
+class RetrieveBlockStorageActionsRequest extends RequestModel implements ModelInterface, RetrieveBlockStorageActionsInterface
 {
     /**
      * @var string

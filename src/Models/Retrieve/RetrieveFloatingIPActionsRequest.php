@@ -4,9 +4,9 @@ namespace wappr\DigitalOcean\Models\Retrieve;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveFloatingIPActionsInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
-class RetrieveFloatingIPActionsRequest extends ModelMethods implements ModelInterface, RetrieveFloatingIPActionsInterface
+class RetrieveFloatingIPActionsRequest extends RequestModel implements ModelInterface, RetrieveFloatingIPActionsInterface
 {
     /**
      * @var string

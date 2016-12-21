@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Delete;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDomainRecordInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class DeleteDomainRecordRequest.
  */
-class DeleteDomainRecordRequest extends ModelMethods implements ModelInterface, DeleteDomainRecordInterface
+class DeleteDomainRecordRequest extends RequestModel implements ModelInterface, DeleteDomainRecordInterface
 {
     /**
      * @var int

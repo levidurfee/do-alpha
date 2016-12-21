@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Retrieve;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDomainRecordsInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class RetrieveDomainRecordsRequest.
  */
-class RetrieveDomainRecordsRequest extends ModelMethods implements ModelInterface, RetrieveDomainRecordsInterface
+class RetrieveDomainRecordsRequest extends RequestModel implements ModelInterface, RetrieveDomainRecordsInterface
 {
     /**
      * @var string

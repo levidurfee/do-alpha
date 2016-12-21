@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Delete;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class DeleteDropletRequest.
  */
-class DeleteDropletRequest extends ModelMethods implements ModelInterface, DeleteDropletInterface
+class DeleteDropletRequest extends RequestModel implements ModelInterface, DeleteDropletInterface
 {
     /**
      * @var int Required

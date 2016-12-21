@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Retrieve;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class RetrieveDropletRequest.
  */
-class RetrieveDropletRequest extends ModelMethods implements ModelInterface, RetrieveDropletInterface
+class RetrieveDropletRequest extends RequestModel implements ModelInterface, RetrieveDropletInterface
 {
     /**
      * @var int

@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Delete;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteImageInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class DeleteImageRequest.
  */
-class DeleteImageRequest extends ModelMethods implements ModelInterface, DeleteImageInterface
+class DeleteImageRequest extends RequestModel implements ModelInterface, DeleteImageInterface
 {
     /**
      * @var int Required

@@ -3,9 +3,9 @@
 namespace wappr\DigitalOcean\Models;
 
 /**
- * Class ModelMethods.
+ * Class RequestModel.
  */
-abstract class ModelMethods
+abstract class RequestModel
 {
     /**
      * @return array Returns an array of the current object model

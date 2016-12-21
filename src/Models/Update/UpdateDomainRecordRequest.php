@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Update;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Update\UpdateDomainRecordInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class UpdateDomainRecordRequest.
  */
-class UpdateDomainRecordRequest extends ModelMethods implements ModelInterface, UpdateDomainRecordInterface
+class UpdateDomainRecordRequest extends RequestModel implements ModelInterface, UpdateDomainRecordInterface
 {
     /**
      * @var string

@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\UnAssign;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\UnAssign\UnAssignFloatingIPActionInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class UnAssignFloatingIPActionRequest.
  */
-class UnAssignFloatingIPActionRequest extends ModelMethods implements ModelInterface, UnAssignFloatingIPActionInterface
+class UnAssignFloatingIPActionRequest extends RequestModel implements ModelInterface, UnAssignFloatingIPActionInterface
 {
     /**
      * @var string

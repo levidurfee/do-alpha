@@ -4,9 +4,9 @@ namespace wappr\DigitalOcean\Models\Create;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Create\CreateDomainRecordInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
-class CreateDomainRecordRequest extends ModelMethods implements ModelInterface, CreateDomainRecordInterface
+class CreateDomainRecordRequest extends RequestModel implements ModelInterface, CreateDomainRecordInterface
 {
     /**
      * @var string

@@ -4,9 +4,9 @@ namespace wappr\DigitalOcean\Models\Assign;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Assign\AssignFloatingIPInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
-class AssignFloatingIPRequest extends ModelMethods implements ModelInterface, AssignFloatingIPInterface
+class AssignFloatingIPRequest extends RequestModel implements ModelInterface, AssignFloatingIPInterface
 {
     /**
      * @var int

@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Retrieve;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveImageInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class RetrieveImageRequest.
  */
-class RetrieveImageRequest extends ModelMethods implements ModelInterface, RetrieveImageInterface
+class RetrieveImageRequest extends RequestModel implements ModelInterface, RetrieveImageInterface
 {
     /**
      * @var int Required

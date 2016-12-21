@@ -4,12 +4,12 @@ namespace wappr\DigitalOcean\Models\Update;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Update\UpdateImageInterface;
-use wappr\DigitalOcean\Models\ModelMethods;
+use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class UpdateImageRequests.
  */
-class UpdateImageRequests extends ModelMethods implements ModelInterface, UpdateImageInterface
+class UpdateImageRequests extends RequestModel implements ModelInterface, UpdateImageInterface
 {
     /**
      * @var int Required
