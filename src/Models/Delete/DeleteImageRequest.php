@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Delete\DeleteImageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class DeleteImageModel.
+ * Class DeleteImageRequest.
  */
-class DeleteImageModel extends ModelMethods implements ModelInterface, DeleteImageInterface
+class DeleteImageRequest extends ModelMethods implements ModelInterface, DeleteImageInterface
 {
     /**
      * @var int Required
@@ -17,7 +17,7 @@ class DeleteImageModel extends ModelMethods implements ModelInterface, DeleteIma
     protected $image_id;
 
     /**
-     * DeleteImageModel constructor.
+     * DeleteImageRequest constructor.
      *
      * @param $image_id int Required
      */

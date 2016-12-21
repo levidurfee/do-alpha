@@ -50,10 +50,10 @@ $response = $droplets->retrieve($client, $retrieve);
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Droplets;
-use wappr\DigitalOcean\Models\Delete\DeleteDropletModel;
+use wappr\DigitalOcean\Models\Delete\DeleteDropletRequest;
 
 $client = new Client();
 $droplets = new Droplets();
-$deleteDroplet = new DeleteDropletModel(1234);
+$deleteDroplet = new DeleteDropletRequest(1234);
 $droplets->delete($client, $deleteDroplet);
 ```

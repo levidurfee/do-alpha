@@ -7,7 +7,7 @@ use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Actions\Domains;
 use wappr\DigitalOcean\Client as DoClient;
 use wappr\DigitalOcean\Models\Create\CreateDomainRequest;
-use wappr\DigitalOcean\Models\Delete\DeleteDomainModel;
+use wappr\DigitalOcean\Models\Delete\DeleteDomainRequest;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveDomainModel;
 
 class DomainsTest extends PHPUnit_Framework_TestCase
@@ -109,7 +109,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
         );
 
         $domains = new Domains;
-        $delete = new DeleteDomainModel('example.com');
+        $delete = new DeleteDomainRequest('example.com');
         $response = $domains->delete($client, $delete);
         $this->assertEquals($response->getStatusCode(), 204);
     }

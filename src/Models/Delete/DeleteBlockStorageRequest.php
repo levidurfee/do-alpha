@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class DeleteBlockStorageModel.
+ * Class DeleteBlockStorageRequest.
  */
-class DeleteBlockStorageModel extends ModelMethods implements ModelInterface, DeleteBlockStorageInterface
+class DeleteBlockStorageRequest extends ModelMethods implements ModelInterface, DeleteBlockStorageInterface
 {
     /**
      * @var string
@@ -17,7 +17,7 @@ class DeleteBlockStorageModel extends ModelMethods implements ModelInterface, De
     protected $drive_id;
 
     /**
-     * DeleteBlockStorageModel constructor.
+     * DeleteBlockStorageRequest constructor.
      *
      * @param string $drive_id
      */

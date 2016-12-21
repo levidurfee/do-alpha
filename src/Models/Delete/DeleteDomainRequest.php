@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDomainInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class DeleteDomainModel.
+ * Class DeleteDomainRequest.
  */
-class DeleteDomainModel extends ModelMethods implements ModelInterface, DeleteDomainInterface
+class DeleteDomainRequest extends ModelMethods implements ModelInterface, DeleteDomainInterface
 {
     /**
      * @var string

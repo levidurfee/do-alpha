@@ -8,6 +8,7 @@ Below are basic examples of interacting with block storage. Each example assumes
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\BlockStorage;
+
 $client = new Client;
 $blockStorage = new BlockStorage;
 $response = $blockStorage->getAll($client);
@@ -21,6 +22,7 @@ var_dump($response->getBody()->getContents());
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\BlockStorage;
 use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
+
 $client = new Client;
 $blockStorage = new BlockStorage;
 $newBlockStorage = new CreateBlockStorageRequest(10, 'testing', 'description', 'nyc1');
@@ -37,6 +39,7 @@ var_dump($response->getBody()->getContents());
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\BlockStorage;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageModel;
+
 $client = new Client;
 $blockStorage = new BlockStorage;
 $retrieveBlockStorage = new RetrieveBlockStorageModel('long uuid');
@@ -50,10 +53,11 @@ var_dump($response->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\BlockStorage;
-use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageModel;
+use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
+
 $client = new Client;
 $blockStorage = new BlockStorage;
-$deleteBlockStorage = new DeleteBlockStorageModel('long uuid');
+$deleteBlockStorage = new DeleteBlockStorageRequest('long uuid');
 $response = $blockStorage->delete($client, $deleteBlockStorage);
 var_dump($response->getStatusCode());
 ```

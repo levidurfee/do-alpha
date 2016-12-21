@@ -54,11 +54,11 @@ var_dump($stream);
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Images;
-use wappr\DigitalOcean\Models\Delete\DeleteImageModel;
+use wappr\DigitalOcean\Models\Delete\DeleteImageRequest;
 
 $client = new Client;
 $images = new Images;
-$deleteImage = new DeleteImageModel(1234);
+$deleteImage = new DeleteImageRequest(1234);
 $response = $images->delete($client, $deleteImage);
 var_dump($response->getStatusCode()); // Should return 204 when successful
 ```

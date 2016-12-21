@@ -7,7 +7,7 @@ use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Client as DoClient;
 use wappr\DigitalOcean\Actions\BlockStorage;
 use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
-use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageModel;
+use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageModel;
 
 class BlockStorageTest extends PHPUnit_Framework_TestCase
@@ -209,7 +209,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
         );
 
         $blockStorage = new BlockStorage;
-        $deleteBlockStorage = new DeleteBlockStorageModel('506f78a4-e098-11e5-ad9f-000f53306ae1');
+        $deleteBlockStorage = new DeleteBlockStorageRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
         $response = $blockStorage->delete($this->client, $deleteBlockStorage);
 
         $this->assertEquals($response->getStatusCode(), 204);

@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class DeleteDropletModel.
+ * Class DeleteDropletRequest.
  */
-class DeleteDropletModel extends ModelMethods implements ModelInterface, DeleteDropletInterface
+class DeleteDropletRequest extends ModelMethods implements ModelInterface, DeleteDropletInterface
 {
     /**
      * @var int Required

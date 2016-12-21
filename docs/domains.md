@@ -53,13 +53,13 @@ var_dump($domains->getAll(new Client)->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Domains;
-use wappr\DigitalOcean\Models\Delete\DeleteDomainModel;
+use wappr\DigitalOcean\Models\Delete\DeleteDomainRequest;
 
 $domains = new Domains;
 var_dump(
   $domains->delete(
       new Client,
-      new DeleteDomainModel('example.com')
+      new DeleteDomainRequest('example.com')
   )->getStatusCode()
 );
 ```
