@@ -63,3 +63,5 @@ $response = $floatingIPsActions->retrieve(
     new RetrieveFloatingIPActionRequest('1.1.1.1', 11111)
 );
 ```
+
+The `RetrieveFloatingIPActionRequest` construct requires the Floating IP and the Action ID.
