@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Update\UpdateImageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class UpdateImageModel.
+ * Class UpdateImageRequests.
  */
-class UpdateImageModel extends ModelMethods implements ModelInterface, UpdateImageInterface
+class UpdateImageRequests extends ModelMethods implements ModelInterface, UpdateImageInterface
 {
     /**
      * @var int Required
@@ -22,7 +22,7 @@ class UpdateImageModel extends ModelMethods implements ModelInterface, UpdateIma
     protected $name;
 
     /**
-     * UpdateImageModel constructor.
+     * UpdateImageRequests constructor.
      *
      * @param $image_id int Required
      * @param $name int Required

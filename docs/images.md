@@ -38,11 +38,11 @@ var_dump($stream);
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Images;
-use wappr\DigitalOcean\Models\Update\UpdateImageModel;
+use wappr\DigitalOcean\Models\Update\UpdateImageRequests;
 
 $client = new Client;
 $images = new Images;
-$updateImage = new UpdateImageModel(1234, 'testing rename api');
+$updateImage = new UpdateImageRequests(1234, 'testing rename api');
 $response = $images->update($client, $updateImage);
 $stream = $response->getBody()->getContents();
 var_dump($stream);
