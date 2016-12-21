@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Create\CreateTagInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class CreateTagModel.
+ * Class CreateTagRequest.
  */
-class CreateTagModel extends ModelMethods implements ModelInterface, CreateTagInterface
+class CreateTagRequest extends ModelMethods implements ModelInterface, CreateTagInterface
 {
     /**
      * @var string

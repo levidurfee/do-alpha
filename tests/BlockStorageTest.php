@@ -6,7 +6,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Client as DoClient;
 use wappr\DigitalOcean\Actions\BlockStorage;
-use wappr\DigitalOcean\Models\Create\CreateBlockStorageModel;
+use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
 use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageModel;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageModel;
 
@@ -129,7 +129,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
         );
 
         $blockStorage = new BlockStorage;
-        $createBlockStorage = new CreateBlockStorageModel('10', 'test', 'description', 'nyc3');
+        $createBlockStorage = new CreateBlockStorageRequest('10', 'test', 'description', 'nyc3');
         $response = $blockStorage->create($this->client, $createBlockStorage);
         $json = json_decode($response->getBody()->getContents());
         $this->assertEquals($json->volume->id, '506f78a4-e098-11e5-ad9f-000f53306ae1');

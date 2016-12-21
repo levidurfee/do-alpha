@@ -8,13 +8,13 @@ Below are basic examples of interacting with domains. Each example assumes you a
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Domains;
-use wappr\DigitalOcean\Models\Create\CreateDomainModel;
+use wappr\DigitalOcean\Models\Create\CreateDomainRequest;
 
 $domains = new Domains;
 var_dump(
     $domains->create(
         new Client,
-        new CreateDomainModel('example.com', '127.0.0.1')
+        new CreateDomainRequest('example.com', '127.0.0.1')
     )->getBody()->getContents()
 );
 ```

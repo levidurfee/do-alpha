@@ -6,7 +6,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Actions\Domains;
 use wappr\DigitalOcean\Client as DoClient;
-use wappr\DigitalOcean\Models\Create\CreateDomainModel;
+use wappr\DigitalOcean\Models\Create\CreateDomainRequest;
 use wappr\DigitalOcean\Models\Delete\DeleteDomainModel;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveDomainModel;
 
@@ -64,7 +64,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
         );
 
         $domains = new Domains;
-        $domain = new CreateDomainModel('example.com', '127.0.0.1');
+        $domain = new CreateDomainRequest('example.com', '127.0.0.1');
         $response = $domains->create($client, $domain);
         $this->assertEquals($response->getStatusCode(), 200);
     }

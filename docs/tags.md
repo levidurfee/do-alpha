@@ -21,12 +21,13 @@ var_dump(
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Tags;
+use wappr\DigitalOcean\Models\Create\CreateTagRequest;
 
 $tags = new Tags;
 var_dump(
     $tags->create(
         new Client,
-        new CreateTagModel('tag_your_it')
+        new CreateTagRequest('tag_your_it')
     )->getBody()->getContents()
 );
 

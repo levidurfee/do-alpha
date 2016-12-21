@@ -20,10 +20,10 @@ var_dump($response->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\BlockStorage;
-use wappr\DigitalOcean\Models\Create\CreateBlockStorageModel;
+use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
 $client = new Client;
 $blockStorage = new BlockStorage;
-$newBlockStorage = new CreateBlockStorageModel(10, 'testing', 'description', 'nyc1');
+$newBlockStorage = new CreateBlockStorageRequest(10, 'testing', 'description', 'nyc1');
 $response = $blockStorage->create($client, $newBlockStorage);
 var_dump($response->getBody()->getContents());
 ```

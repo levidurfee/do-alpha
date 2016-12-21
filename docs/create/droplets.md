@@ -4,11 +4,11 @@
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Droplets;
-use wappr\DigitalOcean\Models\Create\CreateDropletModel;
+use wappr\DigitalOcean\Models\Create\CreateDropletRequest;
 
 $client = new Client();
 $droplets = new Droplets();
-$droplet = new CreateDropletModel('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
+$droplet = new CreateDropletRequest('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
 $droplets->create($client, $droplet);
 ```
 

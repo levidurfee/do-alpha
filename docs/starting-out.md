@@ -19,7 +19,7 @@ $tags = new Tags;
 var_dump(
     $tags->create(
         new Client,
-        new CreateTagModel('levi')
+        new CreateTagRequest('levi')
     )->getBody()->getContents()
 );
 ```
@@ -37,7 +37,7 @@ $tags = new Tags;
 var_dump(
     $tags->create(
         new Client('abcd1234'),
-        new CreateTagModel('levi')
+        new CreateTagRequest('levi')
     )->getBody()->getContents()
 );
 ```

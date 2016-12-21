@@ -4,7 +4,7 @@ namespace wappr\DigitalOcean\Factories;
 
 use wappr\DigitalOcean\Actions\Droplets;
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Models\Create\CreateDropletModel;
+use wappr\DigitalOcean\Models\Create\CreateDropletRequest;
 
 /**
  * Class Droplet.
@@ -21,7 +21,7 @@ class Droplet
      */
     public function create(string $name, string $region, string $size, string $image)
     {
-        $droplet = new CreateDropletModel($name, $region, $size, $image);
+        $droplet = new CreateDropletRequest($name, $region, $size, $image);
 
         return json_decode((new Droplets)->create(new Client, $droplet)->getBody()->getContents());
     }
