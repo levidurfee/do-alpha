@@ -6,7 +6,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Actions\Actions;
 use wappr\DigitalOcean\Client as DoClient;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveActionModel;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveActionRequest;
 
 class ActionsTest extends PHPUnit_Framework_TestCase
 {
@@ -54,7 +54,7 @@ class ActionsTest extends PHPUnit_Framework_TestCase
     public function testGetActions()
     {
         $actions = new Actions;
-        $retrieveActions = new RetrieveActionModel(36804636);
+        $retrieveActions = new RetrieveActionRequest(36804636);
         $response = $actions->retrieve($this->client, $retrieveActions);
         $json = json_decode($response->getBody()->getContents());
         $this->assertEquals($json->action->id, 36804636);

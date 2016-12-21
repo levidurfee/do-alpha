@@ -36,11 +36,11 @@ $droplets->create($client, $droplet);
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Droplets;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveDropletModel;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveDropletRequest;
 
 $client = new Client();
 $droplets = new Droplets();
-$retrieve = new RetrieveDropletModel(1234);
+$retrieve = new RetrieveDropletRequest(1234);
 $response = $droplets->retrieve($client, $retrieve);
 ```
 

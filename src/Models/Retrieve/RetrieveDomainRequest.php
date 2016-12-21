@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDomainInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class RetrieveDomainModel.
+ * Class RetrieveDomainRequest.
  */
-class RetrieveDomainModel extends ModelMethods implements ModelInterface, RetrieveDomainInterface
+class RetrieveDomainRequest extends ModelMethods implements ModelInterface, RetrieveDomainInterface
 {
     /**
      * @var string

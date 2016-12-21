@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class RetrieveDropletModel.
+ * Class RetrieveDropletRequest.
  */
-class RetrieveDropletModel extends ModelMethods implements ModelInterface, RetrieveDropletInterface
+class RetrieveDropletRequest extends ModelMethods implements ModelInterface, RetrieveDropletInterface
 {
     /**
      * @var int
@@ -17,7 +17,7 @@ class RetrieveDropletModel extends ModelMethods implements ModelInterface, Retri
     protected $droplet_id;
 
     /**
-     * RetrieveDropletModel constructor.
+     * RetrieveDropletRequest constructor.
      *
      * @param int $droplet_id
      */

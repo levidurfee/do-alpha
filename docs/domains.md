@@ -25,13 +25,13 @@ var_dump(
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Domains;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveDomainModel;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveDomainRequest;
 
 $domains = new Domains;
 var_dump(
     $domains->retrieve(
         new Client,
-        new RetrieveDomainModel('example.com')
+        new RetrieveDomainRequest('example.com')
     )->getBody()->getContents()
 );
 ```

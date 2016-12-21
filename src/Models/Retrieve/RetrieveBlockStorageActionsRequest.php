@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInte
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class RetrieveBlockStorageActionsModel.
+ * Class RetrieveBlockStorageActionsRequest.
  */
-class RetrieveBlockStorageActionsModel extends ModelMethods implements ModelInterface, RetrieveBlockStorageActionsInterface
+class RetrieveBlockStorageActionsRequest extends ModelMethods implements ModelInterface, RetrieveBlockStorageActionsInterface
 {
     /**
      * @var string

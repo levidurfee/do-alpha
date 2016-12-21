@@ -23,7 +23,7 @@ succinct example, see the one below, as some of these actions can be called in o
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Actions;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveActionModel;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveActionRequest;
 
 var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1))->getBody()->getContents());
 ```

@@ -8,7 +8,7 @@ use wappr\DigitalOcean\Client as DoClient;
 use wappr\DigitalOcean\Actions\BlockStorage;
 use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
 use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageModel;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageRequest;
 
 class BlockStorageTest extends PHPUnit_Framework_TestCase
 {
@@ -185,7 +185,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
         );
 
         $blockStorage = new BlockStorage;
-        $retrieveBlockStorage = new RetrieveBlockStorageModel('506f78a4-e098-11e5-ad9f-000f53306ae1');
+        $retrieveBlockStorage = new RetrieveBlockStorageRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
         $response = $blockStorage->retrieve($this->client, $retrieveBlockStorage);
 
         $json = json_decode($response->getBody()->getContents());

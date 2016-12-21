@@ -8,7 +8,7 @@ use wappr\DigitalOcean\Actions\Domains;
 use wappr\DigitalOcean\Client as DoClient;
 use wappr\DigitalOcean\Models\Create\CreateDomainRequest;
 use wappr\DigitalOcean\Models\Delete\DeleteDomainRequest;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveDomainModel;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveDomainRequest;
 
 class DomainsTest extends PHPUnit_Framework_TestCase
 {
@@ -88,7 +88,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
         );
 
         $domains = new Domains;
-        $retrieve = new RetrieveDomainModel('example.com');
+        $retrieve = new RetrieveDomainRequest('example.com');
         $response = $domains->retrieve($client, $retrieve);
         $this->assertEquals($response->getStatusCode(), 200);
     }

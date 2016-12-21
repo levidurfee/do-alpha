@@ -38,11 +38,11 @@ var_dump($response->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\BlockStorage;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageModel;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageRequest;
 
 $client = new Client;
 $blockStorage = new BlockStorage;
-$retrieveBlockStorage = new RetrieveBlockStorageModel('long uuid');
+$retrieveBlockStorage = new RetrieveBlockStorageRequest('long uuid');
 $response = $blockStorage->retrieve($client, $retrieveBlockStorage);
 var_dump($response->getBody()->getContents());
 ```

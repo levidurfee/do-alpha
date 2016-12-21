@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveActionInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class RetrieveActionModel.
+ * Class RetrieveActionRequest.
  */
-class RetrieveActionModel extends ModelMethods implements ModelInterface, RetrieveActionInterface
+class RetrieveActionRequest extends ModelMethods implements ModelInterface, RetrieveActionInterface
 {
     /**
      * @var int Required

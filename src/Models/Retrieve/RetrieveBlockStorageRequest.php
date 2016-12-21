@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageInterface;
 
 /**
- * Class RetrieveBlockStorageModel.
+ * Class RetrieveBlockStorageRequest.
  */
-class RetrieveBlockStorageModel extends ModelMethods implements ModelInterface, RetrieveBlockStorageInterface
+class RetrieveBlockStorageRequest extends ModelMethods implements ModelInterface, RetrieveBlockStorageInterface
 {
     /**
      * @var string

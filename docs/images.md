@@ -22,11 +22,11 @@ var_dump($stream);
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Images;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveImageModel;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveImageRequest;
 
 $client = new Client;
 $images = new Images;
-$image = new RetrieveImageModel(1234);
+$image = new RetrieveImageRequest(1234);
 $response = $images->retrieve($client, $image);
 $stream = $response->getBody()->getContents();
 var_dump($stream);

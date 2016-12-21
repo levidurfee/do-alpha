@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveImageInterface;
 use wappr\DigitalOcean\Models\ModelMethods;
 
 /**
- * Class RetrieveImageModel.
+ * Class RetrieveImageRequest.
  */
-class RetrieveImageModel extends ModelMethods implements ModelInterface, RetrieveImageInterface
+class RetrieveImageRequest extends ModelMethods implements ModelInterface, RetrieveImageInterface
 {
     /**
      * @var int Required
@@ -17,7 +17,7 @@ class RetrieveImageModel extends ModelMethods implements ModelInterface, Retriev
     protected $image_id;
 
     /**
-     * RetrieveImageModel constructor.
+     * RetrieveImageRequest constructor.
      *
      * @param $image_id int
      */
