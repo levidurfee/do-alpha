@@ -1,7 +1,7 @@
 {
   "name": "wappr/digitalocean",
   "description": "PHP Library for the DigitalOcean API",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "license": "MIT",
   "keywords": ["digitalocean", "vps"],
   "autoload": {
