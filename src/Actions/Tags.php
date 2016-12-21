@@ -9,6 +9,7 @@ use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\Actions\UpdateInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Create\CreateTagInterface;
+use wappr\DigitalOcean\Contracts\Models\Delete\DeleteTagInterface;
 
 /**
  * Class Tags.
@@ -47,9 +48,21 @@ class Tags implements ListInterface, ResourceInterface, RetrieveInterface, Updat
         return $client->post($this->action, $createTag);
     }
 
-    public function delete(ClientInterface $client): ResponseInterface
+    /**
+     * @param ClientInterface         $client
+     * @param DeleteTagInterface|null $deleteTag
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function delete(ClientInterface $client, DeleteTagInterface $deleteTag = null): ResponseInterface
     {
-        // TODO: Implement delete() method.
+        if ($deleteTag == null) {
+            throw new \InvalidArgumentException('Delete Tag model required.');
+        }
+
+        return $client->delete($this->action, $deleteTag, 'getTagName');
     }
 
     public function retrieve(ClientInterface $client): ResponseInterface

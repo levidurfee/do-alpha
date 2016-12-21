@@ -1,0 +1,36 @@
+<?php
+
+namespace wappr\DigitalOcean\Models\Delete;
+
+use wappr\DigitalOcean\Contracts\ModelInterface;
+use wappr\DigitalOcean\Contracts\Models\Delete\DeleteTagInterface;
+use wappr\DigitalOcean\Models\ModelMethods;
+
+/**
+ * Class DeleteTagRequest.
+ */
+class DeleteTagRequest extends ModelMethods implements ModelInterface, DeleteTagInterface
+{
+    /**
+     * @var string
+     */
+    protected $tag_name;
+
+    /**
+     * DeleteTagInterface constructor.
+     *
+     * @param string $tag_name
+     */
+    public function __construct(string $tag_name)
+    {
+        $this->tag_name = $tag_name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTagName(): string
+    {
+        return $this->tag_name;
+    }
+}
