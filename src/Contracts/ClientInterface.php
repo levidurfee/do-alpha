@@ -34,6 +34,15 @@ interface ClientInterface
     public function delete(string $action, ModelInterface $model, string $method): ResponseInterface;
 
     /**
+     * @param string         $action
+     * @param ModelInterface $model
+     * @param string         $method
+     *
+     * @return ResponseInterface
+     */
+    public function put(string $action, ModelInterface $model, string $method): ResponseInterface;
+
+    /**
      * @param $client
      *
      * @return mixed

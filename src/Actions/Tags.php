@@ -10,6 +10,8 @@ use wappr\DigitalOcean\Contracts\Actions\UpdateInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Create\CreateTagInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteTagInterface;
+use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveTagInterface;
+use wappr\DigitalOcean\Contracts\Models\Update\UpdateTagInterface;
 
 /**
  * Class Tags.
@@ -65,13 +67,37 @@ class Tags implements ListInterface, ResourceInterface, RetrieveInterface, Updat
         return $client->delete($this->action, $deleteTag, 'getTagName');
     }
 
-    public function retrieve(ClientInterface $client): ResponseInterface
+    /**
+     * @param ClientInterface           $client
+     * @param RetrieveTagInterface|null $retrieveTag
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function retrieve(ClientInterface $client, RetrieveTagInterface $retrieveTag = null): ResponseInterface
     {
-        // TODO: Implement retrieve() method.
+        if ($retrieveTag == null) {
+            throw new \InvalidArgumentException('Retrieve Tag model required.');
+        }
+
+        return $client->get($this->action.'/'.$retrieveTag->getTagName());
     }
 
-    public function update(ClientInterface $client): ResponseInterface
+    /**
+     * @param ClientInterface         $client
+     * @param UpdateTagInterface|null $updateTag
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function update(ClientInterface $client, UpdateTagInterface $updateTag = null): ResponseInterface
     {
-        // TODO: Implement update() method.
+        if ($updateTag == null) {
+            throw new \InvalidArgumentException('Update Tag model required.');
+        }
+
+        return $client->put($this->action.'/'.$updateTag->getTagName(), $updateTag, 'return');
     }
 }
