@@ -100,4 +100,16 @@ class Tags implements ListInterface, ResourceInterface, RetrieveInterface, Updat
 
         return $client->put($this->action.'/'.$updateTag->getTagName(), $updateTag, 'return');
     }
+
+    // Currently you can only tag/un-tag droplets.
+
+    public function tagResource(ClientInterface $client): ResponseInterface
+    {
+        // TODO: Write code here.
+    }
+
+    public function unTagResource(ClientInterface $client): ResponseInterface
+    {
+        // TODO: Write code here.
+    }
 }
