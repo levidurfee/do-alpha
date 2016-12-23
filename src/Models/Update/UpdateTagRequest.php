@@ -25,7 +25,7 @@ class UpdateTagRequest extends RequestModel implements ModelInterface, UpdateTag
      * UpdateTagInterface constructor.
      *
      * @param string $tag_name Old Tag Name
-     * @param string $name New Tag Name
+     * @param string $name     New Tag Name
      */
     public function __construct(string $tag_name, string $name)
     {
