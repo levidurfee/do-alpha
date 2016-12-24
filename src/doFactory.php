@@ -6,9 +6,9 @@ use Psr\Http\Message\ResponseInterface;
 use ReflectionClass;
 
 /**
- * Class Factory.
+ * Class doFactory.
  */
-class Factory
+class doFactory
 {
     /**
      * @param string      $actionType
@@ -16,6 +16,8 @@ class Factory
      * @param Client|null $client
      *
      * @return mixed
+     *
+     * @throws \InvalidArgumentException
      */
     public static function create(string $actionType, array $params, Client $client = null)
     {
@@ -26,6 +28,10 @@ class Factory
 
         // Create a variable with the full namespace path of the action class.
         $actionClass = "wappr\\DigitalOcean\\Actions\\$actionType";
+        // Check to make sure the class exists.
+        if (!class_exists($actionClass)) {
+            throw new \InvalidArgumentException('Action does not exist');
+        }
         // Instantiate the action class.
         $action = new $actionClass;
 
