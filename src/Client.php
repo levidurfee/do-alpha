@@ -11,12 +11,17 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 /**
  * Class Client.
  *
- * @version 0.5.0
+ * @version 0.6.0
  *
  * @author Levi Durfee <levi.durfee@gmail.com>
  */
 class Client implements ClientInterface
 {
+    /**
+     * @var string Current version
+     */
+    protected $version = '0.6.0';
+
     /**
      * @var string DigitalOcean API URL
      */
@@ -74,6 +79,9 @@ class Client implements ClientInterface
                 'auth' => [$this->apiToken, ':'],
                 'json' => $model->return(),
                 'debug' => $this->debug,
+                'headers' => [
+                    'User-Agent' => 'wappr\digitalocean:'.$this->version,
+                ],
             ]);
         } catch (RequestException $e) {
             $response = $e->getResponse();
@@ -97,6 +105,7 @@ class Client implements ClientInterface
                 'query' => ['page' => 1, 'per_page' => 500],
                 'headers' => [
                     'Content-Type' => 'application/json',
+                    'User-Agent' => 'wappr\digitalocean:'.$this->version,
                 ],
                 'debug' => $this->debug,
             ]);
@@ -123,6 +132,9 @@ class Client implements ClientInterface
                 'auth' => [$this->apiToken, ':'],
                 'json' => $model->return(),
                 'debug' => $this->debug,
+                'headers' => [
+                    'User-Agent' => 'wappr\digitalocean:'.$this->version,
+                ],
             ]);
         } catch (RequestException $e) {
             $response = $e->getResponse();
@@ -147,6 +159,9 @@ class Client implements ClientInterface
                 'auth' => [$this->apiToken, ':'],
                 'json' => $model->{$method}(),
                 'debug' => $this->debug,
+                'headers' => [
+                    'User-Agent' => 'wappr\digitalocean:'.$this->version,
+                ],
             ]);
         } catch (RequestException $e) {
             $response = $e->getResponse();
