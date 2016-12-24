@@ -18,11 +18,13 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
         doFactory::create('FakeAction', ['test'], new doClient());
     }
 
-    /**
-     * @expectedException PHPUnit_Framework_Error_Warning
-     */
     public function testInvalidParams()
     {
+        if (version_compare(PHP_VERSION, "7.1", '>')) {
+            $this->markTestSkipped('only for PHP < 7.1');
+        }
+        $this->setExpectedException('PHPUnit_Framework_Error_Warning');
+
         doFactory::create('Droplets', ['test']);
     }
 
