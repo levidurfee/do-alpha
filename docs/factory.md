@@ -1,9 +1,9 @@
-# Create Factory
+# Factory
 
 The Create Factory simplifies the creation of any action. It currently only accepts the required parameters 
 for the API to process the request.
 
-## Example Usage
+## Example Create Usage
 
 ```php
 <?php
