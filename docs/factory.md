@@ -1,9 +1,13 @@
 # Factory
 
+Please make sure you first read the [getting started](getting-started.md) doc before trying anything else.
+
+## Creating
+
 The Create Factory simplifies the creation of any action. It currently only accepts the required parameters 
 for the API to process the request.
 
-## Example Create Usage
+### Example Usage
 
 ```php
 <?php

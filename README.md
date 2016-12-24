@@ -11,7 +11,7 @@ A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle]
 
 These classes allow you to make more specific requests to the API.
 
-* [Starting Out](docs/starting-out.md)
+* [Getting Started](docs/getting-started.md)
 * [Factory](docs/factory.md)
 * [Droplets](docs/droplets.md)
 * [Images](docs/images.md)
