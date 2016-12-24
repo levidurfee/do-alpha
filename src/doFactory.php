@@ -24,8 +24,8 @@ class doFactory
     public static function __callStatic($name, $arguments)
     {
         /* Check and see if a Client was passed */
-        if (isset($arguments[3])) {
-            $client = $arguments[3];
+        if (isset($arguments[2])) {
+            $client = $arguments[2];
         } else {
             $client = null;
         }
@@ -55,7 +55,7 @@ class doFactory
         $actionClass = "wappr\\DigitalOcean\\Actions\\$actionType";
         // Check to make sure the class exists.
         if (!class_exists($actionClass)) {
-            throw new \InvalidArgumentException('Action does not exist');
+            throw new \InvalidArgumentException('Action does not exist.');
         }
         // Instantiate the action class.
         $action = new $actionClass;
