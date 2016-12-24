@@ -18,6 +18,14 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
         doFactory::create('FakeAction', ['test'], new doClient());
     }
 
+    /**
+     * @expectedException PHPUnit_Framework_Error_Warning
+     */
+    public function testInvalidParams()
+    {
+        doFactory::create('Droplets', ['test']);
+    }
+
     public function testCreate()
     {
         $mockResponse = '{
