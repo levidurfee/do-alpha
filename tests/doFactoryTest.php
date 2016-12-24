@@ -28,6 +28,16 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
         doFactory::create('Droplets', ['test']);
     }
 
+    public function testInvalidParams71()
+    {
+        if (version_compare(PHP_VERSION, "7.1", '<')) {
+            $this->markTestSkipped('only for PHP > 7.1');
+        }
+        $this->setExpectedException('ArgumentCountError');
+
+        doFactory::create('Droplets', ['test']);
+    }
+
     public function testCreate()
     {
         $mockResponse = '{
