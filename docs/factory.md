@@ -1,6 +1,7 @@
 # doFactory
 
-Please make sure you first read the [getting started](getting-started.md) doc before trying anything else.
+Please make sure you first read the [getting started](getting-started.md) doc before trying anything else. You **MUST**
+set your DigitalOcean API Token as an environment variable in order for the `doFactory` to work.
 
 ## Creating
 
