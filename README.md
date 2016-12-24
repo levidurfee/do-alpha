@@ -49,3 +49,30 @@ All contributions are welcome. Please see [contributing guidelines](CONTRIBUTING
 ## License
 
 Please see the [license](LICENSE).
+
+## Status
+
+Roughly %35.7142857143 done.
+
+Action                  | Total # reqs  | Completed  |
+------------------------|--------------:|-----------:|
+Account					| 1				| 1			 |
+Actions 				| 2				| 2			 |
+BlockStorage 			| 7				| 4			 |
+BlockStorageActions		| 8				| 2			 |
+Domains 				| 4				| 4			 |
+DomainRecords 			| 5				| 4			 |
+Droplets 				| 13			| 4			 |
+DropletActions 			| 18			| 0			 |
+FloatingIPs 			| 5				| 0			 |
+FloatingIPActions 		| 4				| 4			 |
+Images 					| 9				| 4			 |
+ImageActions			| 3				| 0			 |
+Regions 				| 1				| 1			 |
+Sizes 					| 1				| 0			 |
+Snapshots 				| 5				| 0			 |
+SSHKeys 				| 5				| 0			 |
+Tags 					| 7				| 5			 |
+**Total**               | **98**		| **35**	 |
+
+*This doesn't take into account the docs, tests, and doFactory.*

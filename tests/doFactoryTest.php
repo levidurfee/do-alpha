@@ -20,7 +20,7 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
 
     public function testInvalidParams()
     {
-        if (version_compare(PHP_VERSION, "7.1", '>')) {
+        if (version_compare(PHP_VERSION, '7.1', '>')) {
             $this->markTestSkipped('only for PHP < 7.1');
         }
         $this->setExpectedException('PHPUnit_Framework_Error_Warning');
@@ -30,7 +30,7 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
 
     public function testInvalidParams71()
     {
-        if (version_compare(PHP_VERSION, "7.1", '<')) {
+        if (version_compare(PHP_VERSION, '7.1', '<')) {
             $this->markTestSkipped('only for PHP > 7.1');
         }
         $this->setExpectedException('ArgumentCountError');
