@@ -9,7 +9,7 @@ A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle]
 
 ### Factories
 
-* [Create](docs/factories/create.md)
+* [Create](docs/factory.md)
 
 ### Action Classes
 

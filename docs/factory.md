@@ -8,8 +8,8 @@ for the API to process the request.
 ```php
 <?php
 require_once 'vendor/autoload.php';
-use wappr\DigitalOcean\Factories\Create;
-Create::request('Droplets', ['test', 'nyc2', '512mb', 'ubuntu-16-04-x64']);
+use wappr\DigitalOcean\Factory;
+Factory::create('Droplets', ['test', 'nyc2', '512mb', 'ubuntu-16-04-x64']);
 ```
 
 ## List of Supported Actions

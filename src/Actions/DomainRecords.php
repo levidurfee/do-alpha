@@ -18,8 +18,19 @@ use wappr\DigitalOcean\Models\Create\CreateDomainRecordRequest;
  */
 class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterface, UpdateInterface
 {
+    /**
+     * @var string action
+     */
     protected $action = 'domains';
 
+    /**
+     * @param ClientInterface                     $client
+     * @param RetrieveDomainRecordsInterface|null $domainRecords
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
     public function getAll(ClientInterface $client, RetrieveDomainRecordsInterface $domainRecords = null): ResponseInterface
     {
         if ($domainRecords == null) {
@@ -29,6 +40,14 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
         return $client->get($this->action.'/'.$domainRecords->getDomain().'/records');
     }
 
+    /**
+     * @param ClientInterface                $client
+     * @param CreateDomainRecordRequest|null $createDomainRecordRequest
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
     public function create(ClientInterface $client, CreateDomainRecordRequest $createDomainRecordRequest = null): ResponseInterface
     {
         if ($createDomainRecordRequest == null) {
@@ -61,6 +80,14 @@ class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterfa
         // TODO: Implement retrieve() method.
     }
 
+    /**
+     * @param ClientInterface                  $client
+     * @param UpdateDomainRecordInterface|null $domainRecord
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
     public function update(ClientInterface $client, UpdateDomainRecordInterface $domainRecord = null): ResponseInterface
     {
         if ($domainRecord == null) {

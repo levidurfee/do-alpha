@@ -1,15 +1,14 @@
 <?php
 
-namespace wappr\DigitalOcean\Factories;
+namespace wappr\DigitalOcean;
 
 use Psr\Http\Message\ResponseInterface;
 use ReflectionClass;
-use wappr\DigitalOcean\Client;
 
 /**
- * Class Create.
+ * Class Factory.
  */
-class Create
+class Factory
 {
     /**
      * @param string      $actionType
@@ -18,7 +17,7 @@ class Create
      *
      * @return mixed
      */
-    public static function request(string $actionType, array $params, Client $client = null)
+    public static function create(string $actionType, array $params, Client $client = null)
     {
         // If client isn't passed, instantiate a new one now.
         if ($client == null) {
