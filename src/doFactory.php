@@ -16,10 +16,35 @@ class doFactory
      * @param Client|null $client
      *
      * @return mixed
+     */
+    public static function create(string $actionType, array $params, Client $client = null)
+    {
+        return self::exec('Create', $actionType, $params, $client);
+    }
+
+    /**
+     * @param string      $actionType
+     * @param array       $params
+     * @param Client|null $client
+     *
+     * @return mixed
+     */
+    public static function delete(string $actionType, array $params, Client $client = null)
+    {
+        return self::exec('Delete', $actionType, $params, $client);
+    }
+
+    /**
+     * @param string $type
+     * @param string $actionType
+     * @param array  $params
+     * @param Client $client
+     *
+     * @return mixed
      *
      * @throws \InvalidArgumentException
      */
-    public static function create(string $actionType, array $params, Client $client = null)
+    protected static function exec(string $type, string $actionType, array $params, Client $client)
     {
         // If client isn't passed, instantiate a new one now.
         if ($client == null) {
@@ -37,11 +62,12 @@ class doFactory
 
         // Create a new Request method that matches the action type. Using reflection so it can pass
         // data to the construct.
-        $request = new ReflectionClass('wappr\DigitalOcean\Models\Create\Create'.rtrim($actionType, 's').'Request');
+        $request = new ReflectionClass('wappr\DigitalOcean\Models\\'.$type.'\\'.$type.rtrim($actionType, 's').'Request');
         $instance = $request->newInstanceArgs($params);
 
+        $method = strtolower($type);
         // Return the Response object.
-        return $action->create($client, $instance);
+        return $action->{$method}($client, $instance);
     }
 
     /**
