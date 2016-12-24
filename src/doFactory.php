@@ -7,31 +7,31 @@ use ReflectionClass;
 
 /**
  * Class doFactory.
+ *
+ * @method static mixed create(string $actionType, array $params, Client $client = null)
+ * @method static mixed retrieve(string $actionType, array $params, Client $client = null)
+ * @method static mixed update(string $actionType, array $params, Client $client = null)
+ * @method static mixed delete(string $actionType, array $params, Client $client = null)
  */
 class doFactory
 {
     /**
-     * @param string      $actionType
-     * @param array       $params
-     * @param Client|null $client
+     * @param $name
+     * @param $arguments
      *
      * @return mixed
      */
-    public static function create(string $actionType, array $params, Client $client = null)
+    public static function __callStatic($name, $arguments)
     {
-        return self::exec('Create', $actionType, $params, $client);
-    }
+        /* Check and see if a Client was passed */
+        if (isset($arguments[3])) {
+            $client = $arguments[3];
+        } else {
+            $client = null;
+        }
 
-    /**
-     * @param string      $actionType
-     * @param array       $params
-     * @param Client|null $client
-     *
-     * @return mixed
-     */
-    public static function delete(string $actionType, array $params, Client $client = null)
-    {
-        return self::exec('Delete', $actionType, $params, $client);
+        /* return the response */
+        return self::exec(ucfirst($name), $arguments[0], $arguments[1], $client);
     }
 
     /**
@@ -44,7 +44,7 @@ class doFactory
      *
      * @throws \InvalidArgumentException
      */
-    protected static function exec(string $type, string $actionType, array $params, Client $client)
+    protected static function exec(string $type, string $actionType, array $params, Client $client = null)
     {
         // If client isn't passed, instantiate a new one now.
         if ($client == null) {
