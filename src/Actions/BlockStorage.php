@@ -9,6 +9,7 @@ use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageByNameInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageInterface;
 
 /**
@@ -66,6 +67,8 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
     }
 
     /**
+     * Retrieve Block Storage volume information using the drive id (uuid)
+     *
      * @param ClientInterface                    $client
      * @param RetrieveBlockStorageInterface|null $blockStorage
      *
@@ -80,5 +83,23 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
         }
 
         return $client->get($this->action.'/'.$blockStorage->getId());
+    }
+
+    /**
+     * Retrieve Block Storage volume information using the name and region.
+     *
+     * @param ClientInterface                     $client
+     * @param RetrieveBlockStorageByNameInterface $blockStorageByName
+     *
+     * @return ResponseInterface
+     * @throws \InvalidArgumentException
+     */
+    public function retrieveByName(ClientInterface $client, RetrieveBlockStorageByNameInterface $blockStorageByName): ResponseInterface
+    {
+        if ($blockStorageByName == null) {
+            throw new \InvalidArgumentException('Retrieve Block Storage By Name model required.');
+        }
+
+        return $client->get($this->action, $blockStorageByName->getQuery());
     }
 }

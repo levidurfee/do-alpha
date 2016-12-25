@@ -61,3 +61,19 @@ $deleteBlockStorage = new DeleteBlockStorageRequest('long uuid');
 $response = $blockStorage->delete($client, $deleteBlockStorage);
 var_dump($response->getStatusCode());
 ```
+
+## Retrieve by Name
+
+```php
+<?php
+use wappr\DigitalOcean\Client;
+use wappr\DigitalOcean\Actions\BlockStorage;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageByNameRequest;
+$blockStorage = new BlockStorage;
+$response = $blockStorage->retrieveByName(
+    new Client,
+    new RetrieveBlockStorageByNameRequest('testing', 'nyc1')
+);
+
+var_dump($response->getBody()->getContents());
+```
