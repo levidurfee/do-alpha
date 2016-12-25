@@ -56,19 +56,19 @@ Roughly %39.39 done.
 
 Action                  | Total # reqs  | Completed  |
 ------------------------|--------------:|-----------:|
-Account					| 1				| 1			 |
-Actions 				| 2				| 2			 |
-BlockStorage 			| 8				| 8			 |
+~~Account~~ 			| 1				| 1			 |
+~~Actions~~				| 2				| 2			 |
+~~BlockStorage~~		| 8				| 8			 |
 BlockStorageActions		| 8				| 2			 |
-Domains 				| 4				| 4			 |
+~~Domains~~				| 4				| 4			 |
 DomainRecords 			| 5				| 4			 |
 Droplets 				| 13			| 4			 |
 DropletActions 			| 18			| 0			 |
 FloatingIPs 			| 5				| 0			 |
-FloatingIPActions 		| 4				| 4			 |
+~~FloatingIPActions~~	| 4				| 4			 |
 Images 					| 9				| 4			 |
 ImageActions			| 3				| 0			 |
-Regions 				| 1				| 1			 |
+~~Regions~~				| 1				| 1			 |
 Sizes 					| 1				| 0			 |
 Snapshots 				| 5				| 0			 |
 SSHKeys 				| 5				| 0			 |
