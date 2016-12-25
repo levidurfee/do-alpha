@@ -103,4 +103,25 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
 
         return $client->get($this->action, $blockStorageByName->getQuery());
     }
+
+    /* List Snapshots for a volume. */
+
+    public function getSnapshots(ClientInterface $client)
+    {
+
+    }
+
+    /* Create a snapshot from a volume. */
+
+    public function createSnapshot(ClientInterface $client)
+    {
+
+    }
+
+    /* Delete a volume by name. */
+    
+    public function deleteVolumeByName(ClientInterface $client)
+    {
+
+    }
 }
