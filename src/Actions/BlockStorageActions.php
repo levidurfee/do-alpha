@@ -8,6 +8,7 @@ use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Attach\AttachBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Attach\AttachByNameBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Remove\RemoveBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Models\Remove\RemoveByNameBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
 
 /**
@@ -77,11 +78,22 @@ class BlockStorageActions implements RetrieveInterface
         return $client->post($this->action.'/'.$removeBlockStorageActions->getVolumeId().'/actions', $removeBlockStorageActions);
     }
 
-    /* Remove a volume from a Droplet by name */
-
-    public function removeVolumeByName(ClientInterface $client): ResponseInterface
+    /**
+     * Remove a volume from a Droplet by name.
+     *
+     * @param ClientInterface                          $client
+     * @param RemoveByNameBlockStorageActionsInterface $removeByNameBlockStorageActions
+     *
+     * @return ResponseInterface
+     * @throws \InvalidArgumentException
+     */
+    public function removeVolumeByName(ClientInterface $client, RemoveByNameBlockStorageActionsInterface $removeByNameBlockStorageActions): ResponseInterface
     {
-        // TODO: write code.
+        if ($removeByNameBlockStorageActions == null) {
+            throw new \InvalidArgumentException('Remove Block Storage Actions model required.');
+        }
+
+        return $client->post($this->action.'/actions', $removeByNameBlockStorageActions);
     }
 
     /* Resize a volume */
