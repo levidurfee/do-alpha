@@ -39,16 +39,41 @@ class BlockStorageActions implements RetrieveInterface
 
     /* Attach a volume to a Droplet by name */
 
+    public function attachVolumeByName(ClientInterface $client): ResponseInterface
+    {
+        // TODO: write code.
+    }
+
     /* Remove a volume from a Droplet */
+
+    public function removeVolume(ClientInterface $client): ResponseInterface
+    {
+        // TODO: write code.
+    }
 
     /* Remove a volume from a Droplet by name */
 
+    public function removeVolumeByName(ClientInterface $client): ResponseInterface
+    {
+        // TODO: write code.
+    }
+
     /* Resize a volume */
+
+    public function resizeVolume(ClientInterface $client): ResponseInterface
+    {
+        // TODO: write code.
+    }
 
     /* List all actions for a volume */
 
+    public function getAllActions(ClientInterface $client): ResponseInterface
+    {
+        // TODO: write code.
+    }
+
     /**
-     * @since 0.1.1
+     * Retrieve an existing volume action.
      *
      * @param ClientInterface                           $client
      * @param RetrieveBlockStorageActionsInterface|null $blockStorageActions
