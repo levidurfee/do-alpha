@@ -94,15 +94,16 @@ class Client implements ClientInterface
      * Send a get request to the API.
      *
      * @param string $action
+     * @param array  $query
      *
      * @return ResponseInterface
      */
-    public function get(string $action): ResponseInterface
+    public function get(string $action, array $query = []): ResponseInterface
     {
         try {
             $response = $this->httpClient->request('GET', $action, [
                 'auth' => [$this->apiToken, ':'],
-                'query' => ['page' => 1, 'per_page' => 500],
+                'query' => $query,
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'User-Agent' => 'wappr\digitalocean:'.$this->version,
