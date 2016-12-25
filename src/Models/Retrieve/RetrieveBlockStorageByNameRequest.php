@@ -7,8 +7,7 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageByNameInter
 use wappr\DigitalOcean\Models\RequestModel;
 
 /**
- * Class RetrieveBlockStorageByNameRequest
- * @package wappr\DigitalOcean\Models\Retrieve
+ * Class RetrieveBlockStorageByNameRequest.
  */
 class RetrieveBlockStorageByNameRequest extends RequestModel implements ModelInterface, RetrieveBlockStorageByNameInterface
 {

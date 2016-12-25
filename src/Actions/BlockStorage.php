@@ -67,7 +67,7 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
     }
 
     /**
-     * Retrieve Block Storage volume information using the drive id (uuid)
+     * Retrieve Block Storage volume information using the drive id (uuid).
      *
      * @param ClientInterface                    $client
      * @param RetrieveBlockStorageInterface|null $blockStorage
@@ -92,6 +92,7 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * @param RetrieveBlockStorageByNameInterface $blockStorageByName
      *
      * @return ResponseInterface
+     *
      * @throws \InvalidArgumentException
      */
     public function retrieveByName(ClientInterface $client, RetrieveBlockStorageByNameInterface $blockStorageByName): ResponseInterface
