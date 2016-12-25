@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Attach\AttachBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Models\Attach\AttachByNameBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
 
 /**
@@ -37,11 +38,22 @@ class BlockStorageActions implements RetrieveInterface
         return $client->post($this->action.'/'.$attachBlockStorageActions->getVolumeId().'/actions', $attachBlockStorageActions);
     }
 
-    /* Attach a volume to a Droplet by name */
-
-    public function attachVolumeByName(ClientInterface $client): ResponseInterface
+    /**
+     * Attach a volume to a Droplet by name.
+     *
+     * @param ClientInterface                          $client
+     * @param AttachByNameBlockStorageActionsInterface $attachByNameBlockStorageActions
+     *
+     * @return ResponseInterface
+     * @throws \InvalidArgumentException
+     */
+    public function attachVolumeByName(ClientInterface $client, AttachByNameBlockStorageActionsInterface $attachByNameBlockStorageActions): ResponseInterface
     {
-        // TODO: write code.
+        if ($attachByNameBlockStorageActions == null) {
+            throw new \InvalidArgumentException('Attach Block Storage by Name Actions model required.');
+        }
+
+        return $client->post($this->action.'/actions', $attachByNameBlockStorageActions);
     }
 
     /* Remove a volume from a Droplet */
