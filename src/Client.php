@@ -123,14 +123,16 @@ class Client implements ClientInterface
      * @param string         $action
      * @param ModelInterface $model
      * @param string         $method
+     * @param array          $query
      *
      * @return ResponseInterface
      */
-    public function delete(string $action, ModelInterface $model, string $method): ResponseInterface
+    public function delete(string $action, ModelInterface $model, string $method, array $query = []): ResponseInterface
     {
         try {
             $response = $this->httpClient->request('DELETE', $action.'/'.$model->{$method}(), [
                 'auth' => [$this->apiToken, ':'],
+                'query' => $query,
                 'json' => $model->return(),
                 'debug' => $this->debug,
                 'headers' => [

@@ -19,19 +19,21 @@ interface ClientInterface
 
     /**
      * @param string $action
+     * @param array  $query
      *
      * @return ResponseInterface
      */
-    public function get(string $action): ResponseInterface;
+    public function get(string $action, array $query = []): ResponseInterface;
 
     /**
      * @param string         $action
      * @param ModelInterface $model
      * @param string         $method
+     * @param array          $query
      *
      * @return ResponseInterface
      */
-    public function delete(string $action, ModelInterface $model, string $method): ResponseInterface;
+    public function delete(string $action, ModelInterface $model, string $method, array $query = []): ResponseInterface;
 
     /**
      * @param string         $action

@@ -8,9 +8,12 @@ use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
+use wappr\DigitalOcean\Contracts\Models\Create\CreateBlockStorageSnapshotInterface;
+use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageByNameInterface;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageByNameInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageSnapshotsInterface;
 
 /**
  * Class BlockStorage.
@@ -104,24 +107,60 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
         return $client->get($this->action, $blockStorageByName->getQuery());
     }
 
-    /* List Snapshots for a volume. */
-
-    public function getSnapshots(ClientInterface $client)
+    /**
+     * List snapshots for a volume.
+     *
+     * @param ClientInterface                             $client
+     * @param RetrieveBlockStorageSnapshotsInterface|null $blockStorageSnapshots
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function getSnapshots(ClientInterface $client, RetrieveBlockStorageSnapshotsInterface $blockStorageSnapshots = null): ResponseInterface
     {
+        if ($blockStorageSnapshots == null) {
+            throw new \InvalidArgumentException('Retrieve Block Storage Snapshots model required.');
+        }
 
+        return $client->get($this->action.'/'.$blockStorageSnapshots->getVolumeId().'/snapshots');
     }
 
-    /* Create a snapshot from a volume. */
-
-    public function createSnapshot(ClientInterface $client)
+    /**
+     * Create a snapshot from a volume.
+     *
+     * @param ClientInterface                          $client
+     * @param CreateBlockStorageSnapshotInterface|null $blockStorageSnapshot
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function createSnapshot(ClientInterface $client, CreateBlockStorageSnapshotInterface $blockStorageSnapshot = null): ResponseInterface
     {
+        if ($blockStorageSnapshot == null) {
+            throw new \InvalidArgumentException('Create Block Storage Snapshot model required.');
+        }
 
+        return $client->post($this->action.'/'.$blockStorageSnapshot->getVolumeId().'/snapshots', $blockStorageSnapshot);
     }
 
-    /* Delete a volume by name. */
-    
-    public function deleteVolumeByName(ClientInterface $client)
+    /**
+     * Delete a volume by name.
+     *
+     * @param ClientInterface                        $client
+     * @param DeleteBlockStorageByNameInterface|null $blockStorageByName
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function deleteVolumeByName(ClientInterface $client, DeleteBlockStorageByNameInterface $blockStorageByName = null): ResponseInterface
     {
+        if ($blockStorageByName == null) {
+            throw new \InvalidArgumentException('Delete Block Storage by name model required.');
+        }
 
+        return $client->delete($this->action, $blockStorageByName, 'return', $blockStorageByName->getQuery());
     }
 }
