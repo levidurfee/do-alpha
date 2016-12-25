@@ -7,6 +7,7 @@ use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
 use wappr\DigitalOcean\Contracts\Models\Attach\AttachBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Attach\AttachByNameBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Models\Remove\RemoveBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
 
 /**
@@ -45,6 +46,7 @@ class BlockStorageActions implements RetrieveInterface
      * @param AttachByNameBlockStorageActionsInterface $attachByNameBlockStorageActions
      *
      * @return ResponseInterface
+     *
      * @throws \InvalidArgumentException
      */
     public function attachVolumeByName(ClientInterface $client, AttachByNameBlockStorageActionsInterface $attachByNameBlockStorageActions): ResponseInterface
@@ -56,11 +58,23 @@ class BlockStorageActions implements RetrieveInterface
         return $client->post($this->action.'/actions', $attachByNameBlockStorageActions);
     }
 
-    /* Remove a volume from a Droplet */
-
-    public function removeVolume(ClientInterface $client): ResponseInterface
+    /**
+     * Remove a volume from a Droplet.
+     *
+     * @param ClientInterface                    $client
+     * @param RemoveBlockStorageActionsInterface $removeBlockStorageActions
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function removeVolume(ClientInterface $client, RemoveBlockStorageActionsInterface $removeBlockStorageActions): ResponseInterface
     {
-        // TODO: write code.
+        if ($removeBlockStorageActions == null) {
+            throw new \InvalidArgumentException('Remove Block Storage Actions model required.');
+        }
+
+        return $client->post($this->action.'/'.$removeBlockStorageActions->getVolumeId().'/actions', $removeBlockStorageActions);
     }
 
     /* Remove a volume from a Droplet by name */

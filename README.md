@@ -52,14 +52,14 @@ Please see the [license](LICENSE).
 
 ## Status
 
-Roughly %39.39 done.
+Roughly %41.41 done.
 
 Action                  | Total # reqs  | Completed  |
 ------------------------|--------------:|-----------:|
 ~~Account~~ 			| 1				| 1			 |
 ~~Actions~~				| 2				| 2			 |
 ~~BlockStorage~~		| 8				| 8			 |
-BlockStorageActions		| 8				| 2			 |
+BlockStorageActions		| 8				| 4			 |
 ~~Domains~~				| 4				| 4			 |
 DomainRecords 			| 5				| 4			 |
 Droplets 				| 13			| 4			 |
@@ -73,6 +73,6 @@ Sizes 					| 1				| 0			 |
 Snapshots 				| 5				| 0			 |
 SSHKeys 				| 5				| 0			 |
 Tags 					| 7				| 5			 |
-**Total**               | **99**		| **39**	 |
+**Total**               | **99**		| **41**	 |
 
 *This does not take into account the docs, tests, and doFactory.*
