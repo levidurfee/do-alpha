@@ -3,15 +3,15 @@
 namespace wappr\DigitalOcean\Actions;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
+use wappr\DigitalOcean\Contracts\Models\Attach\AttachBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
 
 /**
  * Class BlockStorageActions.
  */
-class BlockStorageActions implements ListInterface, RetrieveInterface
+class BlockStorageActions implements RetrieveInterface
 {
     /**
      * @var string
@@ -19,16 +19,33 @@ class BlockStorageActions implements ListInterface, RetrieveInterface
     protected $action = 'volumes';
 
     /**
-     * @since 0.1.1
+     * Attach a volume to a Droplet.
      *
-     * @param ClientInterface $client
+     * @param ClientInterface                         $client
+     * @param AttachBlockStorageActionsInterface|null $attachBlockStorageActions
      *
      * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
      */
-    public function getAll(ClientInterface $client): ResponseInterface
+    public function attachVolume(ClientInterface $client, AttachBlockStorageActionsInterface $attachBlockStorageActions = null): ResponseInterface
     {
-        return $client->get($this->action);
+        if ($attachBlockStorageActions == null) {
+            throw new \InvalidArgumentException('Attach Block Storage Actions model required.');
+        }
+
+        return $client->post($this->action.'/'.$attachBlockStorageActions->getVolumeId().'/actions', $attachBlockStorageActions);
     }
+
+    /* Attach a volume to a Droplet by name */
+
+    /* Remove a volume from a Droplet */
+
+    /* Remove a volume from a Droplet by name */
+
+    /* Resize a volume */
+
+    /* List all actions for a volume */
 
     /**
      * @since 0.1.1
@@ -49,7 +66,7 @@ class BlockStorageActions implements ListInterface, RetrieveInterface
         }
 
         return $client->get(
-            $this->action.'/'.$blockStorageActions->getDriveId().'/'.$blockStorageActions->getActionId()
+            $this->action.'/'.$blockStorageActions->getDriveId().'/actions/'.$blockStorageActions->getActionId()
         );
     }
 }
