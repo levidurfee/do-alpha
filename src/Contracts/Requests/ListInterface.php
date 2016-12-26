@@ -12,6 +12,7 @@ interface ListInterface
 {
     /**
      * @param ClientInterface $client
+     *
      * @return ResponseInterface
      */
     public function getAll(ClientInterface $client): ResponseInterface;

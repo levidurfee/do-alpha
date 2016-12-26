@@ -12,6 +12,7 @@ interface RetrieveInterface
 {
     /**
      * @param ClientInterface $client
+     *
      * @return ResponseInterface
      */
     public function retrieve(ClientInterface $client): ResponseInterface;

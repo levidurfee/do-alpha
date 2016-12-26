@@ -12,6 +12,7 @@ interface UpdateInterface
 {
     /**
      * @param ClientInterface $client
+     *
      * @return ResponseInterface
      */
     public function update(ClientInterface $client): ResponseInterface;
