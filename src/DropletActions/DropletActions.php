@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Droplets\Requests;
+namespace wappr\DigitalOcean\DropletActions;
 
 use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;

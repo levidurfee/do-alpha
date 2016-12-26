@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Retrieve;
+namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveBlockStorageActionsInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Update;
+namespace wappr\DigitalOcean\Images\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Images\UpdateImageInterface;

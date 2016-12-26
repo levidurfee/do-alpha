@@ -10,5 +10,9 @@ use wappr\DigitalOcean\Contracts\Client\ClientInterface;
  */
 interface UpdateInterface
 {
+    /**
+     * @param ClientInterface $client
+     * @return ResponseInterface
+     */
     public function update(ClientInterface $client): ResponseInterface;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Create;
+namespace wappr\DigitalOcean\Droplets\Requests;
 
 use wappr\DigitalOcean\Contracts\Droplets\CreateDroplet;
 use wappr\DigitalOcean\Contracts\ModelInterface;

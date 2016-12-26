@@ -10,6 +10,15 @@ use wappr\DigitalOcean\Contracts\Client\ClientInterface;
  */
 interface ResourceInterface
 {
+    /**
+     * @param ClientInterface $client
+     * @return ResponseInterface
+     */
     public function create(ClientInterface $client): ResponseInterface;
+
+    /**
+     * @param ClientInterface $client
+     * @return ResponseInterface
+     */
     public function delete(ClientInterface $client): ResponseInterface;
 }

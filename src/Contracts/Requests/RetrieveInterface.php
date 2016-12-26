@@ -10,5 +10,9 @@ use wappr\DigitalOcean\Contracts\Client\ClientInterface;
  */
 interface RetrieveInterface
 {
+    /**
+     * @param ClientInterface $client
+     * @return ResponseInterface
+     */
     public function retrieve(ClientInterface $client): ResponseInterface;
 }
