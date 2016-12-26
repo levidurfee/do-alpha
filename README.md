@@ -29,7 +29,7 @@ succinct example, see the one below, as some of these actions can be called in o
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\Actions\Actions;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveActionRequest;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveAction;
 
 var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1))->getBody()->getContents());
 ```
@@ -38,6 +38,7 @@ var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1))->getBod
 
 ## Todo
 
+* Rewrite docs
 * Rewrite `Factory` class
 * Utilize traits for repeated data transfer objects (Requests)
 * Write units tests for existing actions

@@ -62,7 +62,7 @@ class Factory implements FactoryInterface
 
         // Check if the action class exists and instantiate it.
         $actionClass = "wappr\\DigitalOcean\\Actions\\$action";
-        if (!class_exists($actionClass)) {
+        if (! class_exists($actionClass)) {
             throw new \InvalidArgumentException('Action does not exist.');
         }
         $actionObject = new $actionClass;

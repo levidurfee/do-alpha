@@ -5,12 +5,12 @@ namespace wappr\DigitalOcean\Contracts\Actions;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface RetrieveActionInterface.
+ * Interface RetrieveActionContract.
  */
-interface RetrieveActionInterface extends ModelInterface
+interface RetrieveActionContract extends ModelInterface
 {
     /**
-     * RetrieveActionInterface constructor.
+     * RetrieveActionContract constructor.
      *
      * @param $action_id int Required
      */

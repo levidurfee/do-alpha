@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\Actions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Actions\RetrieveActionInterface;
+use wappr\DigitalOcean\Contracts\Actions\RetrieveActionContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveActionRequest.
+ * Class RetrieveAction.
  */
-class RetrieveActionRequest extends RequestModel implements ModelInterface, RetrieveActionInterface
+class RetrieveAction extends RequestModel implements ModelInterface, RetrieveActionContract
 {
     /**
      * @var int Required
@@ -17,7 +17,7 @@ class RetrieveActionRequest extends RequestModel implements ModelInterface, Retr
     protected $action_id;
 
     /**
-     * RetrieveActionInterface constructor.
+     * RetrieveActionContract constructor.
      *
      * @param $action_id int Required
      */
