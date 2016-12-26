@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Create;
+namespace wappr\DigitalOcean\Domains\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Domains\CreateDomainInterface;

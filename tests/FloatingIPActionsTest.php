@@ -4,12 +4,12 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use wappr\DigitalOcean\Actions\FloatingIPActions;
-use wappr\DigitalOcean\Client as DoClient;
-use wappr\DigitalOcean\Models\Assign\AssignFloatingIPRequest;
-use wappr\DigitalOcean\Models\UnAssign\UnAssignFloatingIPActionRequest;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveFloatingIPActionsRequest;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveFloatingIPActionRequest;
+use wappr\DigitalOcean\FloatingIPActions\FloatingIPActions;
+use wappr\DigitalOcean\Client\Client as DoClient;
+use wappr\DigitalOcean\FloatingIPActions\Requests\AssignFloatingIPRequest;
+use wappr\DigitalOcean\FloatingIPActions\Requests\UnAssignFloatingIPActionRequest;
+use wappr\DigitalOcean\FloatingIPActions\Requests\RetrieveFloatingIPActionsRequest;
+use wappr\DigitalOcean\FloatingIPActions\Requests\RetrieveFloatingIPActionRequest;
 
 class FloatingIPActionsTest extends PHPUnit_Framework_TestCase
 {

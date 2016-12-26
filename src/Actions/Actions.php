@@ -5,6 +5,8 @@ namespace wappr\DigitalOcean\Actions;
 use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveActionInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListInterface;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
 
 class Actions implements ListInterface, RetrieveInterface
 {

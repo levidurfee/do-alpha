@@ -5,8 +5,8 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Actions\Actions;
-use wappr\DigitalOcean\Client as DoClient;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveActionRequest;
+use wappr\DigitalOcean\Client\Client as DoClient;
+use wappr\DigitalOcean\Actions\Requests\RetrieveActionRequest;
 
 class ActionsTest extends PHPUnit_Framework_TestCase
 {

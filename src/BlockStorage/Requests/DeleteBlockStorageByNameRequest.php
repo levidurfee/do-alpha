@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Delete;
+namespace wappr\DigitalOcean\BlockStorage\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\BlockStorage\DeleteBlockStorageByNameInterface;

@@ -3,17 +3,17 @@
 namespace wappr\DigitalOcean\BlockStorage;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Models\Create\CreateBlockStorageInterface;
-use wappr\DigitalOcean\Contracts\Actions\ListInterface;
-use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
-use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
-use wappr\DigitalOcean\Contracts\ClientInterface;
-use wappr\DigitalOcean\Contracts\Models\Create\CreateBlockStorageSnapshotInterface;
-use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageByNameInterface;
-use wappr\DigitalOcean\Contracts\Models\Delete\DeleteBlockStorageInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageByNameInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageSnapshotsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListInterface;
+use wappr\DigitalOcean\Contracts\Requests\ResourceInterface;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Client\ClientInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageSnapshotInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\DeleteBlockStorageByNameInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\DeleteBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveBlockStorageByNameInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveBlockStorageSnapshotsInterface;
 
 /**
  * Class BlockStorage.

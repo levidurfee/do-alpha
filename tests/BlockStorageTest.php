@@ -4,11 +4,11 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use wappr\DigitalOcean\Client as DoClient;
-use wappr\DigitalOcean\Actions\BlockStorage;
-use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
-use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageRequest;
+use wappr\DigitalOcean\Client\Client as DoClient;
+use wappr\DigitalOcean\BlockStorage\BlockStorage;
+use wappr\DigitalOcean\BlockStorage\Requests\CreateBlockStorageRequest;
+use wappr\DigitalOcean\BlockStorage\Requests\DeleteBlockStorageRequest;
+use wappr\DigitalOcean\BlockStorage\Requests\RetrieveBlockStorageRequest;
 
 class BlockStorageTest extends PHPUnit_Framework_TestCase
 {

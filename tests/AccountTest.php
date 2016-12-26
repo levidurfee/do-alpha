@@ -4,8 +4,8 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use wappr\DigitalOcean\Actions\Account;
-use wappr\DigitalOcean\Client as DoClient;
+use wappr\DigitalOcean\Account\Account;
+use wappr\DigitalOcean\Client\Client as DoClient;
 
 class AccountTest extends PHPUnit_Framework_TestCase
 {

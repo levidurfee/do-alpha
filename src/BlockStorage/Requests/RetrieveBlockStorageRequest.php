@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Retrieve;
+namespace wappr\DigitalOcean\BlockStorage\Requests;
 
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 use wappr\DigitalOcean\Contracts\ModelInterface;

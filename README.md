@@ -38,6 +38,7 @@ var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1))->getBod
 
 ## Todo
 
+* Rewrite `Factory` class
 * Utilize traits for repeated data transfer objects (Requests)
 * Write units tests for existing actions
 * Basic functionality for other actions

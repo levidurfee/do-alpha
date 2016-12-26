@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Retrieve;
+namespace wappr\DigitalOcean\FloatingIPActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\FloatingIPActions\RetrieveFloatingIPActionsInterface;
