@@ -7,8 +7,7 @@ use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveAllBlockStorageActionsI
 use wappr\DigitalOcean\Models\RequestModel;
 
 /**
- * Class RetrieveAllBlockStorageActionsRequest
- * @package wappr\DigitalOcean\Models\Retrieve
+ * Class RetrieveAllBlockStorageActionsRequest.
  */
 class RetrieveAllBlockStorageActionsRequest extends RequestModel implements ModelInterface, RetrieveAllBlockStorageActionsInterface
 {

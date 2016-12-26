@@ -14,7 +14,7 @@ class RetrieveBlockStorageActionsRequest extends RequestModel implements ModelIn
     /**
      * @var string
      */
-    protected $drive_id;
+    protected $volume_id;
 
     /**
      * @var int
@@ -24,21 +24,21 @@ class RetrieveBlockStorageActionsRequest extends RequestModel implements ModelIn
     /**
      * RetrieveBlockStorageActionsInterface constructor.
      *
-     * @param string $drive_id  Required
+     * @param string $volume_id Required
      * @param int    $action_id Required
      */
-    public function __construct(string $drive_id, int $action_id)
+    public function __construct(string $volume_id, int $action_id)
     {
-        $this->drive_id = $drive_id;
+        $this->volume_id = $volume_id;
         $this->action_id = $action_id;
     }
 
     /**
      * @return string
      */
-    public function getDriveId(): string
+    public function getVolumeId(): string
     {
-        return $this->drive_id;
+        return $this->volume_id;
     }
 
     /**

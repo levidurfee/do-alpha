@@ -1,7 +1,7 @@
 # DigitalOcean API client
 
 [![Build Status](https://travis-ci.org/wappr/digitalocean.svg?branch=master)](https://travis-ci.org/wappr/digitalocean)
-[![v0.6.0](https://img.shields.io/badge/version-v0.6.0-orange.svg)](https://packagist.org/packages/wappr/digitalocean)
+[![v0.6.0](https://img.shields.io/badge/version-v0.7.0-orange.svg)](https://packagist.org/packages/wappr/digitalocean)
 
 A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle](https://github.com/guzzle/guzzle) by default.
 
@@ -52,14 +52,14 @@ Please see the [license](LICENSE).
 
 ## Status
 
-Roughly %43.87 done.
+Roughly %44.89 done.
 
 Action                  | Total # reqs  | Completed  |
 ------------------------|--------------:|-----------:|
 ~~Account~~ 			| 1				| 1			 |
 ~~Actions~~				| 2				| 2			 |
 ~~BlockStorage~~		| 8				| 8			 |
-BlockStorageActions		| 7				| 6			 |
+~~BlockStorageActions~~	| 7				| 7			 |
 ~~Domains~~				| 4				| 4			 |
 DomainRecords 			| 5				| 4			 |
 Droplets 				| 13			| 4			 |
@@ -73,6 +73,6 @@ Sizes 					| 1				| 0			 |
 Snapshots 				| 5				| 0			 |
 SSHKeys 				| 5				| 0			 |
 Tags 					| 7				| 5			 |
-**Total**               | **98**		| **43**	 |
+**Total**               | **98**		| **44**	 |
 
 *This does not take into account the docs, tests, and doFactory.*

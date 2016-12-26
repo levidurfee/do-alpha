@@ -131,6 +131,7 @@ class BlockStorageActions implements RetrieveInterface
      * @param RetrieveAllBlockStorageActionsInterface $retrieveAllBlockStorageActions
      *
      * @return ResponseInterface
+     *
      * @throws \InvalidArgumentException
      */
     public function getAllActions(ClientInterface $client, RetrieveAllBlockStorageActionsInterface $retrieveAllBlockStorageActions): ResponseInterface
@@ -154,16 +155,14 @@ class BlockStorageActions implements RetrieveInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function retrieve(
-        ClientInterface $client,
-        RetrieveBlockStorageActionsInterface $blockStorageActions = null
-    ): ResponseInterface {
+    public function retrieve(ClientInterface $client, RetrieveBlockStorageActionsInterface $blockStorageActions = null): ResponseInterface
+    {
         if ($blockStorageActions == null) {
             throw new \InvalidArgumentException('Retrieve Block Storage Actions model required.');
         }
 
         return $client->get(
-            $this->action.'/'.$blockStorageActions->getDriveId().'/actions/'.$blockStorageActions->getActionId()
+            $this->action.'/'.$blockStorageActions->getVolumeId().'/actions/'.$blockStorageActions->getActionId()
         );
     }
 }

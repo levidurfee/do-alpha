@@ -5,8 +5,7 @@ namespace wappr\DigitalOcean\Contracts\Models\Retrieve;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface RetrieveAllBlockStorageActionsInterface
- * @package wappr\DigitalOcean\Contracts\Models\Retrieve
+ * Interface RetrieveAllBlockStorageActionsInterface.
  */
 interface RetrieveAllBlockStorageActionsInterface extends ModelInterface
 {
