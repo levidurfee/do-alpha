@@ -22,12 +22,12 @@ class CreateBlockStorageRequest extends RequestModel implements ModelInterface, 
     protected $name;
 
     /**
-     * @var string Optional
+     * @var string Required
      */
     protected $description;
 
     /**
-     * @var string Optional
+     * @var string Required
      */
     protected $region;
 
