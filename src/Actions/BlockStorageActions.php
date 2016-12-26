@@ -10,6 +10,7 @@ use wappr\DigitalOcean\Contracts\Models\Attach\AttachByNameBlockStorageActionsIn
 use wappr\DigitalOcean\Contracts\Models\Remove\RemoveBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Remove\RemoveByNameBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Resize\ResizeBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveAllBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
 
 /**
@@ -38,7 +39,9 @@ class BlockStorageActions implements RetrieveInterface
             throw new \InvalidArgumentException('Attach Block Storage Actions model required.');
         }
 
-        return $client->post($this->action.'/'.$attachBlockStorageActions->getVolumeId().'/actions', $attachBlockStorageActions);
+        return $client->post(
+            $this->action.'/'.$attachBlockStorageActions->getVolumeId().'/actions', $attachBlockStorageActions
+        );
     }
 
     /**
@@ -76,7 +79,9 @@ class BlockStorageActions implements RetrieveInterface
             throw new \InvalidArgumentException('Remove Block Storage Actions model required.');
         }
 
-        return $client->post($this->action.'/'.$removeBlockStorageActions->getVolumeId().'/actions', $removeBlockStorageActions);
+        return $client->post(
+            $this->action.'/'.$removeBlockStorageActions->getVolumeId().'/actions', $removeBlockStorageActions
+        );
     }
 
     /**
@@ -114,14 +119,29 @@ class BlockStorageActions implements RetrieveInterface
             throw new \InvalidArgumentException('Resize Block Storage Actions model required.');
         }
 
-        return $client->post($this->action.'/'.$resizeBlockStorageActions->getVolumeId().'/actions', $resizeBlockStorageActions);
+        return $client->post(
+            $this->action.'/'.$resizeBlockStorageActions->getVolumeId().'/actions', $resizeBlockStorageActions
+        );
     }
 
-    /* List all actions for a volume */
-
-    public function getAllActions(ClientInterface $client): ResponseInterface
+    /**
+     * List all actions for a volume.
+     *
+     * @param ClientInterface                         $client
+     * @param RetrieveAllBlockStorageActionsInterface $retrieveAllBlockStorageActions
+     *
+     * @return ResponseInterface
+     * @throws \InvalidArgumentException
+     */
+    public function getAllActions(ClientInterface $client, RetrieveAllBlockStorageActionsInterface $retrieveAllBlockStorageActions): ResponseInterface
     {
-        // TODO: write code.
+        if ($retrieveAllBlockStorageActions == null) {
+            throw new \InvalidArgumentException('Retrieve Block Storage Actions model required.');
+        }
+
+        return $client->get(
+            $this->action.'/'.$retrieveAllBlockStorageActions->getVolumeId().'/actions/'
+        );
     }
 
     /**
