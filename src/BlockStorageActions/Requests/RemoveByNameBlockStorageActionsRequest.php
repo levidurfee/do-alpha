@@ -1,10 +1,10 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Remove;
+namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Remove\RemoveByNameBlockStorageActionsInterface;
-use wappr\DigitalOcean\Models\RequestModel;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\RemoveByNameBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class RemoveByNameBlockStorageActionsRequest.

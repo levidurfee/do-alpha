@@ -1,10 +1,10 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Retrieve;
+namespace wappr\DigitalOcean\Droplets\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
-use wappr\DigitalOcean\Models\RequestModel;
+use wappr\DigitalOcean\Contracts\Droplets\RetrieveDropletInterface;
+use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class RetrieveDropletRequest.

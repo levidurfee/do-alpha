@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\Droplets;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Actions\ListInterface;
-use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
-use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
-use wappr\DigitalOcean\Contracts\ClientInterface;
-use wappr\DigitalOcean\Contracts\Models\Create\CreateDroplet;
-use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListInterface;
+use wappr\DigitalOcean\Contracts\Requests\ResourceInterface;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Client\ClientInterface;
+use wappr\DigitalOcean\Contracts\Droplets\CreateDroplet;
+use wappr\DigitalOcean\Contracts\Droplets\DeleteDropletInterface;
+use wappr\DigitalOcean\Contracts\Droplets\RetrieveDropletInterface;
 
 /**
  * Class Droplets.

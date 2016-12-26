@@ -1,10 +1,10 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Delete;
+namespace wappr\DigitalOcean\Droplets\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
-use wappr\DigitalOcean\Models\RequestModel;
+use wappr\DigitalOcean\Contracts\Droplets\DeleteDropletInterface;
+use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class DeleteDropletRequest.

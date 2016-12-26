@@ -3,10 +3,8 @@
 namespace wappr\DigitalOcean\Actions;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\ClientInterface;
-use wappr\DigitalOcean\Contracts\Actions\ListInterface;
-use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveActionInterface;
+use wappr\DigitalOcean\Contracts\Client\ClientInterface;
+use wappr\DigitalOcean\Contracts\Actions\RetrieveActionInterface;
 
 class Actions implements ListInterface, RetrieveInterface
 {

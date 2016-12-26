@@ -1,10 +1,10 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Resize;
+namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Resize\ResizeBlockStorageActionsInterface;
-use wappr\DigitalOcean\Models\RequestModel;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\ResizeBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class ResizeBlockStorageActionsRequest.

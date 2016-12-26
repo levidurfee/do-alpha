@@ -1,6 +1,6 @@
 <?php
 
-namespace wappr\DigitalOcean\Contracts\Models\Delete;
+namespace wappr\DigitalOcean\Contracts\Droplets;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Attach;
+namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Attach\AttachByNameBlockStorageActionsInterface;
-use wappr\DigitalOcean\Models\RequestModel;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachByNameBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class AttachByNameBlockStorageActionsRequest.

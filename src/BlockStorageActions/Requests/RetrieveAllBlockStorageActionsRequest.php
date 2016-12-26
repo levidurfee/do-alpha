@@ -1,10 +1,10 @@
 <?php
 
-namespace wappr\DigitalOcean\Models\Retrieve;
+namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveAllBlockStorageActionsInterface;
-use wappr\DigitalOcean\Models\RequestModel;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveAllBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class RetrieveAllBlockStorageActionsRequest.

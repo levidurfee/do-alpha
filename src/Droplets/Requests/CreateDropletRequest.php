@@ -4,7 +4,7 @@ namespace wappr\DigitalOcean\Models\Create;
 
 use wappr\DigitalOcean\Contracts\Droplets\CreateDroplet;
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Models\RequestModel;
+use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class CreateDropletRequest.

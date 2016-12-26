@@ -1,17 +1,17 @@
 <?php
 
-namespace wappr\DigitalOcean\Actions;
+namespace wappr\DigitalOcean\BlockStorageActions;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
-use wappr\DigitalOcean\Contracts\ClientInterface;
-use wappr\DigitalOcean\Contracts\Models\Attach\AttachBlockStorageActionsInterface;
-use wappr\DigitalOcean\Contracts\Models\Attach\AttachByNameBlockStorageActionsInterface;
-use wappr\DigitalOcean\Contracts\Models\Remove\RemoveBlockStorageActionsInterface;
-use wappr\DigitalOcean\Contracts\Models\Remove\RemoveByNameBlockStorageActionsInterface;
-use wappr\DigitalOcean\Contracts\Models\Resize\ResizeBlockStorageActionsInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveAllBlockStorageActionsInterface;
-use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Client\ClientInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachByNameBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\RemoveBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\RemoveByNameBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\ResizeBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveAllBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveBlockStorageActionsInterface;
 
 /**
  * Class BlockStorageActions.
