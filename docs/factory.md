@@ -1,11 +1,11 @@
-# doFactory
+# Factory
 
 Please make sure you first read the [getting started](getting-started.md) doc before trying anything else. You **MUST**
-set your DigitalOcean API Token as an environment variable in order for the `doFactory` to work.
+set your DigitalOcean API Token as an environment variable in order for the `Factory` to work.
 
 ## Creating
 
-The Create doFactory simplifies the creation of any action. It currently only accepts the required parameters 
+The Create Factory simplifies the creation of any action. It currently only accepts the required parameters 
 for the API to process the request.
 
 ### Example Usage
@@ -13,7 +13,7 @@ for the API to process the request.
 ```php
 <?php
 require_once 'vendor/autoload.php';
-use wappr\DigitalOcean\doFactory as Factory;
+use wappr\DigitalOcean\Factory as Factory;
 Factory::create('Droplets', ['test', 'nyc2', '512mb', 'ubuntu-16-04-x64']);
 ```
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace wappr\DigitalOcean\Actions;
+namespace wappr\DigitalOcean\Droplets;
 
 use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Actions\ListInterface;
 use wappr\DigitalOcean\Contracts\Actions\ResourceInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\ClientInterface;
-use wappr\DigitalOcean\Contracts\Models\Create\CreateDropletInterface;
+use wappr\DigitalOcean\Contracts\Models\Create\CreateDroplet;
 use wappr\DigitalOcean\Contracts\Models\Delete\DeleteDropletInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveDropletInterface;
 
@@ -38,14 +38,14 @@ class Droplets implements ListInterface, ResourceInterface, RetrieveInterface
     /**
      * @since 0.1.1
      *
-     * @param ClientInterface             $client
-     * @param CreateDropletInterface|null $droplet
+     * @param ClientInterface    $client
+     * @param CreateDroplet|null $droplet
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function create(ClientInterface $client, CreateDropletInterface $droplet = null): ResponseInterface
+    public function create(ClientInterface $client, CreateDroplet $droplet = null): ResponseInterface
     {
         if ($droplet == null) {
             throw new \InvalidArgumentException('Create Droplet model required.');

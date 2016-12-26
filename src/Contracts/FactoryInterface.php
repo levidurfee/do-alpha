@@ -12,7 +12,7 @@ use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Client;
 
 /**
- * Class doFactory.
+ * Class Factory.
  *
  * @method static mixed create(string $actionType, array $params = [], Client $client = null)
  * @method static mixed retrieve(string $actionType, array $params = [], Client $client = null)

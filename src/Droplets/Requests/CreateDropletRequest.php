@@ -2,14 +2,14 @@
 
 namespace wappr\DigitalOcean\Models\Create;
 
+use wappr\DigitalOcean\Contracts\Droplets\CreateDroplet;
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Models\Create\CreateDropletInterface;
 use wappr\DigitalOcean\Models\RequestModel;
 
 /**
  * Class CreateDropletRequest.
  */
-class CreateDropletRequest extends RequestModel implements ModelInterface, CreateDropletInterface
+class CreateDropletRequest extends RequestModel implements ModelInterface, CreateDroplet
 {
     /**
      * @var string Required

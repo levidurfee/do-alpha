@@ -5,7 +5,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Client as doClient;
-use wappr\DigitalOcean\doFactory;
+use wappr\DigitalOcean\Factory;
 
 class doFactoryTest extends PHPUnit_Framework_TestCase
 {
@@ -15,7 +15,7 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidArgumentException()
     {
-        doFactory::create('FakeAction', ['test'], new doClient());
+        Factory::create('FakeAction', ['test'], new doClient());
     }
 
     public function testInvalidParams()
@@ -25,7 +25,7 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
         }
         $this->setExpectedException('PHPUnit_Framework_Error_Warning');
 
-        doFactory::create('Droplets', ['test']);
+        Factory::create('Droplets', ['test']);
     }
 
     public function testCreate()
@@ -76,11 +76,11 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $response = doFactory::create('BlockStorage', [
+        $response = Factory::create('BlockStorage', [
             10, 'testing', 'description', 'nyc1',
         ], $client);
 
-        $json = doFactory::json($response);
+        $json = Factory::json($response);
 
         $this->assertEquals($json->volume->id, '506f78a4-e098-11e5-ad9f-000f53306ae1');
         $this->assertEquals($response->getStatusCode(), 200);
@@ -99,7 +99,7 @@ class doFactoryTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $response = doFactory::delete('BlockStorage', ['506f78a4-e098-11e5-ad9f-000f53306ae1'], $client);
+        $response = Factory::delete('BlockStorage', ['506f78a4-e098-11e5-ad9f-000f53306ae1'], $client);
 
         $this->assertEquals($response->getStatusCode(), 204);
     }

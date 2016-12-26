@@ -12,7 +12,7 @@ A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle]
 These classes allow you to make more specific requests to the API.
 
 * [Getting Started](docs/getting-started.md)
-* [doFactory](docs/factory.md)
+* [Factory](docs/factory.md)
 * [Droplets](docs/droplets.md)
 * [Images](docs/images.md)
 * [Account](docs/account.md)
@@ -75,4 +75,4 @@ SSHKeys 				| 5				| 0			 |
 Tags 					| 7				| 5			 |
 **Total**               | **98**		| **44**	 |
 
-*This does not take into account the docs, tests, and doFactory.*
+*This does not take into account the docs, tests, and Factory.*

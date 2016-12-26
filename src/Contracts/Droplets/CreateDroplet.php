@@ -1,13 +1,13 @@
 <?php
 
-namespace wappr\DigitalOcean\Contracts\Models\Create;
+namespace wappr\DigitalOcean\Contracts\Droplets;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface CreateDropletInterface.
+ * Interface CreateDroplet.
  */
-interface CreateDropletInterface extends ModelInterface
+interface CreateDroplet extends ModelInterface
 {
     /**
      * Droplet constructor.
