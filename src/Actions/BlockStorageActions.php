@@ -9,6 +9,7 @@ use wappr\DigitalOcean\Contracts\Models\Attach\AttachBlockStorageActionsInterfac
 use wappr\DigitalOcean\Contracts\Models\Attach\AttachByNameBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Remove\RemoveBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Remove\RemoveByNameBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\Models\Resize\ResizeBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\Models\Retrieve\RetrieveBlockStorageActionsInterface;
 
 /**
@@ -85,6 +86,7 @@ class BlockStorageActions implements RetrieveInterface
      * @param RemoveByNameBlockStorageActionsInterface $removeByNameBlockStorageActions
      *
      * @return ResponseInterface
+     *
      * @throws \InvalidArgumentException
      */
     public function removeVolumeByName(ClientInterface $client, RemoveByNameBlockStorageActionsInterface $removeByNameBlockStorageActions): ResponseInterface
@@ -96,11 +98,23 @@ class BlockStorageActions implements RetrieveInterface
         return $client->post($this->action.'/actions', $removeByNameBlockStorageActions);
     }
 
-    /* Resize a volume */
-
-    public function resizeVolume(ClientInterface $client): ResponseInterface
+    /**
+     * Resize a volume.
+     *
+     * @param ClientInterface                    $client
+     * @param ResizeBlockStorageActionsInterface $resizeBlockStorageActions
+     *
+     * @return ResponseInterface
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function resizeVolume(ClientInterface $client, ResizeBlockStorageActionsInterface $resizeBlockStorageActions): ResponseInterface
     {
-        // TODO: write code.
+        if ($resizeBlockStorageActions == null) {
+            throw new \InvalidArgumentException('Resize Block Storage Actions model required.');
+        }
+
+        return $client->post($this->action.'/'.$resizeBlockStorageActions->getVolumeId().'/actions', $resizeBlockStorageActions);
     }
 
     /* List all actions for a volume */
