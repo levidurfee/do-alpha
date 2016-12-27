@@ -5,24 +5,6 @@
 
 A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle](https://github.com/guzzle/guzzle) by default.
 
-## Example Usage
-
-### Action Classes
-
-These classes allow you to make more specific requests to the API.
-
-Most of the example usage will display the verbose way of accomplishing each action. If you would like a more
-succinct example, see the one below, as some of these actions can be called in one line (excluding the imports).
-
-```php
-<?php
-use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Actions;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveAction;
-
-var_dump((new Actions)->retrieve(new Client, new RetrieveActionModel(1))->getBody()->getContents());
-```
-
 [DigitalOcean API documentation.](https://developers.digitalocean.com/documentation/v2/)
 
 ## Todo
