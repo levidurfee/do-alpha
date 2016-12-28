@@ -12,12 +12,12 @@ interface RetrieveBlockStorageInterface extends ModelInterface
     /**
      * RetrieveBlockStorageInterface constructor.
      *
-     * @param string $id
+     * @param string $volume_id
      */
-    public function __construct(string $id);
+    public function __construct(string $volume_id);
 
     /**
      * @return string
      */
-    public function getId(): string;
+    public function getVolumeId(): string;
 }

@@ -85,7 +85,7 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
             throw new \InvalidArgumentException('Retrieve Block Storage model required.');
         }
 
-        return $client->get($this->action.'/'.$blockStorage->getId());
+        return $client->get($this->action.'/'.$blockStorage->getVolumeId());
     }
 
     /**
