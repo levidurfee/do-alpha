@@ -4,3 +4,4 @@ vendor/*
 example.php
 /output.json
 e/*
+.php_cs.cache

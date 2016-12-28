@@ -4,11 +4,11 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use wappr\DigitalOcean\Actions\Domains;
-use wappr\DigitalOcean\Client as DoClient;
-use wappr\DigitalOcean\Models\Create\CreateDomainRequest;
-use wappr\DigitalOcean\Models\Delete\DeleteDomainRequest;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveDomainRequest;
+use wappr\DigitalOcean\Domains\Domains;
+use wappr\DigitalOcean\Client\Client as DoClient;
+use wappr\DigitalOcean\Domains\Requests\CreateDomainRequest;
+use wappr\DigitalOcean\Domains\Requests\DeleteDomainRequest;
+use wappr\DigitalOcean\Domains\Requests\RetrieveDomainRequest;
 
 class DomainsTest extends PHPUnit_Framework_TestCase
 {
