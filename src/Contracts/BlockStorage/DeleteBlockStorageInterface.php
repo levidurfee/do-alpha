@@ -12,12 +12,12 @@ interface DeleteBlockStorageInterface extends ModelInterface
     /**
      * DeleteBlockStorageInterface constructor.
      *
-     * @param $drive_id
+     * @param $volume_id
      */
-    public function __construct(string $drive_id);
+    public function __construct(string $volume_id);
 
     /**
      * @return string
      */
-    public function getDriveId(): string;
+    public function getVolumeId(): string;
 }

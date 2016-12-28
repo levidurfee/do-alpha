@@ -66,7 +66,7 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
             throw new \InvalidArgumentException('Delete Block Storage model required.');
         }
 
-        return $client->delete($this->action, $deleteBlockStorage, 'getDriveId');
+        return $client->delete($this->action, $deleteBlockStorage, 'getVolumeId');
     }
 
     /**
