@@ -5,3 +5,4 @@ example.php
 /output.json
 e/*
 .php_cs.cache
+ignore/*
