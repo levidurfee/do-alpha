@@ -6,9 +6,9 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Domains\Domains;
 use wappr\DigitalOcean\Client\Client as DoClient;
-use wappr\DigitalOcean\Domains\Requests\CreateDomainRequest;
-use wappr\DigitalOcean\Domains\Requests\DeleteDomainRequest;
-use wappr\DigitalOcean\Domains\Requests\RetrieveDomainRequest;
+use wappr\DigitalOcean\Domains\Requests\CreateRequest;
+use wappr\DigitalOcean\Domains\Requests\DeleteRequest;
+use wappr\DigitalOcean\Domains\Requests\RetrieveRequest;
 
 class DomainsTest extends PHPUnit_Framework_TestCase
 {
@@ -64,7 +64,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
         );
 
         $domains = new Domains;
-        $domain = new CreateDomainRequest('example.com', '127.0.0.1');
+        $domain = new CreateRequest('example.com', '127.0.0.1');
         $response = $domains->create($client, $domain);
         $this->assertEquals($response->getStatusCode(), 200);
     }
@@ -88,7 +88,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
         );
 
         $domains = new Domains;
-        $retrieve = new RetrieveDomainRequest('example.com');
+        $retrieve = new RetrieveRequest('example.com');
         $response = $domains->retrieve($client, $retrieve);
         $this->assertEquals($response->getStatusCode(), 200);
     }
@@ -109,7 +109,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
         );
 
         $domains = new Domains;
-        $delete = new DeleteDomainRequest('example.com');
+        $delete = new DeleteRequest('example.com');
         $response = $domains->delete($client, $delete);
         $this->assertEquals($response->getStatusCode(), 204);
     }

@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Domains\CreateDomainInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class CreateDomainRequest.
+ * Class CreateRequest.
  */
-class CreateDomainRequest extends RequestModel implements ModelInterface, CreateDomainInterface
+class CreateRequest extends RequestModel implements ModelInterface, CreateDomainInterface
 {
     /**
      * @var string
@@ -22,7 +22,7 @@ class CreateDomainRequest extends RequestModel implements ModelInterface, Create
     protected $ip_address;
 
     /**
-     * CreateDomainRequest constructor.
+     * CreateRequest constructor.
      *
      * @param string $name
      * @param string $ip_address

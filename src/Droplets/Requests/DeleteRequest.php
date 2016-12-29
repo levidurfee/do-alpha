@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\Droplets\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Droplets\DeleteDropletInterface;
+use wappr\DigitalOcean\Contracts\Droplets\DeleteInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class DeleteDropletRequest.
+ * Class DeleteRequest.
  */
-class DeleteDropletRequest extends RequestModel implements ModelInterface, DeleteDropletInterface
+class DeleteRequest extends RequestModel implements ModelInterface, DeleteInterface
 {
     /**
      * @var int Required
