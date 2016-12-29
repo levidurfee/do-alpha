@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachByNameBlockStorageAct
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class AttachByNameBlockStorageActionsRequest.
+ * Class AttachBlockStorageActionsByNameRequest.
  */
-class AttachByNameBlockStorageActionsRequest extends RequestModel implements ModelInterface, AttachByNameBlockStorageActionsInterface
+class AttachBlockStorageActionsByNameRequest extends RequestModel implements ModelInterface, AttachByNameBlockStorageActionsInterface
 {
     /**
      * @var string
