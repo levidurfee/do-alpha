@@ -16,9 +16,9 @@ use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveInterface;
 use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveSnapshotsInterface;
 
 /**
- * Class BlockStorage.
+ * Class BlockStorageManager.
  */
-class BlockStorage implements ListContract, ResourceContract, RetrieveContract
+class BlockStorageManager implements ListContract, ResourceContract, RetrieveContract
 {
     /**
      * @var string The action that you are requesting

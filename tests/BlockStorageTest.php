@@ -5,7 +5,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Client\Client as DoClient;
-use wappr\DigitalOcean\BlockStorage\BlockStorage;
+use wappr\DigitalOcean\BlockStorage\BlockStorageManager;
 use wappr\DigitalOcean\BlockStorage\Requests\CreateRequest;
 use wappr\DigitalOcean\BlockStorage\Requests\DeleteRequest;
 use wappr\DigitalOcean\BlockStorage\Requests\RetrieveRequest;
@@ -70,7 +70,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $blockStorage = new BlockStorage;
+        $blockStorage = new BlockStorageManager;
         $response = $blockStorage->getAll($this->client);
         $this->assertEquals($response->getStatusCode(), 200);
         $contents = json_decode($response->getBody()->getContents());
@@ -128,7 +128,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $blockStorage = new BlockStorage;
+        $blockStorage = new BlockStorageManager;
         $createBlockStorage = new CreateRequest('10', 'test', 'description', 'nyc3');
         $response = $blockStorage->create($this->client, $createBlockStorage);
         $json = json_decode($response->getBody()->getContents());
@@ -184,7 +184,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $blockStorage = new BlockStorage;
+        $blockStorage = new BlockStorageManager;
         $retrieveBlockStorage = new RetrieveRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
         $response = $blockStorage->retrieve($this->client, $retrieveBlockStorage);
 
@@ -208,7 +208,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $blockStorage = new BlockStorage;
+        $blockStorage = new BlockStorageManager;
         $deleteBlockStorage = new DeleteRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
         $response = $blockStorage->delete($this->client, $deleteBlockStorage);
 

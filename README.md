@@ -32,7 +32,7 @@ Action                  | Total # reqs  | Completed  |
 ------------------------|--------------:|-----------:|
 ~~Account~~ 			| 1				| 1			 |
 ~~Actions~~				| 2				| 2			 |
-~~BlockStorage~~		| 8				| 8			 |
+~~BlockStorageManager~~		| 8				| 8			 |
 ~~BlockStorageActions~~	| 7				| 7			 |
 ~~Domains~~				| 4				| 4			 |
 DomainRecords 			| 5				| 4			 |

@@ -22,7 +22,7 @@ Factory::create('Droplets', ['test', 'nyc2', '512mb', 'ubuntu-16-04-x64']);
 * Account
 * Actions
 * BlockStorageActions
-* BlockStorage
+* BlockStorageManager
 * DomainRecords
 * Domains
 * DropletActions
