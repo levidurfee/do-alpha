@@ -4,13 +4,13 @@ namespace wappr\DigitalOcean\BlockStorage\Requests;
 
 use wappr\DigitalOcean\BlockStorage\VolumeID;
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\DeleteBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveSnapshotsInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class DeleteBlockStorageRequest.
+ * Class RetrieveSnapshotsRequest.
  */
-class DeleteBlockStorageRequest extends RequestModel implements ModelInterface, DeleteBlockStorageInterface
+class RetrieveSnapshotsRequest extends RequestModel implements ModelInterface, RetrieveSnapshotsInterface
 {
     use VolumeID;
 }

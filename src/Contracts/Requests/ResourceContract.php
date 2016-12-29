@@ -6,9 +6,9 @@ use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Interface ResourceInterface.
+ * Interface ResourceContract.
  */
-interface ResourceInterface
+interface ResourceContract
 {
     /**
      * @param ClientInterface $client

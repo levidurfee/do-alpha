@@ -15,7 +15,7 @@ trait ByName
     protected $region;
 
     /**
-     * RetrieveBlockStorageByNameInterface constructor.
+     * RetrieveByNameInterface constructor.
      *
      * @param string $name
      * @param string $region

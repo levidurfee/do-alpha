@@ -3,8 +3,8 @@
 namespace wappr\DigitalOcean\FloatingIPActions;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 use wappr\DigitalOcean\Contracts\FloatingIPActions\AssignFloatingIPInterface;
 use wappr\DigitalOcean\Contracts\FloatingIPActions\RetrieveFloatingIPActionInterface;
@@ -14,7 +14,7 @@ use wappr\DigitalOcean\Contracts\FloatingIPActions\UnAssignFloatingIPActionInter
 /**
  * Class FloatingIPActions.
  */
-class FloatingIPActions implements ListInterface, RetrieveInterface
+class FloatingIPActions implements ListContract, RetrieveContract
 {
     /**
      * @var string

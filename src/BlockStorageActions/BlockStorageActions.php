@@ -3,7 +3,7 @@
 namespace wappr\DigitalOcean\BlockStorageActions;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachBlockStorageActionsInterface;
 use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachByNameBlockStorageActionsInterface;
@@ -16,7 +16,7 @@ use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveBlockStorageActions
 /**
  * Class BlockStorageActions.
  */
-class BlockStorageActions implements RetrieveInterface
+class BlockStorageActions implements RetrieveContract
 {
     /**
      * @var string

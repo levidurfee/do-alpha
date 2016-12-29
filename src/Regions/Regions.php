@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\Regions;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
  * Class Regions.
  */
-class Regions implements ListInterface
+class Regions implements ListContract
 {
     /**
      * List all of the regions that are available.

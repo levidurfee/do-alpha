@@ -5,10 +5,10 @@ namespace wappr\DigitalOcean\Actions;
 use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 use wappr\DigitalOcean\Contracts\Actions\RetrieveActionContract;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 
-class Actions implements ListInterface, RetrieveInterface
+class Actions implements ListContract, RetrieveContract
 {
     /**
      * @var string The action that you are requesting

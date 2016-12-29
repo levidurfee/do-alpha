@@ -5,14 +5,14 @@ namespace wappr\DigitalOcean\Contracts\BlockStorage;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface DeleteBlockStorageInterface.
+ * Interface RetrieveSnapshotsInterface.
  */
-interface DeleteBlockStorageInterface extends ModelInterface
+interface RetrieveSnapshotsInterface extends ModelInterface
 {
     /**
-     * DeleteBlockStorageInterface constructor.
+     * RetrieveSnapshotsInterface constructor.
      *
-     * @param $volume_id
+     * @param string $volume_id
      */
     public function __construct(string $volume_id);
 

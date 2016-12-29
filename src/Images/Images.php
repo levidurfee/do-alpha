@@ -3,9 +3,9 @@
 namespace wappr\DigitalOcean\Images;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
-use wappr\DigitalOcean\Contracts\Requests\UpdateInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
+use wappr\DigitalOcean\Contracts\Requests\UpdateContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 use wappr\DigitalOcean\Contracts\Images\DeleteImageInterface;
 use wappr\DigitalOcean\Contracts\Images\RetrieveImageInterface;
@@ -14,7 +14,7 @@ use wappr\DigitalOcean\Contracts\Images\UpdateImageInterface;
 /**
  * Class Images.
  */
-class Images implements ListInterface, RetrieveInterface, UpdateInterface
+class Images implements ListContract, RetrieveContract, UpdateContract
 {
     protected $action = 'images';
 

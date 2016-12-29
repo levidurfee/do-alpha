@@ -6,14 +6,14 @@ use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Interface ListInterface.
+ * Interface UpdateContract.
  */
-interface ListInterface
+interface UpdateContract
 {
     /**
      * @param ClientInterface $client
      *
      * @return ResponseInterface
      */
-    public function getAll(ClientInterface $client): ResponseInterface;
+    public function update(ClientInterface $client): ResponseInterface;
 }

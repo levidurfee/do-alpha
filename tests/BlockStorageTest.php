@@ -6,9 +6,9 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\Client\Client as DoClient;
 use wappr\DigitalOcean\BlockStorage\BlockStorage;
-use wappr\DigitalOcean\BlockStorage\Requests\CreateBlockStorageRequest;
-use wappr\DigitalOcean\BlockStorage\Requests\DeleteBlockStorageRequest;
-use wappr\DigitalOcean\BlockStorage\Requests\RetrieveBlockStorageRequest;
+use wappr\DigitalOcean\BlockStorage\Requests\CreateRequest;
+use wappr\DigitalOcean\BlockStorage\Requests\DeleteRequest;
+use wappr\DigitalOcean\BlockStorage\Requests\RetrieveRequest;
 
 class BlockStorageTest extends PHPUnit_Framework_TestCase
 {
@@ -129,7 +129,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
         );
 
         $blockStorage = new BlockStorage;
-        $createBlockStorage = new CreateBlockStorageRequest('10', 'test', 'description', 'nyc3');
+        $createBlockStorage = new CreateRequest('10', 'test', 'description', 'nyc3');
         $response = $blockStorage->create($this->client, $createBlockStorage);
         $json = json_decode($response->getBody()->getContents());
         $this->assertEquals($json->volume->id, '506f78a4-e098-11e5-ad9f-000f53306ae1');
@@ -185,7 +185,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
         );
 
         $blockStorage = new BlockStorage;
-        $retrieveBlockStorage = new RetrieveBlockStorageRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
+        $retrieveBlockStorage = new RetrieveRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
         $response = $blockStorage->retrieve($this->client, $retrieveBlockStorage);
 
         $json = json_decode($response->getBody()->getContents());
@@ -209,7 +209,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
         );
 
         $blockStorage = new BlockStorage;
-        $deleteBlockStorage = new DeleteBlockStorageRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
+        $deleteBlockStorage = new DeleteRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
         $response = $blockStorage->delete($this->client, $deleteBlockStorage);
 
         $this->assertEquals($response->getStatusCode(), 204);

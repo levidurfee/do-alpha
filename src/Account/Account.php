@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\Account;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
  * Class Account.
  */
-class Account implements RetrieveInterface
+class Account implements RetrieveContract
 {
     /**
      * @param ClientInterface $client

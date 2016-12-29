@@ -3,14 +3,14 @@
 namespace wappr\DigitalOcean\Snapshots;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
  * Class Snapshots.
  */
-class Snapshots implements ListInterface, RetrieveInterface
+class Snapshots implements ListContract, RetrieveContract
 {
     public function getAll(ClientInterface $client): ResponseInterface
     {

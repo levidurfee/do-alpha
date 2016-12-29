@@ -13,7 +13,7 @@ trait VolumeID
     protected $volume_id;
 
     /**
-     * RetrieveBlockStorageSnapshotsInterface constructor.
+     * RetrieveSnapshotsInterface constructor.
      *
      * @param string $volume_id
      */

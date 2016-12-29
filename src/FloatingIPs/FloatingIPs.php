@@ -3,15 +3,15 @@
 namespace wappr\DigitalOcean\FloatingIPs;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\ResourceInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
  * Class FloatingIPs.
  */
-class FloatingIPs implements ListInterface, ResourceInterface, RetrieveInterface
+class FloatingIPs implements ListContract, ResourceContract, RetrieveContract
 {
     public function getAll(ClientInterface $client): ResponseInterface
     {

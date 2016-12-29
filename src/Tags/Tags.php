@@ -3,10 +3,10 @@
 namespace wappr\DigitalOcean\Tags;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\ResourceInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
-use wappr\DigitalOcean\Contracts\Requests\UpdateInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
+use wappr\DigitalOcean\Contracts\Requests\UpdateContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 use wappr\DigitalOcean\Contracts\Tags\CreateTagInterface;
 use wappr\DigitalOcean\Contracts\Tags\DeleteTagInterface;
@@ -16,7 +16,7 @@ use wappr\DigitalOcean\Contracts\Tags\UpdateTagInterface;
 /**
  * Class Tags.
  */
-class Tags implements ListInterface, ResourceInterface, RetrieveInterface, UpdateInterface
+class Tags implements ListContract, ResourceContract, RetrieveContract, UpdateContract
 {
     /**
      * @var string

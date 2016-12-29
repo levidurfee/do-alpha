@@ -3,9 +3,9 @@
 namespace wappr\DigitalOcean\Domains;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\ResourceInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 use wappr\DigitalOcean\Contracts\Domains\CreateDomainInterface;
 use wappr\DigitalOcean\Contracts\Domains\DeleteDomainInterface;
@@ -14,7 +14,7 @@ use wappr\DigitalOcean\Contracts\Domains\RetrieveDomainInterface;
 /**
  * Class Domains.
  */
-class Domains implements ListInterface, ResourceInterface, RetrieveInterface
+class Domains implements ListContract, ResourceContract, RetrieveContract
 {
     /**
      * @var string

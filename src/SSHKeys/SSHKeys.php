@@ -3,16 +3,16 @@
 namespace wappr\DigitalOcean\SSHKeys;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\ResourceInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
-use wappr\DigitalOcean\Contracts\Requests\UpdateInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
+use wappr\DigitalOcean\Contracts\Requests\UpdateContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
  * Class SSHKeys.
  */
-class SSHKeys implements ListInterface, ResourceInterface, RetrieveInterface, UpdateInterface
+class SSHKeys implements ListContract, ResourceContract, RetrieveContract, UpdateContract
 {
     public function getAll(ClientInterface $client): ResponseInterface
     {

@@ -3,22 +3,22 @@
 namespace wappr\DigitalOcean\BlockStorage;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\ResourceInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageSnapshotInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\DeleteBlockStorageByNameInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\DeleteBlockStorageInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveBlockStorageByNameInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveBlockStorageInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveBlockStorageSnapshotsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateSnapshotInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\DeleteByNameInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\DeleteInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveByNameInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveSnapshotsInterface;
 
 /**
  * Class BlockStorage.
  */
-class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterface
+class BlockStorage implements ListContract, ResourceContract, RetrieveContract
 {
     /**
      * @var string The action that you are requesting
@@ -37,13 +37,13 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
 
     /**
      * @param ClientInterface                  $client
-     * @param CreateBlockStorageInterface|null $blockStorage
+     * @param CreateInterface|null $blockStorage
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function create(ClientInterface $client, CreateBlockStorageInterface $blockStorage = null): ResponseInterface
+    public function create(ClientInterface $client, CreateInterface $blockStorage = null): ResponseInterface
     {
         if ($blockStorage == null) {
             throw new \InvalidArgumentException('Block Storage model required.');
@@ -54,13 +54,13 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
 
     /**
      * @param ClientInterface                  $client
-     * @param DeleteBlockStorageInterface|null $deleteBlockStorage
+     * @param DeleteInterface|null $deleteBlockStorage
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function delete(ClientInterface $client, DeleteBlockStorageInterface $deleteBlockStorage = null): ResponseInterface
+    public function delete(ClientInterface $client, DeleteInterface $deleteBlockStorage = null): ResponseInterface
     {
         if ($deleteBlockStorage == null) {
             throw new \InvalidArgumentException('Delete Block Storage model required.');
@@ -73,13 +73,13 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * Retrieve Block Storage volume information using the drive id (uuid).
      *
      * @param ClientInterface                    $client
-     * @param RetrieveBlockStorageInterface|null $blockStorage
+     * @param RetrieveInterface|null $blockStorage
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function retrieve(ClientInterface $client, RetrieveBlockStorageInterface $blockStorage = null): ResponseInterface
+    public function retrieve(ClientInterface $client, RetrieveInterface $blockStorage = null): ResponseInterface
     {
         if ($blockStorage == null) {
             throw new \InvalidArgumentException('Retrieve Block Storage model required.');
@@ -92,13 +92,13 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * Retrieve Block Storage volume information using the name and region.
      *
      * @param ClientInterface                     $client
-     * @param RetrieveBlockStorageByNameInterface $blockStorageByName
+     * @param RetrieveByNameInterface $blockStorageByName
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function retrieveByName(ClientInterface $client, RetrieveBlockStorageByNameInterface $blockStorageByName): ResponseInterface
+    public function retrieveByName(ClientInterface $client, RetrieveByNameInterface $blockStorageByName): ResponseInterface
     {
         if ($blockStorageByName == null) {
             throw new \InvalidArgumentException('Retrieve Block Storage By Name model required.');
@@ -111,13 +111,13 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * List snapshots for a volume.
      *
      * @param ClientInterface                             $client
-     * @param RetrieveBlockStorageSnapshotsInterface|null $blockStorageSnapshots
+     * @param RetrieveSnapshotsInterface|null $blockStorageSnapshots
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function getSnapshots(ClientInterface $client, RetrieveBlockStorageSnapshotsInterface $blockStorageSnapshots = null): ResponseInterface
+    public function getSnapshots(ClientInterface $client, RetrieveSnapshotsInterface $blockStorageSnapshots = null): ResponseInterface
     {
         if ($blockStorageSnapshots == null) {
             throw new \InvalidArgumentException('Retrieve Block Storage Snapshots model required.');
@@ -130,13 +130,13 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * Create a snapshot from a volume.
      *
      * @param ClientInterface                          $client
-     * @param CreateBlockStorageSnapshotInterface|null $blockStorageSnapshot
+     * @param CreateSnapshotInterface|null $blockStorageSnapshot
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function createSnapshot(ClientInterface $client, CreateBlockStorageSnapshotInterface $blockStorageSnapshot = null): ResponseInterface
+    public function createSnapshot(ClientInterface $client, CreateSnapshotInterface $blockStorageSnapshot = null): ResponseInterface
     {
         if ($blockStorageSnapshot == null) {
             throw new \InvalidArgumentException('Create Block Storage Snapshot model required.');
@@ -149,13 +149,13 @@ class BlockStorage implements ListInterface, ResourceInterface, RetrieveInterfac
      * Delete a volume by name.
      *
      * @param ClientInterface                        $client
-     * @param DeleteBlockStorageByNameInterface|null $blockStorageByName
+     * @param DeleteByNameInterface|null $blockStorageByName
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function deleteVolumeByName(ClientInterface $client, DeleteBlockStorageByNameInterface $blockStorageByName = null): ResponseInterface
+    public function deleteVolumeByName(ClientInterface $client, DeleteByNameInterface $blockStorageByName = null): ResponseInterface
     {
         if ($blockStorageByName == null) {
             throw new \InvalidArgumentException('Delete Block Storage by name model required.');

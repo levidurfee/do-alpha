@@ -3,10 +3,10 @@
 namespace wappr\DigitalOcean\DomainRecords;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\ListInterface;
-use wappr\DigitalOcean\Contracts\Requests\ResourceInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
-use wappr\DigitalOcean\Contracts\Requests\UpdateInterface;
+use wappr\DigitalOcean\Contracts\Requests\ListContract;
+use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
+use wappr\DigitalOcean\Contracts\Requests\UpdateContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 use wappr\DigitalOcean\Contracts\DomainRecords\DeleteDomainRecordInterface;
 use wappr\DigitalOcean\Contracts\DomainRecords\RetrieveDomainRecordsInterface;
@@ -16,7 +16,7 @@ use wappr\DigitalOcean\DomainRecords\Requests\CreateDomainRecordsRequest;
 /**
  * Class DomainRecords.
  */
-class DomainRecords implements ListInterface, ResourceInterface, RetrieveInterface, UpdateInterface
+class DomainRecords implements ListContract, ResourceContract, RetrieveContract, UpdateContract
 {
     /**
      * @var string action

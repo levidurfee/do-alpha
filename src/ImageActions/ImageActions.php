@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\ImageActions;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\Requests\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
  * Class ImageActions.
  */
-class ImageActions implements RetrieveInterface
+class ImageActions implements RetrieveContract
 {
     public function retrieve(ClientInterface $client): ResponseInterface
     {
