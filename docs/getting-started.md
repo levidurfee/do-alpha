@@ -13,9 +13,9 @@ You're less likely to reveal your API token doing it this way.
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Tags;
+use wappr\DigitalOcean\ActionsManager\TagsManager;
 
-$tags = new Tags;
+$tags = new TagsManager;
 var_dump(
     $tags->create(
         new Client,
@@ -31,9 +31,9 @@ If you wish to pass the API token to the `Client` construct, here is how you may
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Tags;
+use wappr\DigitalOcean\ActionsManager\TagsManager;
 
-$tags = new Tags;
+$tags = new TagsManager;
 var_dump(
     $tags->create(
         new Client('abcd1234'),

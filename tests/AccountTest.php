@@ -4,7 +4,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use wappr\DigitalOcean\Account\Account;
+use wappr\DigitalOcean\Account\AccountManager;
 use wappr\DigitalOcean\Client\Client as DoClient;
 
 class AccountTest extends PHPUnit_Framework_TestCase
@@ -40,7 +40,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
 
     public function testGetAccountInfo()
     {
-        $account = new Account;
+        $account = new AccountManager;
         $response = $account->retrieve($this->client);
         $json = json_decode($response->getBody()->getContents());
         $this->assertTrue($json->account->email_verified);

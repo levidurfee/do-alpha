@@ -14,9 +14,9 @@ use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveAllBlockStorageActi
 use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveBlockStorageActionsInterface;
 
 /**
- * Class BlockStorageActions.
+ * Class BlockStorageActionsManager.
  */
-class BlockStorageActions implements RetrieveContract
+class BlockStorageActionsManager implements RetrieveContract
 {
     /**
      * @var string
@@ -36,7 +36,7 @@ class BlockStorageActions implements RetrieveContract
     public function attachVolume(ClientInterface $client, AttachBlockStorageActionsInterface $attachBlockStorageActions = null): ResponseInterface
     {
         if ($attachBlockStorageActions == null) {
-            throw new \InvalidArgumentException('Attach Block Storage Actions model required.');
+            throw new \InvalidArgumentException('Attach Block Storage ActionsManager model required.');
         }
 
         return $client->post(
@@ -57,7 +57,7 @@ class BlockStorageActions implements RetrieveContract
     public function attachVolumeByName(ClientInterface $client, AttachByNameBlockStorageActionsInterface $attachByNameBlockStorageActions): ResponseInterface
     {
         if ($attachByNameBlockStorageActions == null) {
-            throw new \InvalidArgumentException('Attach Block Storage by Name Actions model required.');
+            throw new \InvalidArgumentException('Attach Block Storage by Name ActionsManager model required.');
         }
 
         return $client->post($this->action.'/actions', $attachByNameBlockStorageActions);
@@ -76,7 +76,7 @@ class BlockStorageActions implements RetrieveContract
     public function removeVolume(ClientInterface $client, RemoveBlockStorageActionsInterface $removeBlockStorageActions): ResponseInterface
     {
         if ($removeBlockStorageActions == null) {
-            throw new \InvalidArgumentException('Remove Block Storage Actions model required.');
+            throw new \InvalidArgumentException('Remove Block Storage ActionsManager model required.');
         }
 
         return $client->post(
@@ -97,7 +97,7 @@ class BlockStorageActions implements RetrieveContract
     public function removeVolumeByName(ClientInterface $client, RemoveByNameBlockStorageActionsInterface $removeByNameBlockStorageActions): ResponseInterface
     {
         if ($removeByNameBlockStorageActions == null) {
-            throw new \InvalidArgumentException('Remove Block Storage Actions model required.');
+            throw new \InvalidArgumentException('Remove Block Storage ActionsManager model required.');
         }
 
         return $client->post($this->action.'/actions', $removeByNameBlockStorageActions);
@@ -116,7 +116,7 @@ class BlockStorageActions implements RetrieveContract
     public function resizeVolume(ClientInterface $client, ResizeBlockStorageActionsInterface $resizeBlockStorageActions): ResponseInterface
     {
         if ($resizeBlockStorageActions == null) {
-            throw new \InvalidArgumentException('Resize Block Storage Actions model required.');
+            throw new \InvalidArgumentException('Resize Block Storage ActionsManager model required.');
         }
 
         return $client->post(
@@ -137,7 +137,7 @@ class BlockStorageActions implements RetrieveContract
     public function getAllActions(ClientInterface $client, RetrieveAllBlockStorageActionsInterface $retrieveAllBlockStorageActions): ResponseInterface
     {
         if ($retrieveAllBlockStorageActions == null) {
-            throw new \InvalidArgumentException('Retrieve Block Storage Actions model required.');
+            throw new \InvalidArgumentException('Retrieve Block Storage ActionsManager model required.');
         }
 
         return $client->get(
@@ -158,7 +158,7 @@ class BlockStorageActions implements RetrieveContract
     public function retrieve(ClientInterface $client, RetrieveBlockStorageActionsInterface $blockStorageActions = null): ResponseInterface
     {
         if ($blockStorageActions == null) {
-            throw new \InvalidArgumentException('Retrieve Block Storage Actions model required.');
+            throw new \InvalidArgumentException('Retrieve Block Storage ActionsManager model required.');
         }
 
         return $client->get(

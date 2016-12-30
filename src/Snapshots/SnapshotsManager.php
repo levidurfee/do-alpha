@@ -8,9 +8,9 @@ use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Class Snapshots.
+ * Class SnapshotsManager.
  */
-class Snapshots implements ListContract, RetrieveContract
+class SnapshotsManager implements ListContract, RetrieveContract
 {
     public function getAll(ClientInterface $client): ResponseInterface
     {

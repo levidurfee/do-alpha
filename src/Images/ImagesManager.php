@@ -12,16 +12,14 @@ use wappr\DigitalOcean\Contracts\Images\RetrieveImageInterface;
 use wappr\DigitalOcean\Contracts\Images\UpdateImageInterface;
 
 /**
- * Class Images.
+ * Class ImagesManager.
  */
-class Images implements ListContract, RetrieveContract, UpdateContract
+class ImagesManager implements ListContract, RetrieveContract, UpdateContract
 {
     protected $action = 'images';
 
     /**
      * List all the images.
-     *
-     * @since 0.1.1
      *
      * @param ClientInterface $client
      *
@@ -33,7 +31,7 @@ class Images implements ListContract, RetrieveContract, UpdateContract
     }
 
     /**
-     * @since 0.1.1
+     * Retrieve an image.
      *
      * @param ClientInterface             $client
      * @param RetrieveImageInterface|null $image
@@ -52,7 +50,7 @@ class Images implements ListContract, RetrieveContract, UpdateContract
     }
 
     /**
-     * @since 0.1.1
+     * Update an image.
      *
      * @param ClientInterface           $client
      * @param UpdateImageInterface|null $image
@@ -71,7 +69,7 @@ class Images implements ListContract, RetrieveContract, UpdateContract
     }
 
     /**
-     * @since 0.1.1
+     * Delete an image.
      *
      * @param ClientInterface           $client
      * @param DeleteImageInterface|null $image

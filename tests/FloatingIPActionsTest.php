@@ -4,7 +4,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use wappr\DigitalOcean\FloatingIPActions\FloatingIPActions;
+use wappr\DigitalOcean\FloatingIPActions\FloatingIPActionsManager;
 use wappr\DigitalOcean\Client\Client as DoClient;
 use wappr\DigitalOcean\FloatingIPActions\Requests\AssignFloatingIPRequest;
 use wappr\DigitalOcean\FloatingIPActions\Requests\UnAssignFloatingIPActionRequest;
@@ -61,7 +61,7 @@ class FloatingIPActionsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $floatingIPsActions = new FloatingIPActions();
+        $floatingIPsActions = new FloatingIPActionsManager();
         $response = $floatingIPsActions->assign(
             $client,
             new AssignFloatingIPRequest('assign', 11111, '1.1.1.1')
@@ -117,7 +117,7 @@ class FloatingIPActionsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $floatingIPsActions = new FloatingIPActions();
+        $floatingIPsActions = new FloatingIPActionsManager();
         $response = $floatingIPsActions->unAssign(
             $client,
             new UnAssignFloatingIPActionRequest('1.1.1.1')
@@ -180,7 +180,7 @@ class FloatingIPActionsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $floatingIPsActions = new FloatingIPActions();
+        $floatingIPsActions = new FloatingIPActionsManager();
         $response = $floatingIPsActions->getAll(
             $client,
             new RetrieveFloatingIPActionsRequest('1.1.1.1')
@@ -236,7 +236,7 @@ class FloatingIPActionsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $floatingIPsActions = new FloatingIPActions();
+        $floatingIPsActions = new FloatingIPActionsManager();
         $response = $floatingIPsActions->retrieve(
             $client,
             new RetrieveFloatingIPActionRequest('1.1.1.1', 11111)

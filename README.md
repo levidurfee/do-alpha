@@ -30,23 +30,23 @@ Roughly %44.89 done.
 
 Action                  | Total # reqs  | Completed  |
 ------------------------|--------------:|-----------:|
-~~Account~~ 			| 1				| 1			 |
-~~Actions~~				| 2				| 2			 |
+~~AccountManager~~ 			| 1				| 1			 |
+~~ActionsManager~~				| 2				| 2			 |
 ~~BlockStorageManager~~		| 8				| 8			 |
-~~BlockStorageActions~~	| 7				| 7			 |
-~~Domains~~				| 4				| 4			 |
-DomainRecords 			| 5				| 4			 |
-Droplets 				| 13			| 4			 |
-DropletActions 			| 18			| 0			 |
-FloatingIPs 			| 5				| 0			 |
-~~FloatingIPActions~~	| 4				| 4			 |
-Images 					| 9				| 4			 |
-ImageActions			| 3				| 0			 |
-~~Regions~~				| 1				| 1			 |
-Sizes 					| 1				| 0			 |
-Snapshots 				| 5				| 0			 |
-SSHKeys 				| 5				| 0			 |
-Tags 					| 7				| 5			 |
+~~BlockStorageActionsManager~~	| 7				| 7			 |
+~~DomainsManager~~				| 4				| 4			 |
+DomainRecordsManager 			| 5				| 4			 |
+DropletsManager 				| 13			| 4			 |
+DropletActionsManager 			| 18			| 0			 |
+FloatingIPsManager 			| 5				| 0			 |
+~~FloatingIPActionsManager~~	| 4				| 4			 |
+ImagesManager 					| 9				| 4			 |
+ImageActionsManager			| 3				| 0			 |
+~~RegionsManager~~				| 1				| 1			 |
+SizesManager 					| 1				| 0			 |
+SnapshotsManager 				| 5				| 0			 |
+SSHKeysManager 				| 5				| 0			 |
+TagsManager 					| 7				| 5			 |
 **Total**               | **98**		| **44**	 |
 
 *This does not take into account the docs, tests, and Factory.*

@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Class ImageActions.
+ * Class ImageActionsManager.
  */
-class ImageActions implements RetrieveContract
+class ImageActionsManager implements RetrieveContract
 {
     public function retrieve(ClientInterface $client): ResponseInterface
     {

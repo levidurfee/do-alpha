@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Class DropletActions.
+ * Class DropletActionsManager.
  */
-class DropletActions implements RetrieveContract
+class DropletActionsManager implements RetrieveContract
 {
     public function retrieve(ClientInterface $client): ResponseInterface
     {

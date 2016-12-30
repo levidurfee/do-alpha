@@ -8,7 +8,7 @@ use wappr\DigitalOcean\Contracts\Actions\RetrieveActionContract;
 use wappr\DigitalOcean\Contracts\Requests\ListContract;
 use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 
-class Actions implements ListContract, RetrieveContract
+class ActionsManager implements ListContract, RetrieveContract
 {
     /**
      * @var string The action that you are requesting

@@ -12,9 +12,9 @@ use wappr\DigitalOcean\Contracts\Droplets\DeleteInterface;
 use wappr\DigitalOcean\Contracts\Droplets\RetrieveInterface;
 
 /**
- * Class Droplets.
+ * Class DropletsManager.
  */
-class Droplets implements ListContract, ResourceContract, RetrieveContract
+class DropletsManager implements ListContract, ResourceContract, RetrieveContract
 {
     /**
      * @since 0.1.1

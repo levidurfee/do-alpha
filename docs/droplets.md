@@ -1,4 +1,4 @@
-# Droplets
+# DropletsManager
 
 Below are basic examples of interacting with droplets. Each example assumes you are including an autoloader.
 
@@ -7,10 +7,10 @@ Below are basic examples of interacting with droplets. Each example assumes you 
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Droplets;
+use wappr\DigitalOcean\ActionsManager\DropletsManager;
 
 $client = new Client();
-$droplets = new Droplets();
+$droplets = new DropletsManager();
 $droplets->getAll($client);
 ```
 
@@ -19,11 +19,11 @@ $droplets->getAll($client);
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Droplets;
+use wappr\DigitalOcean\ActionsManager\DropletsManager;
 use wappr\DigitalOcean\Models\Create\CreateRequest;
 
 $client = new Client();
-$droplets = new Droplets();
+$droplets = new DropletsManager();
 $droplet = new CreateRequest('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
 $droplets->create($client, $droplet);
 ```
@@ -35,11 +35,11 @@ $droplets->create($client, $droplet);
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Droplets;
+use wappr\DigitalOcean\ActionsManager\DropletsManager;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveRequest;
 
 $client = new Client();
-$droplets = new Droplets();
+$droplets = new DropletsManager();
 $retrieve = new RetrieveRequest(1234);
 $response = $droplets->retrieve($client, $retrieve);
 ```
@@ -49,11 +49,11 @@ $response = $droplets->retrieve($client, $retrieve);
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Droplets;
+use wappr\DigitalOcean\ActionsManager\DropletsManager;
 use wappr\DigitalOcean\Models\Delete\DeleteRequest;
 
 $client = new Client();
-$droplets = new Droplets();
+$droplets = new DropletsManager();
 $deleteDroplet = new DeleteRequest(1234);
 $droplets->delete($client, $deleteDroplet);
 ```

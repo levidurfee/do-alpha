@@ -14,9 +14,9 @@ use wappr\DigitalOcean\Contracts\DomainRecords\UpdateDomainRecordInterface;
 use wappr\DigitalOcean\DomainRecords\Requests\CreateDomainRecordsRequest;
 
 /**
- * Class DomainRecords.
+ * Class DomainRecordsManager.
  */
-class DomainRecords implements ListContract, ResourceContract, RetrieveContract, UpdateContract
+class DomainRecordsManager implements ListContract, ResourceContract, RetrieveContract, UpdateContract
 {
     /**
      * @var string action

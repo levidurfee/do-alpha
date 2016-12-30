@@ -1,4 +1,4 @@
-# Domains
+# DomainsManager
 
 Below are basic examples of interacting with domains. Each example assumes you are including an autoloader.
 
@@ -7,10 +7,10 @@ Below are basic examples of interacting with domains. Each example assumes you a
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Domains;
+use wappr\DigitalOcean\ActionsManager\DomainsManager;
 use wappr\DigitalOcean\Models\Create\CreateRequest;
 
-$domains = new Domains;
+$domains = new DomainsManager;
 var_dump(
     $domains->create(
         new Client,
@@ -24,10 +24,10 @@ var_dump(
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Domains;
+use wappr\DigitalOcean\ActionsManager\DomainsManager;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveRequest;
 
-$domains = new Domains;
+$domains = new DomainsManager;
 var_dump(
     $domains->retrieve(
         new Client,
@@ -41,9 +41,9 @@ var_dump(
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Domains;
+use wappr\DigitalOcean\ActionsManager\DomainsManager;
 
-$domains = new Domains;
+$domains = new DomainsManager;
 var_dump($domains->getAll(new Client)->getBody()->getContents());
 ```
 
@@ -52,10 +52,10 @@ var_dump($domains->getAll(new Client)->getBody()->getContents());
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Domains;
+use wappr\DigitalOcean\ActionsManager\DomainsManager;
 use wappr\DigitalOcean\Models\Delete\DeleteRequest;
 
-$domains = new Domains;
+$domains = new DomainsManager;
 var_dump(
   $domains->delete(
       new Client,

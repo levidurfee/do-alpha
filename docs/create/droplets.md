@@ -1,13 +1,13 @@
-# Creating Droplets
+# Creating DropletsManager
 
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Droplets;
+use wappr\DigitalOcean\ActionsManager\DropletsManager;
 use wappr\DigitalOcean\Models\Create\CreateRequest;
 
 $client = new Client();
-$droplets = new Droplets();
+$droplets = new DropletsManager();
 $droplet = new CreateRequest('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
 $droplets->create($client, $droplet);
 ```
@@ -29,7 +29,7 @@ You can set additional properties when creating new droplets.
 * Private Networking
 * User Data
 * Volumes
-* Tags
+* TagsManager
 
 ## Methods
 

@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Requests\ListContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Class Sizes.
+ * Class SizesManager.
  */
-class Sizes implements ListContract
+class SizesManager implements ListContract
 {
     public function getAll(ClientInterface $client): ResponseInterface
     {

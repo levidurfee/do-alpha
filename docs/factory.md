@@ -14,25 +14,25 @@ for the API to process the request.
 <?php
 require_once 'vendor/autoload.php';
 use wappr\DigitalOcean\Factory as Factory;
-Factory::create('Droplets', ['test', 'nyc2', '512mb', 'ubuntu-16-04-x64']);
+Factory::create('DropletsManagerManager', ['test', 'nyc2', '512mb', 'ubuntu-16-04-x64']);
 ```
 
-## List of Supported Actions
+## List of Supported ActionsManager
 
-* Account
-* Actions
-* BlockStorageActions
+* AccountManager
+* ActionsManager
+* BlockStorageActionsManager
 * BlockStorageManager
-* DomainRecords
-* Domains
-* DropletActions
-* Droplets
-* FloatingIPActions
-* FloatingIPs
-* ImageActions
-* Images
-* Regions
-* Sizes
-* Snapshots
-* SSHKeys
-* Tags
+* DomainRecordsManager
+* DomainsManager
+* DropletActionsManager
+* DropletsManager
+* FloatingIPActionsManager
+* FloatingIPsManager
+* ImageActionsManager
+* ImagesManager
+* RegionsManager
+* SizesManager
+* SnapshotsManager
+* SSHKeysManager
+* TagsManager

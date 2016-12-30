@@ -14,9 +14,9 @@ use wappr\DigitalOcean\Contracts\Tags\RetrieveTagInterface;
 use wappr\DigitalOcean\Contracts\Tags\UpdateTagInterface;
 
 /**
- * Class Tags.
+ * Class TagsManager.
  */
-class Tags implements ListContract, ResourceContract, RetrieveContract, UpdateContract
+class TagsManager implements ListContract, ResourceContract, RetrieveContract, UpdateContract
 {
     /**
      * @var string

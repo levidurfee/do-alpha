@@ -7,7 +7,7 @@ Below are basic examples of interacting with block storage. Each example assumes
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\BlockStorageManager;
+use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
 
 $client = new Client;
 $blockStorage = new BlockStorageManager;
@@ -20,7 +20,7 @@ var_dump($response->getBody()->getContents());
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\BlockStorageManager;
+use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
 use wappr\DigitalOcean\Models\Create\CreateRequest;
 
 $client = new Client;
@@ -37,7 +37,7 @@ var_dump($response->getBody()->getContents());
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\BlockStorageManager;
+use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveRequest;
 
 $client = new Client;
@@ -52,7 +52,7 @@ var_dump($response->getBody()->getContents());
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\BlockStorageManager;
+use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
 use wappr\DigitalOcean\Models\Delete\DeleteRequest;
 
 $client = new Client;
@@ -67,7 +67,7 @@ var_dump($response->getStatusCode());
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\BlockStorageManager;
+use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveByNameRequest;
 $blockStorage = new BlockStorageManager;
 $response = $blockStorage->retrieveByName(

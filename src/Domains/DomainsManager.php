@@ -12,9 +12,9 @@ use wappr\DigitalOcean\Contracts\Domains\DeleteDomainInterface;
 use wappr\DigitalOcean\Contracts\Domains\RetrieveDomainInterface;
 
 /**
- * Class Domains.
+ * Class DomainsManager.
  */
-class Domains implements ListContract, ResourceContract, RetrieveContract
+class DomainsManager implements ListContract, ResourceContract, RetrieveContract
 {
     /**
      * @var string

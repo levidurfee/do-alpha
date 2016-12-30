@@ -120,7 +120,7 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
     public function getSnapshots(ClientInterface $client, RetrieveSnapshotsInterface $blockStorageSnapshots = null): ResponseInterface
     {
         if ($blockStorageSnapshots == null) {
-            throw new \InvalidArgumentException('Retrieve Block Storage Snapshots model required.');
+            throw new \InvalidArgumentException('Retrieve Block Storage SnapshotsManager model required.');
         }
 
         return $client->get($this->action.'/'.$blockStorageSnapshots->getVolumeId().'/snapshots');

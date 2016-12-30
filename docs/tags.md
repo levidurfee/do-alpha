@@ -1,4 +1,4 @@
-# Droplets
+# DropletsManager
 
 Below are basic examples of interacting with tags. Each example assumes you are including an autoloader.
 
@@ -7,9 +7,9 @@ Below are basic examples of interacting with tags. Each example assumes you are 
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Tags;
+use wappr\DigitalOcean\ActionsManager\TagsManager;
 
-$tags = new Tags;
+$tags = new TagsManager;
 var_dump(
     $tags->getAll(new Client)->getBody()->getContents()
 );
@@ -20,10 +20,10 @@ var_dump(
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Tags;
+use wappr\DigitalOcean\ActionsManager\TagsManager;
 use wappr\DigitalOcean\Models\Create\CreateTagRequest;
 
-$tags = new Tags;
+$tags = new TagsManager;
 var_dump(
     $tags->create(
         new Client,
@@ -38,10 +38,10 @@ var_dump(
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Tags;
+use wappr\DigitalOcean\ActionsManager\TagsManager;
 use wappr\DigitalOcean\Models\Delete\DeleteTagRequest;
 
-$tags = new Tags;
+$tags = new TagsManager;
 var_dump(
     $tags->create(
         new Client,
@@ -56,10 +56,10 @@ var_dump(
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Tags;
+use wappr\DigitalOcean\ActionsManager\TagsManager;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveTagRequest;
 
-$tags = new Tags;
+$tags = new TagsManager;
 var_dump(
     $tags->create(
         new Client,
@@ -76,10 +76,10 @@ First parameter is the old tag name and the second parameter is the new tag name
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Tags;
+use wappr\DigitalOcean\ActionsManager\TagsManager;
 use wappr\DigitalOcean\Models\Update\UpdateTagRequest;
 
-$tags = new Tags;
+$tags = new TagsManager;
 var_dump(
     $tags->create(
         new Client,

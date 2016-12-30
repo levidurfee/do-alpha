@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Class Account.
+ * Class AccountManager.
  */
-class Account implements RetrieveContract
+class AccountManager implements RetrieveContract
 {
     /**
      * @param ClientInterface $client

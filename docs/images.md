@@ -1,4 +1,4 @@
-# Images
+# ImagesManager
 
 Below are basic examples of interacting with images. Each example assumes you are including an autoloader.
 
@@ -7,10 +7,10 @@ Below are basic examples of interacting with images. Each example assumes you ar
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Images;
+use wappr\DigitalOcean\ActionsManager\ImagesManager;
 
 $client = new Client;
-$images = new Images;
+$images = new ImagesManager;
 $response = $images->getAll($client);
 $stream = $response->getBody()->getContents();
 var_dump($stream);
@@ -21,11 +21,11 @@ var_dump($stream);
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Images;
+use wappr\DigitalOcean\ActionsManager\ImagesManager;
 use wappr\DigitalOcean\Models\Retrieve\RetrieveImageRequest;
 
 $client = new Client;
-$images = new Images;
+$images = new ImagesManager;
 $image = new RetrieveImageRequest(1234);
 $response = $images->retrieve($client, $image);
 $stream = $response->getBody()->getContents();
@@ -37,11 +37,11 @@ var_dump($stream);
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Images;
+use wappr\DigitalOcean\ActionsManager\ImagesManager;
 use wappr\DigitalOcean\Models\Update\UpdateImageRequests;
 
 $client = new Client;
-$images = new Images;
+$images = new ImagesManager;
 $updateImage = new UpdateImageRequests(1234, 'testing rename api');
 $response = $images->update($client, $updateImage);
 $stream = $response->getBody()->getContents();
@@ -53,11 +53,11 @@ var_dump($stream);
 ```php
 <?php
 use wappr\DigitalOcean\Client;
-use wappr\DigitalOcean\Actions\Images;
+use wappr\DigitalOcean\ActionsManager\ImagesManager;
 use wappr\DigitalOcean\Models\Delete\DeleteImageRequest;
 
 $client = new Client;
-$images = new Images;
+$images = new ImagesManager;
 $deleteImage = new DeleteImageRequest(1234);
 $response = $images->delete($client, $deleteImage);
 var_dump($response->getStatusCode()); // Should return 204 when successful

@@ -4,7 +4,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use wappr\DigitalOcean\Actions\Actions;
+use wappr\DigitalOcean\Actions\ActionsManager;
 use wappr\DigitalOcean\Client\Client as DoClient;
 use wappr\DigitalOcean\Actions\Requests\RetrieveAction;
 
@@ -47,13 +47,13 @@ class ActionsTest extends PHPUnit_Framework_TestCase
      */
     public function testGetActionsFail()
     {
-        $actions = new Actions;
+        $actions = new ActionsManager;
         $response = $actions->retrieve($this->client);
     }
 
     public function testGetActions()
     {
-        $actions = new Actions;
+        $actions = new ActionsManager;
         $retrieveActions = new RetrieveAction(36804636);
         $response = $actions->retrieve($this->client, $retrieveActions);
         $json = json_decode($response->getBody()->getContents());
@@ -99,7 +99,7 @@ class ActionsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $actions = new Actions;
+        $actions = new ActionsManager;
         $response = $actions->getAll($this->client);
         $this->assertEquals($response->getStatusCode(), 200);
     }
@@ -142,7 +142,7 @@ class ActionsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $actions = new Actions;
+        $actions = new ActionsManager;
         $response = $actions->getAll($this->client);
         $this->assertEquals($response->getStatusCode(), 404);
     }

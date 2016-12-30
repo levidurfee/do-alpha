@@ -1,18 +1,17 @@
 <?php
 
-namespace wappr\DigitalOcean\SSHKeys;
+namespace wappr\DigitalOcean\FloatingIPs;
 
 use Psr\Http\Message\ResponseInterface;
 use wappr\DigitalOcean\Contracts\Requests\ListContract;
 use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
 use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
-use wappr\DigitalOcean\Contracts\Requests\UpdateContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Class SSHKeys.
+ * Class FloatingIPsManager.
  */
-class SSHKeys implements ListContract, ResourceContract, RetrieveContract, UpdateContract
+class FloatingIPsManager implements ListContract, ResourceContract, RetrieveContract
 {
     public function getAll(ClientInterface $client): ResponseInterface
     {
@@ -32,10 +31,5 @@ class SSHKeys implements ListContract, ResourceContract, RetrieveContract, Updat
     public function retrieve(ClientInterface $client): ResponseInterface
     {
         // TODO: Implement retrieve() method.
-    }
-
-    public function update(ClientInterface $client): ResponseInterface
-    {
-        // TODO: Implement update() method.
     }
 }

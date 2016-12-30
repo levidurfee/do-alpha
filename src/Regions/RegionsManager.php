@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Requests\ListContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
 
 /**
- * Class Regions.
+ * Class RegionsManager.
  */
-class Regions implements ListContract
+class RegionsManager implements ListContract
 {
     /**
      * List all of the regions that are available.

@@ -12,9 +12,9 @@ use wappr\DigitalOcean\Contracts\FloatingIPActions\RetrieveFloatingIPActionsInte
 use wappr\DigitalOcean\Contracts\FloatingIPActions\UnAssignFloatingIPActionInterface;
 
 /**
- * Class FloatingIPActions.
+ * Class FloatingIPActionsManager.
  */
-class FloatingIPActions implements ListContract, RetrieveContract
+class FloatingIPActionsManager implements ListContract, RetrieveContract
 {
     /**
      * @var string
