@@ -25,13 +25,13 @@ var_dump(
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DomainsManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageRequest;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageBlockStorageRequest;
 
 $domains = new DomainsManager;
 var_dump(
     $domains->retrieve(
         new Client,
-        new RetrieveBlockStorageRequest('example.com')
+        new RetrieveBlockStorageBlockStorageRequest('example.com')
     )->getBody()->getContents()
 );
 ```
@@ -53,13 +53,13 @@ var_dump($domains->getAll(new Client)->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DomainsManager;
-use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
+use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageBlockStorageRequest;
 
 $domains = new DomainsManager;
 var_dump(
   $domains->delete(
       new Client,
-      new DeleteBlockStorageRequest('example.com')
+      new DeleteBlockStorageBlockStorageRequest('example.com')
   )->getStatusCode()
 );
 ```

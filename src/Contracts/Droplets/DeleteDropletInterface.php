@@ -5,16 +5,16 @@ namespace wappr\DigitalOcean\Contracts\Droplets;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface RetrieveInterface.
+ * Interface DeleteDropletInterface.
  */
-interface RetrieveInterface extends ModelInterface
+interface DeleteDropletInterface extends ModelInterface
 {
     /**
-     * RetrieveInterface constructor.
+     * DeleteDropletInterface constructor.
      *
-     * @param int $droplet_id
+     * @param $droplet_id
      */
-    public function __construct(int $droplet_id);
+    public function __construct($droplet_id);
 
     /**
      * @return int

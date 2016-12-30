@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\Droplets\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Droplets\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Droplets\RetrieveDropletInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveBlockStorageRequest.
+ * Class RetrieveBlockStorageBlockStorageRequest.
  */
-class RetrieveDropletRequest extends RequestModel implements ModelInterface, RetrieveInterface
+class RetrieveDropletRequest extends RequestModel implements ModelInterface, RetrieveDropletInterface
 {
     /**
      * @var int
@@ -17,7 +17,7 @@ class RetrieveDropletRequest extends RequestModel implements ModelInterface, Ret
     protected $droplet_id;
 
     /**
-     * RetrieveBlockStorageRequest constructor.
+     * RetrieveBlockStorageBlockStorageRequest constructor.
      *
      * @param int $droplet_id
      */

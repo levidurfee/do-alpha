@@ -7,7 +7,7 @@ use wappr\DigitalOcean\Contracts\Domains\RetrieveDomainInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveBlockStorageRequest.
+ * Class RetrieveBlockStorageBlockStorageRequest.
  */
 class RetrieveDomainRequest extends RequestModel implements ModelInterface, RetrieveDomainInterface
 {

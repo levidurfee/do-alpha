@@ -7,7 +7,7 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 /**
  * Interface RetrieveContract.
  */
-interface RetrieveInterface extends ModelInterface
+interface RetrieveBlockStorageInterface extends ModelInterface
 {
     /**
      * RetrieveContract constructor.

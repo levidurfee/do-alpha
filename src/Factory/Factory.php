@@ -61,7 +61,7 @@ class Factory implements FactoryInterface
         }
 
         // Check if the action class exists and instantiate it.
-        $actionClass = "wappr\\DigitalOcean\\$action\\$action";
+        $actionClass = "wappr\\DigitalOcean\\$action\\$action"."Manager";
         if (! class_exists($actionClass)) {
             throw new \InvalidArgumentException('Action does not exist.');
         }
@@ -75,10 +75,10 @@ class Factory implements FactoryInterface
         // then instantiate it, pass the client and request object to the action method.
         if (count($params) > 1) {
             $requestClass = str_replace(
-                ['Contracts\\', $action],
-                ['', $action.'\\Requests'],
+                ['Contract'],
+                ['Request'],
                 $params[1]->getClass()->name
-            ).'Request';
+            );
 
             // After we get the type, we go ahead and instantiate it then pass the params.
             $request = new ReflectionClass($requestClass);

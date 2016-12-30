@@ -2,14 +2,14 @@
 
 namespace wappr\DigitalOcean\Droplets\Requests;
 
-use wappr\DigitalOcean\Contracts\Droplets\CreateInterface;
+use wappr\DigitalOcean\Contracts\Droplets\CreateDropletInterface;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class CreateBlockStorageRequest.
  */
-class CreateDropletRequest extends RequestModel implements ModelInterface, CreateInterface
+class CreateDropletRequest extends RequestModel implements ModelInterface, CreateDropletInterface
 {
     /**
      * @var string Required

@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Requests\ListContract;
 use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
 use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
-use wappr\DigitalOcean\Contracts\Droplets\CreateInterface;
-use wappr\DigitalOcean\Contracts\Droplets\DeleteInterface;
-use wappr\DigitalOcean\Contracts\Droplets\RetrieveInterface;
+use wappr\DigitalOcean\Contracts\Droplets\CreateDropletInterface;
+use wappr\DigitalOcean\Contracts\Droplets\DeleteDropletInterface;
+use wappr\DigitalOcean\Contracts\Droplets\RetrieveDropletInterface;
 
 /**
  * Class DropletsManager.
@@ -39,13 +39,13 @@ class DropletsManager implements ListContract, ResourceContract, RetrieveContrac
      * @since 0.1.1
      *
      * @param ClientInterface    $client
-     * @param CreateInterface|null $droplet
+     * @param CreateDropletInterface|null $droplet
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function create(ClientInterface $client, CreateInterface $droplet = null): ResponseInterface
+    public function create(ClientInterface $client, CreateDropletInterface $droplet = null): ResponseInterface
     {
         if ($droplet == null) {
             throw new \InvalidArgumentException('Create Droplet model required.');
@@ -58,13 +58,13 @@ class DropletsManager implements ListContract, ResourceContract, RetrieveContrac
      * @since 0.1.1
      *
      * @param ClientInterface             $client
-     * @param DeleteInterface|null $droplet
+     * @param DeleteDropletInterface|null $droplet
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function delete(ClientInterface $client, DeleteInterface $droplet = null): ResponseInterface
+    public function delete(ClientInterface $client, DeleteDropletInterface $droplet = null): ResponseInterface
     {
         if ($droplet == null) {
             throw new \InvalidArgumentException('Delete Droplet model required.');
@@ -77,13 +77,13 @@ class DropletsManager implements ListContract, ResourceContract, RetrieveContrac
      * @since 0.1.1
      *
      * @param ClientInterface               $client
-     * @param RetrieveInterface|null $droplet
+     * @param RetrieveDropletInterface|null $droplet
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function retrieve(ClientInterface $client, RetrieveInterface $droplet = null): ResponseInterface
+    public function retrieve(ClientInterface $client, RetrieveDropletInterface $droplet = null): ResponseInterface
     {
         if ($droplet == null) {
             throw new \InvalidArgumentException('Retrieve Droplet model required.');

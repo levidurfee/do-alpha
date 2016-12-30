@@ -7,7 +7,7 @@ use wappr\DigitalOcean\Contracts\Domains\DeleteDomainInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class DeleteBlockStorageRequest.
+ * Class DeleteBlockStorageBlockStorageRequest.
  */
 class DeleteDomainRequest extends RequestModel implements ModelInterface, DeleteDomainInterface
 {

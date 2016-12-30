@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\Droplets\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Droplets\DeleteInterface;
+use wappr\DigitalOcean\Contracts\Droplets\DeleteDropletInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class DeleteBlockStorageRequest.
+ * Class DeleteBlockStorageBlockStorageRequest.
  */
-class DeleteDropletRequest extends RequestModel implements ModelInterface, DeleteInterface
+class DeleteDropletRequest extends RequestModel implements ModelInterface, DeleteDropletInterface
 {
     /**
      * @var int Required

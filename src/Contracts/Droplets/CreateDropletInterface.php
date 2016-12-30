@@ -5,9 +5,9 @@ namespace wappr\DigitalOcean\Contracts\Droplets;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface CreateBlockStorageContract.
+ * Interface CreateBlockStorageInterface.
  */
-interface CreateInterface extends ModelInterface
+interface CreateDropletInterface extends ModelInterface
 {
     /**
      * Droplet constructor.

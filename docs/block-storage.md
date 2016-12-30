@@ -38,11 +38,11 @@ var_dump($response->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageRequest;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageBlockStorageRequest;
 
 $client = new Client;
 $blockStorage = new BlockStorageManager;
-$retrieveBlockStorage = new RetrieveBlockStorageRequest('long uuid');
+$retrieveBlockStorage = new RetrieveBlockStorageBlockStorageRequest('long uuid');
 $response = $blockStorage->retrieve($client, $retrieveBlockStorage);
 var_dump($response->getBody()->getContents());
 ```
@@ -53,11 +53,11 @@ var_dump($response->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
-use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
+use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageBlockStorageRequest;
 
 $client = new Client;
 $blockStorage = new BlockStorageManager;
-$deleteBlockStorage = new DeleteBlockStorageRequest('long uuid');
+$deleteBlockStorage = new DeleteBlockStorageBlockStorageRequest('long uuid');
 $response = $blockStorage->delete($client, $deleteBlockStorage);
 var_dump($response->getStatusCode());
 ```
