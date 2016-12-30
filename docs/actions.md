@@ -27,11 +27,11 @@ to change this.
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\ActionsManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveAction;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveActionsRequest;
 
 $client = new Client;
 $actions = new Actions;
-$retrieveAction = new RetrieveAction(1234);
+$retrieveAction = new RetrieveActionsRequest(1234);
 $response = $actions->retrieve($client, $retrieveAction);
 var_dump($response->getBody()->getContents());
 ```
@@ -42,10 +42,10 @@ The example above could also be trimmed a couple lines as shown in the example b
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\ActionsManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveAction;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveActionsRequest;
 
 $actions = new Actions;
-$response = $actions->retrieve(new Client, new RetrieveAction(1234));
+$response = $actions->retrieve(new Client, new RetrieveActionsRequest(1234));
 var_dump($response->getBody()->getContents());
 ```
 
@@ -55,9 +55,9 @@ Even that could be simplified into one line (excluding the imports).
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\ActionsManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveAction;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveActionsRequest;
 
-var_dump((new Actions)->retrieve(new Client, new RetrieveAction(1234))->getBody()->getContents());
+var_dump((new Actions)->retrieve(new Client, new RetrieveActionsRequest(1234))->getBody()->getContents());
 ```
 
 Feel free to use the verbose or succinct way of calling the client API.

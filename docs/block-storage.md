@@ -21,11 +21,11 @@ var_dump($response->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
-use wappr\DigitalOcean\Models\Create\CreateRequest;
+use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
 
 $client = new Client;
 $blockStorage = new BlockStorageManager;
-$newBlockStorage = new CreateRequest(10, 'testing', 'description', 'nyc1');
+$newBlockStorage = new CreateBlockStorageRequest(10, 'testing', 'description', 'nyc1');
 $response = $blockStorage->create($client, $newBlockStorage);
 var_dump($response->getBody()->getContents());
 ```
@@ -38,11 +38,11 @@ var_dump($response->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveRequest;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageRequest;
 
 $client = new Client;
 $blockStorage = new BlockStorageManager;
-$retrieveBlockStorage = new RetrieveRequest('long uuid');
+$retrieveBlockStorage = new RetrieveBlockStorageRequest('long uuid');
 $response = $blockStorage->retrieve($client, $retrieveBlockStorage);
 var_dump($response->getBody()->getContents());
 ```
@@ -53,11 +53,11 @@ var_dump($response->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
-use wappr\DigitalOcean\Models\Delete\DeleteRequest;
+use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
 
 $client = new Client;
 $blockStorage = new BlockStorageManager;
-$deleteBlockStorage = new DeleteRequest('long uuid');
+$deleteBlockStorage = new DeleteBlockStorageRequest('long uuid');
 $response = $blockStorage->delete($client, $deleteBlockStorage);
 var_dump($response->getStatusCode());
 ```
@@ -68,11 +68,11 @@ var_dump($response->getStatusCode());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\BlockStorageManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveByNameRequest;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageByNameRequest;
 $blockStorage = new BlockStorageManager;
 $response = $blockStorage->retrieveByName(
     new Client,
-    new RetrieveByNameRequest('testing', 'nyc1')
+    new RetrieveBlockStorageByNameRequest('testing', 'nyc1')
 );
 
 var_dump($response->getBody()->getContents());

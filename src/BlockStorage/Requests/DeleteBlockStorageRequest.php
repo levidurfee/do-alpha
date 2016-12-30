@@ -8,9 +8,9 @@ use wappr\DigitalOcean\Contracts\BlockStorage\DeleteInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class DeleteRequest.
+ * Class DeleteBlockStorageRequest.
  */
-class DeleteRequest extends RequestModel implements ModelInterface, DeleteInterface
+class DeleteBlockStorageRequest extends RequestModel implements ModelInterface, DeleteInterface
 {
     use VolumeID;
 }

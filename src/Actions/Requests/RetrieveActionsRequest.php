@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\Actions\RetrieveActionContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveAction.
+ * Class RetrieveActionsRequest.
  */
-class RetrieveAction extends RequestModel implements ModelInterface, RetrieveActionContract
+class RetrieveActionsRequest extends RequestModel implements ModelInterface, RetrieveActionContract
 {
     /**
      * @var int Required

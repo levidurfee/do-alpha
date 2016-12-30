@@ -6,7 +6,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use wappr\DigitalOcean\FloatingIPActions\FloatingIPActionsManager;
 use wappr\DigitalOcean\Client\Client as DoClient;
-use wappr\DigitalOcean\FloatingIPActions\Requests\AssignFloatingIPRequest;
+use wappr\DigitalOcean\FloatingIPActions\Requests\AssignFloatingIPActionsRequest;
 use wappr\DigitalOcean\FloatingIPActions\Requests\UnAssignFloatingIPActionRequest;
 use wappr\DigitalOcean\FloatingIPActions\Requests\RetrieveFloatingIPActionsRequest;
 use wappr\DigitalOcean\FloatingIPActions\Requests\RetrieveFloatingIPActionRequest;
@@ -64,7 +64,7 @@ class FloatingIPActionsTest extends PHPUnit_Framework_TestCase
         $floatingIPsActions = new FloatingIPActionsManager();
         $response = $floatingIPsActions->assign(
             $client,
-            new AssignFloatingIPRequest('assign', 11111, '1.1.1.1')
+            new AssignFloatingIPActionsRequest('assign', 11111, '1.1.1.1')
         );
         $this->assertEquals($response->getStatusCode(), 200);
     }

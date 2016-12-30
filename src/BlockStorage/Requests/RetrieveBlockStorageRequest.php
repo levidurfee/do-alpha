@@ -8,9 +8,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveInterface;
 
 /**
- * Class RetrieveRequest.
+ * Class RetrieveBlockStorageRequest.
  */
-class RetrieveRequest extends RequestModel implements ModelInterface, RetrieveInterface
+class RetrieveBlockStorageRequest extends RequestModel implements ModelInterface, RetrieveInterface
 {
     use VolumeID;
 }

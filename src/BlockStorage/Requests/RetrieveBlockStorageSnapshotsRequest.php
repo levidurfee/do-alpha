@@ -8,9 +8,9 @@ use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveSnapshotsInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveSnapshotsRequest.
+ * Class RetrieveBlockStorageSnapshotsRequest.
  */
-class RetrieveSnapshotsRequest extends RequestModel implements ModelInterface, RetrieveSnapshotsInterface
+class RetrieveBlockStorageSnapshotsRequest extends RequestModel implements ModelInterface, RetrieveSnapshotsInterface
 {
     use VolumeID;
 }

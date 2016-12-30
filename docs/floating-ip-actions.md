@@ -8,16 +8,16 @@ Below are basic examples of interacting with Floating IP ActionsManager. Each ex
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\FloatingIPActionsManager;
-use wappr\DigitalOcean\Models\Assign\AssignFloatingIPRequest;
+use wappr\DigitalOcean\Models\Assign\AssignFloatingIPActionsRequest;
 
 $floatingIPsActions = new FloatingIPActionsManager;
 $response = $floatingIPsActions->assign(
     new Client,
-    new AssignFloatingIPRequest('assign', 11111, '1.1.1.1')      
+    new AssignFloatingIPActionsRequest('assign', 11111, '1.1.1.1')      
 );
 ```
 
-The `AssignFloatingIPRequest` class construct requires the Type, Droplet ID, and IP.
+The `AssignFloatingIPActionsRequest` class construct requires the Type, Droplet ID, and IP.
 
 ## Un-Assign a Floating IP
 
@@ -55,13 +55,13 @@ $response = $floatingIPsActions->getAll(
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\FloatingIPActionsManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveFloatingIPActionRequest;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveFloatingIPActionsRequest;
 
 $floatingIPsActions = new FloatingIPActionsManager;
 $response = $floatingIPsActions->retrieve(
     new Client,
-    new RetrieveFloatingIPActionRequest('1.1.1.1', 11111)
+    new RetrieveFloatingIPActionsRequest('1.1.1.1', 11111)
 );
 ```
 
-The `RetrieveFloatingIPActionRequest` construct requires the Floating IP and the Action ID.
+The `RetrieveFloatingIPActionsRequest` construct requires the Floating IP and the Action ID.

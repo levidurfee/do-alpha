@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\Domains\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\Domains\RetrieveDomainInterface;
+use wappr\DigitalOcean\Contracts\Domains\DeleteDomainInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveRequest.
+ * Class DeleteBlockStorageRequest.
  */
-class RetrieveRequest extends RequestModel implements ModelInterface, RetrieveDomainInterface
+class DeleteDomainRequest extends RequestModel implements ModelInterface, DeleteDomainInterface
 {
     /**
      * @var string
@@ -17,7 +17,7 @@ class RetrieveRequest extends RequestModel implements ModelInterface, RetrieveDo
     protected $domain_name;
 
     /**
-     * RetrieveDomainInterface constructor.
+     * DeleteDomainInterface constructor.
      *
      * @param string $domain_name
      */

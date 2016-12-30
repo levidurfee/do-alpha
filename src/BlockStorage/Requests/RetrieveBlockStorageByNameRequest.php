@@ -8,9 +8,9 @@ use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveByNameInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveByNameRequest.
+ * Class RetrieveBlockStorageByNameRequest.
  */
-class RetrieveByNameRequest extends RequestModel implements ModelInterface, RetrieveByNameInterface
+class RetrieveBlockStorageByNameRequest extends RequestModel implements ModelInterface, RetrieveByNameInterface
 {
     use ByName;
 }

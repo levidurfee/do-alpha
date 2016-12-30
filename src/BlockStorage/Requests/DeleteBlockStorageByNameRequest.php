@@ -8,9 +8,9 @@ use wappr\DigitalOcean\Contracts\BlockStorage\DeleteByNameInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class DeleteByNameRequest.
+ * Class DeleteBlockStorageByNameRequest.
  */
-class DeleteByNameRequest extends RequestModel implements ModelInterface, DeleteByNameInterface
+class DeleteBlockStorageByNameRequest extends RequestModel implements ModelInterface, DeleteByNameInterface
 {
     use ByName;
 }

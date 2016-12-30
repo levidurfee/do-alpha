@@ -20,11 +20,11 @@ $droplets->getAll($client);
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DropletsManager;
-use wappr\DigitalOcean\Models\Create\CreateRequest;
+use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
 
 $client = new Client();
 $droplets = new DropletsManager();
-$droplet = new CreateRequest('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
+$droplet = new CreateBlockStorageRequest('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
 $droplets->create($client, $droplet);
 ```
 
@@ -36,11 +36,11 @@ $droplets->create($client, $droplet);
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DropletsManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveRequest;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageRequest;
 
 $client = new Client();
 $droplets = new DropletsManager();
-$retrieve = new RetrieveRequest(1234);
+$retrieve = new RetrieveBlockStorageRequest(1234);
 $response = $droplets->retrieve($client, $retrieve);
 ```
 
@@ -50,10 +50,10 @@ $response = $droplets->retrieve($client, $retrieve);
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DropletsManager;
-use wappr\DigitalOcean\Models\Delete\DeleteRequest;
+use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
 
 $client = new Client();
 $droplets = new DropletsManager();
-$deleteDroplet = new DeleteRequest(1234);
+$deleteDroplet = new DeleteBlockStorageRequest(1234);
 $droplets->delete($client, $deleteDroplet);
 ```

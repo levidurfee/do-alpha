@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveAllBlockStorageActi
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveAllBlockStorageActionsRequest.
+ * Class RetrieveBlockStorageActionsAllRequest.
  */
-class RetrieveAllBlockStorageActionsRequest extends RequestModel implements ModelInterface, RetrieveAllBlockStorageActionsInterface
+class RetrieveBlockStorageActionsAllRequest extends RequestModel implements ModelInterface, RetrieveAllBlockStorageActionsInterface
 {
     /**
      * @var string

@@ -4,11 +4,11 @@
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DropletsManager;
-use wappr\DigitalOcean\Models\Create\CreateRequest;
+use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
 
 $client = new Client();
 $droplets = new DropletsManager();
-$droplet = new CreateRequest('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
+$droplet = new CreateBlockStorageRequest('testing', 'nyc3', '512mb', 'ubuntu-14-04-x64');
 $droplets->create($client, $droplet);
 ```
 

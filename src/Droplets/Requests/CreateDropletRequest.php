@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class CreateRequest.
+ * Class CreateBlockStorageRequest.
  */
-class CreateRequest extends RequestModel implements ModelInterface, CreateInterface
+class CreateDropletRequest extends RequestModel implements ModelInterface, CreateInterface
 {
     /**
      * @var string Required

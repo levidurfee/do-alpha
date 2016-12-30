@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\BlockStorageActions\RemoveByNameBlockStorageAct
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RemoveByNameBlockStorageActionsRequest.
+ * Class RemoveBlockStorageActionsByNameRequest.
  */
-class RemoveByNameBlockStorageActionsRequest extends RequestModel implements ModelInterface, RemoveByNameBlockStorageActionsInterface
+class RemoveBlockStorageActionsByNameRequest extends RequestModel implements ModelInterface, RemoveByNameBlockStorageActionsInterface
 {
     /**
      * @var string
@@ -32,7 +32,7 @@ class RemoveByNameBlockStorageActionsRequest extends RequestModel implements Mod
     protected $region;
 
     /**
-     * RemoveByNameBlockStorageActionsRequest constructor.
+     * RemoveBlockStorageActionsByNameRequest constructor.
      *
      * @param int    $droplet_id
      * @param string $volume_name

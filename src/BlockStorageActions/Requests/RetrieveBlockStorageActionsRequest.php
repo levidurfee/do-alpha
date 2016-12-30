@@ -7,7 +7,7 @@ use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveBlockStorageActions
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class RetrieveBlockStorageActionsRequest.
+ * Class RetrieveBlockStorageRequest.
  */
 class RetrieveBlockStorageActionsRequest extends RequestModel implements ModelInterface, RetrieveBlockStorageActionsInterface
 {

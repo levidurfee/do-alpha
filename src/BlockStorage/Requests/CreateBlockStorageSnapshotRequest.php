@@ -6,7 +6,7 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\BlockStorage\CreateSnapshotInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
-class CreateSnapshotRequest extends RequestModel implements ModelInterface, CreateSnapshotInterface
+class CreateBlockStorageSnapshotRequest extends RequestModel implements ModelInterface, CreateSnapshotInterface
 {
     /**
      * @var string

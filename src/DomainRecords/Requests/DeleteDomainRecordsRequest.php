@@ -7,9 +7,9 @@ use wappr\DigitalOcean\Contracts\DomainRecords\DeleteDomainRecordInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
- * Class DeleteDomainRecordRequest.
+ * Class DeleteDomainRecordsRequest.
  */
-class DeleteDomainRecordRequest extends RequestModel implements ModelInterface, DeleteDomainRecordInterface
+class DeleteDomainRecordsRequest extends RequestModel implements ModelInterface, DeleteDomainRecordInterface
 {
     /**
      * @var int
@@ -22,7 +22,7 @@ class DeleteDomainRecordRequest extends RequestModel implements ModelInterface, 
     protected $domainName;
 
     /**
-     * DeleteDomainRecordRequest constructor.
+     * DeleteDomainRecordsRequest constructor.
      *
      * @param string $domainName
      * @param int    $recordId

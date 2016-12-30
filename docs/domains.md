@@ -8,13 +8,13 @@ Below are basic examples of interacting with domains. Each example assumes you a
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DomainsManager;
-use wappr\DigitalOcean\Models\Create\CreateRequest;
+use wappr\DigitalOcean\Models\Create\CreateBlockStorageRequest;
 
 $domains = new DomainsManager;
 var_dump(
     $domains->create(
         new Client,
-        new CreateRequest('example.com', '127.0.0.1')
+        new CreateBlockStorageRequest('example.com', '127.0.0.1')
     )->getBody()->getContents()
 );
 ```
@@ -25,13 +25,13 @@ var_dump(
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DomainsManager;
-use wappr\DigitalOcean\Models\Retrieve\RetrieveRequest;
+use wappr\DigitalOcean\Models\Retrieve\RetrieveBlockStorageRequest;
 
 $domains = new DomainsManager;
 var_dump(
     $domains->retrieve(
         new Client,
-        new RetrieveRequest('example.com')
+        new RetrieveBlockStorageRequest('example.com')
     )->getBody()->getContents()
 );
 ```
@@ -53,13 +53,13 @@ var_dump($domains->getAll(new Client)->getBody()->getContents());
 <?php
 use wappr\DigitalOcean\Client;
 use wappr\DigitalOcean\ActionsManager\DomainsManager;
-use wappr\DigitalOcean\Models\Delete\DeleteRequest;
+use wappr\DigitalOcean\Models\Delete\DeleteBlockStorageRequest;
 
 $domains = new DomainsManager;
 var_dump(
   $domains->delete(
       new Client,
-      new DeleteRequest('example.com')
+      new DeleteBlockStorageRequest('example.com')
   )->getStatusCode()
 );
 ```

@@ -6,7 +6,7 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 use wappr\DigitalOcean\Contracts\FloatingIPActions\AssignFloatingIPInterface;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
-class AssignFloatingIPRequest extends RequestModel implements ModelInterface, AssignFloatingIPInterface
+class AssignFloatingIPActionsRequest extends RequestModel implements ModelInterface, AssignFloatingIPInterface
 {
     /**
      * @var int
@@ -22,7 +22,7 @@ class AssignFloatingIPRequest extends RequestModel implements ModelInterface, As
     protected $ip;
 
     /**
-     * AssignFloatingIPRequest constructor.
+     * AssignFloatingIPActionsRequest constructor.
      *
      * @param string $type
      * @param int    $droplet_id

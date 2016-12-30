@@ -5,12 +5,12 @@ namespace wappr\DigitalOcean\Contracts\BlockStorage;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface CreateInterface.
+ * Interface CreateBlockStorageContract.
  */
-interface CreateInterface extends ModelInterface
+interface CreateBlockStorageContract extends ModelInterface
 {
     /**
-     * CreateInterface constructor.
+     * CreateBlockStorageContract constructor.
      *
      * @param $size_gigabytes int
      * @param $name string

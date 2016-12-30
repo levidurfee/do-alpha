@@ -3,7 +3,7 @@
 namespace wappr\DigitalOcean\BlockStorage;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\CreateInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageContract;
 use wappr\DigitalOcean\Contracts\Requests\ListContract;
 use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
 use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
@@ -37,13 +37,13 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
 
     /**
      * @param ClientInterface                  $client
-     * @param CreateInterface|null $blockStorage
+     * @param CreateBlockStorageContract|null $blockStorage
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function create(ClientInterface $client, CreateInterface $blockStorage = null): ResponseInterface
+    public function create(ClientInterface $client, CreateBlockStorageContract $blockStorage = null): ResponseInterface
     {
         if ($blockStorage == null) {
             throw new \InvalidArgumentException('Block Storage model required.');
