@@ -69,7 +69,7 @@ class CreateDropletRequest extends RequestModel implements ModelInterface, Creat
     /**
      * @var bool Optional
      */
-    protected $install_agent;
+    protected $monitoring;
 
     /**
      * Droplet constructor.
@@ -144,10 +144,10 @@ class CreateDropletRequest extends RequestModel implements ModelInterface, Creat
     }
 
     /**
-     * @param bool $install_agent
+     * @param bool $monitoring
      */
-    public function setInstallAgent(bool $install_agent)
+    public function setMonitoring(bool $monitoring)
     {
-        $this->install_agent = $install_agent;
+        $this->monitoring = $monitoring;
     }
 }

@@ -55,7 +55,7 @@ interface CreateDropletInterface extends ModelInterface
     public function setTags(array $tags);
 
     /**
-     * @param bool $install_agent
+     * @param bool $monitoring
      */
-    public function setInstallAgent(bool $install_agent);
+    public function setMonitoring(bool $monitoring);
 }
