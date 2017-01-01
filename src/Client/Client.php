@@ -82,7 +82,7 @@ class Client implements ClientInterface
                 'headers' => [
                     'User-Agent' => 'wappr\digitalocean:'.$this->version,
                 ],
-            ]);
+            );
         } catch (RequestException $e) {
             $response = $e->getResponse();
         }
