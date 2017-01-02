@@ -11,7 +11,7 @@ use wappr\DigitalOcean\Contracts\ModelInterface;
 /**
  * Class Client.
  *
- * @version 0.9.0
+ * @version 0.10.0
  *
  * @author Levi Durfee <levi.durfee@gmail.com>
  */
@@ -20,7 +20,7 @@ class Client implements ClientInterface
     /**
      * @var string Current version
      */
-    protected $version = '0.9.0';
+    protected $version = '0.10.0';
 
     /**
      * @var string DigitalOcean API URL
