@@ -128,6 +128,14 @@ class CreateDropletRequest extends RequestModel implements ModelInterface, Creat
     }
 
     /**
+     * @param string $filename
+     */
+    public function setUserDataFromFile(string $filename)
+    {
+        $this->user_data = file_get_contents($filename);
+    }
+
+    /**
      * @param array $volumes
      */
     public function setVolumes(array $volumes)
