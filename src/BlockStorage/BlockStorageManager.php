@@ -3,17 +3,17 @@
 namespace wappr\DigitalOcean\BlockStorage;
 
 use Psr\Http\Message\ResponseInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageContract;
 use wappr\DigitalOcean\Contracts\Requests\ListContract;
 use wappr\DigitalOcean\Contracts\Requests\ResourceContract;
 use wappr\DigitalOcean\Contracts\Requests\RetrieveContract;
 use wappr\DigitalOcean\Contracts\Client\ClientInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\CreateSnapshotInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\DeleteByNameInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\DeleteBlockStorageInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveByNameInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveBlockStorageInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveSnapshotsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateSnapshotContract;
+use wappr\DigitalOcean\Contracts\BlockStorage\DeleteByNameContract;
+use wappr\DigitalOcean\Contracts\BlockStorage\DeleteBlockStorageContract;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveByNameContract;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveBlockStorageContract;
+use wappr\DigitalOcean\Contracts\BlockStorage\RetrieveSnapshotsContract;
 
 /**
  * Class BlockStorageManager.
@@ -37,13 +37,13 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
 
     /**
      * @param ClientInterface                  $client
-     * @param CreateBlockStorageInterface|null $blockStorage
+     * @param CreateBlockStorageContract|null $blockStorage
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function create(ClientInterface $client, CreateBlockStorageInterface $blockStorage = null): ResponseInterface
+    public function create(ClientInterface $client, CreateBlockStorageContract $blockStorage = null): ResponseInterface
     {
         if ($blockStorage == null) {
             throw new \InvalidArgumentException('Block Storage model required.');
@@ -54,13 +54,13 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
 
     /**
      * @param ClientInterface                  $client
-     * @param DeleteBlockStorageInterface|null $deleteBlockStorage
+     * @param DeleteBlockStorageContract|null $deleteBlockStorage
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function delete(ClientInterface $client, DeleteBlockStorageInterface $deleteBlockStorage = null): ResponseInterface
+    public function delete(ClientInterface $client, DeleteBlockStorageContract $deleteBlockStorage = null): ResponseInterface
     {
         if ($deleteBlockStorage == null) {
             throw new \InvalidArgumentException('Delete Block Storage model required.');
@@ -73,13 +73,13 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
      * Retrieve Block Storage volume information using the drive id (uuid).
      *
      * @param ClientInterface                    $client
-     * @param RetrieveBlockStorageInterface|null $blockStorage
+     * @param RetrieveBlockStorageContract|null $blockStorage
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function retrieve(ClientInterface $client, RetrieveBlockStorageInterface $blockStorage = null): ResponseInterface
+    public function retrieve(ClientInterface $client, RetrieveBlockStorageContract $blockStorage = null): ResponseInterface
     {
         if ($blockStorage == null) {
             throw new \InvalidArgumentException('Retrieve Block Storage model required.');
@@ -92,13 +92,13 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
      * Retrieve Block Storage volume information using the name and region.
      *
      * @param ClientInterface                     $client
-     * @param RetrieveByNameInterface $blockStorageByName
+     * @param RetrieveByNameContract $blockStorageByName
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function retrieveByName(ClientInterface $client, RetrieveByNameInterface $blockStorageByName): ResponseInterface
+    public function retrieveByName(ClientInterface $client, RetrieveByNameContract $blockStorageByName): ResponseInterface
     {
         if ($blockStorageByName == null) {
             throw new \InvalidArgumentException('Retrieve Block Storage By Name model required.');
@@ -111,13 +111,13 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
      * List snapshots for a volume.
      *
      * @param ClientInterface                             $client
-     * @param RetrieveSnapshotsInterface|null $blockStorageSnapshots
+     * @param RetrieveSnapshotsContract|null $blockStorageSnapshots
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function getSnapshots(ClientInterface $client, RetrieveSnapshotsInterface $blockStorageSnapshots = null): ResponseInterface
+    public function getSnapshots(ClientInterface $client, RetrieveSnapshotsContract $blockStorageSnapshots = null): ResponseInterface
     {
         if ($blockStorageSnapshots == null) {
             throw new \InvalidArgumentException('Retrieve Block Storage SnapshotsManager model required.');
@@ -130,13 +130,13 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
      * Create a snapshot from a volume.
      *
      * @param ClientInterface                          $client
-     * @param CreateSnapshotInterface|null $blockStorageSnapshot
+     * @param CreateSnapshotContract|null $blockStorageSnapshot
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function createSnapshot(ClientInterface $client, CreateSnapshotInterface $blockStorageSnapshot = null): ResponseInterface
+    public function createSnapshot(ClientInterface $client, CreateSnapshotContract $blockStorageSnapshot = null): ResponseInterface
     {
         if ($blockStorageSnapshot == null) {
             throw new \InvalidArgumentException('Create Block Storage Snapshot model required.');
@@ -149,13 +149,13 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
      * Delete a volume by name.
      *
      * @param ClientInterface                        $client
-     * @param DeleteByNameInterface|null $blockStorageByName
+     * @param DeleteByNameContract|null $blockStorageByName
      *
      * @return ResponseInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function deleteVolumeByName(ClientInterface $client, DeleteByNameInterface $blockStorageByName = null): ResponseInterface
+    public function deleteVolumeByName(ClientInterface $client, DeleteByNameContract $blockStorageByName = null): ResponseInterface
     {
         if ($blockStorageByName == null) {
             throw new \InvalidArgumentException('Delete Block Storage by name model required.');

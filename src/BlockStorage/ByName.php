@@ -15,7 +15,7 @@ trait ByName
     protected $region;
 
     /**
-     * RetrieveByNameInterface constructor.
+     * RetrieveByNameContract constructor.
      *
      * @param string $name
      * @param string $region

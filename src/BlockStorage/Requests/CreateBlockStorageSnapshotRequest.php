@@ -3,10 +3,10 @@
 namespace wappr\DigitalOcean\BlockStorage\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\CreateSnapshotInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateSnapshotContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
-class CreateBlockStorageSnapshotRequest extends RequestModel implements ModelInterface, CreateSnapshotInterface
+class CreateBlockStorageSnapshotRequest extends RequestModel implements ModelInterface, CreateSnapshotContract
 {
     /**
      * @var string
@@ -19,7 +19,7 @@ class CreateBlockStorageSnapshotRequest extends RequestModel implements ModelInt
     protected $name;
 
     /**
-     * CreateSnapshotInterface constructor.
+     * CreateSnapshotRequest constructor.
      *
      * @param string $volume_id
      * @param string $name
