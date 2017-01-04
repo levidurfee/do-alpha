@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\BlockStorage\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageInterface;
+use wappr\DigitalOcean\Contracts\BlockStorage\CreateBlockStorageContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class CreateBlockStorageRequest.
  */
-class CreateBlockStorageRequest extends RequestModel implements ModelInterface, CreateBlockStorageInterface
+class CreateBlockStorageRequest extends RequestModel implements ModelInterface, CreateBlockStorageContract
 {
     /**
      * @var int Required

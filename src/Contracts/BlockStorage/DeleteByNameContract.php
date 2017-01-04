@@ -5,12 +5,12 @@ namespace wappr\DigitalOcean\Contracts\BlockStorage;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface RetrieveByNameInterface.
+ * Interface DeleteByNameContract.
  */
-interface RetrieveByNameInterface extends ModelInterface
+interface DeleteByNameContract extends ModelInterface
 {
     /**
-     * RetrieveByNameInterface constructor.
+     * DeleteByNameContract constructor.
      *
      * @param string $name
      * @param string $region
