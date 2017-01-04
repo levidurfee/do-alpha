@@ -1,7 +1,7 @@
 # DigitalOcean API client
 
 [![Build Status](https://travis-ci.org/wappr/digitalocean.svg?branch=master)](https://travis-ci.org/wappr/digitalocean)
-[![v0.8.0](https://img.shields.io/badge/version-v0.8.0-orange.svg)](https://packagist.org/packages/wappr/digitalocean)
+[![v0.10.0](https://img.shields.io/badge/version-v0.10.0-orange.svg)](https://packagist.org/packages/wappr/digitalocean)
 
 A [DigitalOcean](https://m.do.co/c/97ced4f9088d) PHP 7 client that uses [Guzzle](https://github.com/guzzle/guzzle) by default.
 

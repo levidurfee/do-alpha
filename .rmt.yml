@@ -1,6 +1,0 @@
-vcs: git
-version-generator: semantic
-version-persister:
-    name: vcs-tag
-    tag-prefix : "v_"
-post-release-actions: [vcs-publish]
