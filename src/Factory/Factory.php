@@ -71,24 +71,25 @@ class Factory implements FactoryInterface
         $actionClass = new ReflectionClass($actionClass);
         $params = $actionClass->getMethod($actionMethod)->getParameters();
 
-        // If the method requires a request object then create a string that represents the namespace and class
-        // then instantiate it, pass the client and request object to the action method.
-        if (count($params) > 1) {
-            $requestClass = str_replace(
-                ['Contract'],
-                ['Request'],
-                $params[1]->getClass()->name
-            );
-
-            // After we get the type, we go ahead and instantiate it then pass the params.
-            $request = new ReflectionClass($requestClass);
-            $requestObject = $request->newInstanceArgs($requestParams);
-
-            // Using the action class, call the method with the client and request object params.
-            return $actionObject->{$actionMethod}($client, $requestObject);
+        // If the method does NOT require a request object, call the method and pass the client.
+        if (count($params) == 1) {
+            return $actionObject->{$actionMethod}($client);
         }
 
-        return $actionObject->{$actionMethod}($client);
+        // If the method requires a request object then create a string that represents the namespace and class
+        // then instantiate it, pass the client and request object to the action method.
+        $requestClass = str_replace(
+            ['Contract'],
+            ['Request'],
+            $params[1]->getClass()->name
+        );
+
+        // After we get the type, we go ahead and instantiate it then pass the params.
+        $request = new ReflectionClass($requestClass);
+        $requestObject = $request->newInstanceArgs($requestParams);
+
+        // Using the action class, call the method with the client and request object params.
+        return $actionObject->{$actionMethod}($client, $requestObject);
     }
 
     /**
