@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachBlockStorageActionsContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class AttachBlockStorageActionsRequest.
  */
-class AttachBlockStorageActionsRequest extends RequestModel implements ModelInterface, AttachBlockStorageActionsInterface
+class AttachBlockStorageActionsRequest extends RequestModel implements ModelInterface, AttachBlockStorageActionsContract
 {
     /**
      * @var string
@@ -27,7 +27,7 @@ class AttachBlockStorageActionsRequest extends RequestModel implements ModelInte
     protected $type = 'attach';
 
     /**
-     * AttachBlockStorageActionsInterface constructor.
+     * AttachBlockStorageActionsContract constructor.
      *
      * @param string $volume_id
      * @param int    $droplet_id

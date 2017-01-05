@@ -5,12 +5,12 @@ namespace wappr\DigitalOcean\Contracts\BlockStorageActions;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface RemoveByNameBlockStorageActionsInterface.
+ * Interface AttachByNameBlockStorageActionsContract.
  */
-interface RemoveByNameBlockStorageActionsInterface extends ModelInterface
+interface AttachByNameBlockStorageActionsContract extends ModelInterface
 {
     /**
-     * RemoveByNameBlockStorageActionsInterface constructor.
+     * AttachByNameBlockStorageActionsContract constructor.
      *
      * @param int    $droplet_id
      * @param string $volume_name

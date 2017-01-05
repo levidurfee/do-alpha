@@ -2,13 +2,15 @@
 
 namespace wappr\DigitalOcean\Contracts\BlockStorageActions;
 
+use wappr\DigitalOcean\Contracts\ModelInterface;
+
 /**
- * Interface RetrieveBlockStorageActionsInterface.
+ * Interface RetrieveBlockStorageActionsContract.
  */
-interface RetrieveBlockStorageActionsInterface
+interface RetrieveBlockStorageActionsContract extends ModelInterface
 {
     /**
-     * RetrieveBlockStorageActionsInterface constructor.
+     * RetrieveBlockStorageActionsContract constructor.
      *
      * @param string $volume_id Required
      * @param int    $action_id Required

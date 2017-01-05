@@ -5,12 +5,12 @@ namespace wappr\DigitalOcean\Contracts\BlockStorageActions;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface ResizeBlockStorageActionsInterface.
+ * Interface ResizeBlockStorageActionsContract.
  */
-interface ResizeBlockStorageActionsInterface extends ModelInterface
+interface ResizeBlockStorageActionsContract extends ModelInterface
 {
     /**
-     * ResizeBlockStorageActionsInterface constructor.
+     * ResizeBlockStorageActionsContract constructor.
      *
      * @param string $volume_id
      * @param int    $size_gigabytes

@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\BlockStorageActions\ResizeBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\ResizeBlockStorageActionsContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class ResizeBlockStorageActionsRequest.
  */
-class ResizeBlockStorageActionsRequest extends RequestModel implements ModelInterface, ResizeBlockStorageActionsInterface
+class ResizeBlockStorageActionsRequest extends RequestModel implements ModelInterface, ResizeBlockStorageActionsContract
 {
     /**
      * @var string
@@ -32,7 +32,7 @@ class ResizeBlockStorageActionsRequest extends RequestModel implements ModelInte
     protected $region;
 
     /**
-     * ResizeBlockStorageActionsInterface constructor.
+     * ResizeBlockStorageActionsContract constructor.
      *
      * @param string $volume_id
      * @param int    $size_gigabytes

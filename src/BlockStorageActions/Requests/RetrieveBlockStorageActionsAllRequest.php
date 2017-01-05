@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveAllBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\RetrieveAllBlockStorageActionsContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class RetrieveBlockStorageActionsAllRequest.
  */
-class RetrieveBlockStorageActionsAllRequest extends RequestModel implements ModelInterface, RetrieveAllBlockStorageActionsInterface
+class RetrieveBlockStorageActionsAllRequest extends RequestModel implements ModelInterface, RetrieveAllBlockStorageActionsContract
 {
     /**
      * @var string
@@ -17,7 +17,7 @@ class RetrieveBlockStorageActionsAllRequest extends RequestModel implements Mode
     protected $volume_id;
 
     /**
-     * RetrieveAllBlockStorageActionsInterface constructor.
+     * RetrieveAllBlockStorageActionsContract constructor.
      *
      * @param string $volume_id
      */

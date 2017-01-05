@@ -5,18 +5,17 @@ namespace wappr\DigitalOcean\Contracts\BlockStorageActions;
 use wappr\DigitalOcean\Contracts\ModelInterface;
 
 /**
- * Interface RemoveBlockStorageActionsInterface.
+ * Interface AttachBlockStorageActionsContract.
  */
-interface RemoveBlockStorageActionsInterface extends ModelInterface
+interface AttachBlockStorageActionsContract extends ModelInterface
 {
     /**
-     * RemoveBlockStorageActionsInterface constructor.
+     * AttachBlockStorageActionsContract constructor.
      *
      * @param string $volume_id
      * @param int    $droplet_id
-     * @param string $region
      */
-    public function __construct(string $volume_id, int $droplet_id, string $region);
+    public function __construct(string $volume_id, int $droplet_id);
 
     /**
      * @return string

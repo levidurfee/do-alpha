@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachByNameBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\AttachByNameBlockStorageActionsContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class AttachBlockStorageActionsByNameRequest.
  */
-class AttachBlockStorageActionsByNameRequest extends RequestModel implements ModelInterface, AttachByNameBlockStorageActionsInterface
+class AttachBlockStorageActionsByNameRequest extends RequestModel implements ModelInterface, AttachByNameBlockStorageActionsContract
 {
     /**
      * @var string
@@ -32,7 +32,7 @@ class AttachBlockStorageActionsByNameRequest extends RequestModel implements Mod
     protected $region;
 
     /**
-     * AttachByNameBlockStorageActionsInterface constructor.
+     * AttachByNameBlockStorageActionsContract constructor.
      *
      * @param int    $droplet_id
      * @param string $volume_name

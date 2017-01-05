@@ -3,13 +3,13 @@
 namespace wappr\DigitalOcean\BlockStorageActions\Requests;
 
 use wappr\DigitalOcean\Contracts\ModelInterface;
-use wappr\DigitalOcean\Contracts\BlockStorageActions\RemoveBlockStorageActionsInterface;
+use wappr\DigitalOcean\Contracts\BlockStorageActions\RemoveBlockStorageActionsContract;
 use wappr\DigitalOcean\Contracts\Requests\RequestModel;
 
 /**
  * Class RemoveBlockStorageActionsRequest.
  */
-class RemoveBlockStorageActionsRequest extends RequestModel implements ModelInterface, RemoveBlockStorageActionsInterface
+class RemoveBlockStorageActionsRequest extends RequestModel implements ModelInterface, RemoveBlockStorageActionsContract
 {
     /**
      * @var string
@@ -32,7 +32,7 @@ class RemoveBlockStorageActionsRequest extends RequestModel implements ModelInte
     protected $region;
 
     /**
-     * RemoveBlockStorageActionsInterface constructor.
+     * RemoveBlockStorageActionsContract constructor.
      *
      * @param string $volume_id
      * @param int    $droplet_id
