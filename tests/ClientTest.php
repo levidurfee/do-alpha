@@ -1,9 +1,10 @@
 <?php
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use wappr\digitalocean\Client;
 use wappr\digitalocean\Droplets;
 use wappr\digitalocean\Requests\Droplets\CreateDroplet;
 
@@ -19,8 +20,8 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
         $handler = HandlerStack::create($mock);
 
-        $client = new \wappr\digitalocean\Client();
-        $client->httpClient = new Client(['handler' => $handler]);
+        $client = new Client();
+        $client->httpClient = new GuzzleClient(['handler' => $handler]);
 
         $droplets = new Droplets($client);
         $droplets->create(new CreateDroplet('deleteme', 'nyc1', '512mb', 'ubuntu-14-04-x64'));
