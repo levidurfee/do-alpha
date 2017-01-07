@@ -6,11 +6,9 @@
   "keywords": ["digitalocean", "vps"],
   "autoload": {
     "psr-4": {
-      "wappr\\digitalocean\\": "src/"
+      "wappr\\digitalocean\\": "src/",
+      "files": ["src/helpers.php"]
     }
-  },
-  "autoload": {
-    "files": ["src/helpers.php"]
   },
   "require": {
     "php": ">=5.6",
