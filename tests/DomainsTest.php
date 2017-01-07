@@ -40,7 +40,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $domains = new DomainsManager;
+        $domains = new DomainsManager();
         $response = $domains->getAll($client);
         $this->assertEquals($response->getStatusCode(), 200);
     }
@@ -63,7 +63,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $domains = new DomainsManager;
+        $domains = new DomainsManager();
         $domain = new CreateDomainRequest('example.com', '127.0.0.1');
         $response = $domains->create($client, $domain);
         $this->assertEquals($response->getStatusCode(), 200);
@@ -87,7 +87,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $domains = new DomainsManager;
+        $domains = new DomainsManager();
         $retrieve = new RetrieveDomainRequest('example.com');
         $response = $domains->retrieve($client, $retrieve);
         $this->assertEquals($response->getStatusCode(), 200);
@@ -108,7 +108,7 @@ class DomainsTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $domains = new DomainsManager;
+        $domains = new DomainsManager();
         $delete = new DeleteDomainRequest('example.com');
         $response = $domains->delete($client, $delete);
         $this->assertEquals($response->getStatusCode(), 204);

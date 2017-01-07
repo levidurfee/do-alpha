@@ -26,7 +26,7 @@ class BlockStorageActionsManager implements RetrieveContract
     /**
      * Attach a volume to a Droplet.
      *
-     * @param ClientInterface                         $client
+     * @param ClientInterface                        $client
      * @param AttachBlockStorageActionsContract|null $attachBlockStorageActions
      *
      * @return ResponseInterface
@@ -47,7 +47,7 @@ class BlockStorageActionsManager implements RetrieveContract
     /**
      * Attach a volume to a Droplet by name.
      *
-     * @param ClientInterface                          $client
+     * @param ClientInterface                         $client
      * @param AttachByNameBlockStorageActionsContract $attachByNameBlockStorageActions
      *
      * @return ResponseInterface
@@ -66,7 +66,7 @@ class BlockStorageActionsManager implements RetrieveContract
     /**
      * Remove a volume from a Droplet.
      *
-     * @param ClientInterface                    $client
+     * @param ClientInterface                   $client
      * @param RemoveBlockStorageActionsContract $removeBlockStorageActions
      *
      * @return ResponseInterface
@@ -87,7 +87,7 @@ class BlockStorageActionsManager implements RetrieveContract
     /**
      * Remove a volume from a Droplet by name.
      *
-     * @param ClientInterface                          $client
+     * @param ClientInterface                         $client
      * @param RemoveByNameBlockStorageActionsContract $removeByNameBlockStorageActions
      *
      * @return ResponseInterface
@@ -106,7 +106,7 @@ class BlockStorageActionsManager implements RetrieveContract
     /**
      * Resize a volume.
      *
-     * @param ClientInterface                    $client
+     * @param ClientInterface                   $client
      * @param ResizeBlockStorageActionsContract $resizeBlockStorageActions
      *
      * @return ResponseInterface
@@ -127,7 +127,7 @@ class BlockStorageActionsManager implements RetrieveContract
     /**
      * List all actions for a volume.
      *
-     * @param ClientInterface                         $client
+     * @param ClientInterface                        $client
      * @param RetrieveAllBlockStorageActionsContract $retrieveAllBlockStorageActions
      *
      * @return ResponseInterface
@@ -148,7 +148,7 @@ class BlockStorageActionsManager implements RetrieveContract
     /**
      * Retrieve an existing volume action.
      *
-     * @param ClientInterface                           $client
+     * @param ClientInterface                          $client
      * @param RetrieveBlockStorageActionsContract|null $blockStorageActions
      *
      * @return ResponseInterface

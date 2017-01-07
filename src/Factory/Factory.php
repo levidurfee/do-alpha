@@ -57,15 +57,15 @@ class Factory implements FactoryInterface
     {
         // If client isn't passed, instantiate a new one now.
         if ($client == null) {
-            $client = new Client;
+            $client = new Client();
         }
 
         // Check if the action class exists and instantiate it.
         $actionClass = "wappr\\DigitalOcean\\$action\\$action".'Manager';
-        if (! class_exists($actionClass)) {
+        if (!class_exists($actionClass)) {
             throw new \InvalidArgumentException('Action does not exist.');
         }
-        $actionObject = new $actionClass;
+        $actionObject = new $actionClass();
 
         // Get the type hinted interface of the request param.
         $actionClass = new ReflectionClass($actionClass);

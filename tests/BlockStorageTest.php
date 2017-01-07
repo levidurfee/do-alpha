@@ -70,7 +70,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $blockStorage = new BlockStorageManager;
+        $blockStorage = new BlockStorageManager();
         $response = $blockStorage->getAll($this->client);
         $this->assertEquals($response->getStatusCode(), 200);
         $contents = json_decode($response->getBody()->getContents());
@@ -128,7 +128,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $blockStorage = new BlockStorageManager;
+        $blockStorage = new BlockStorageManager();
         $createBlockStorage = new CreateBlockStorageRequest('10', 'test', 'description', 'nyc3');
         $response = $blockStorage->create($this->client, $createBlockStorage);
         $json = json_decode($response->getBody()->getContents());
@@ -184,7 +184,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $blockStorage = new BlockStorageManager;
+        $blockStorage = new BlockStorageManager();
         $retrieveBlockStorage = new RetrieveBlockStorageRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
         $response = $blockStorage->retrieve($this->client, $retrieveBlockStorage);
 
@@ -208,7 +208,7 @@ class BlockStorageTest extends PHPUnit_Framework_TestCase
             new Client(['handler' => $handler])
         );
 
-        $blockStorage = new BlockStorageManager;
+        $blockStorage = new BlockStorageManager();
         $deleteBlockStorage = new DeleteBlockStorageRequest('506f78a4-e098-11e5-ad9f-000f53306ae1');
         $response = $blockStorage->delete($this->client, $deleteBlockStorage);
 
