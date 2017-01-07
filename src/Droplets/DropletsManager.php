@@ -38,7 +38,7 @@ class DropletsManager implements ListContract, ResourceContract, RetrieveContrac
     /**
      * @since 0.1.1
      *
-     * @param ClientInterface    $client
+     * @param ClientInterface             $client
      * @param CreateDropletInterface|null $droplet
      *
      * @return ResponseInterface

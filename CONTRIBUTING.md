@@ -1,5 +1,9 @@
 # Contributing
 
+```bash
+$ php-cs-fixer fix . --level=symfony
+```
+
 Please feel free to report any issues, make any suggestions, request features, and submit pull requests!
 
 If you're interested in writing tests, that would be very helpful. Documentation is also a very important

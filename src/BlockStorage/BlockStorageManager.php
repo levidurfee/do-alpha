@@ -36,7 +36,7 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
     }
 
     /**
-     * @param ClientInterface                  $client
+     * @param ClientInterface                 $client
      * @param CreateBlockStorageContract|null $blockStorage
      *
      * @return ResponseInterface
@@ -53,7 +53,7 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
     }
 
     /**
-     * @param ClientInterface                  $client
+     * @param ClientInterface                 $client
      * @param DeleteBlockStorageContract|null $deleteBlockStorage
      *
      * @return ResponseInterface
@@ -72,7 +72,7 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
     /**
      * Retrieve Block Storage volume information using the drive id (uuid).
      *
-     * @param ClientInterface                    $client
+     * @param ClientInterface                   $client
      * @param RetrieveBlockStorageContract|null $blockStorage
      *
      * @return ResponseInterface
@@ -91,7 +91,7 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
     /**
      * Retrieve Block Storage volume information using the name and region.
      *
-     * @param ClientInterface                     $client
+     * @param ClientInterface        $client
      * @param RetrieveByNameContract $blockStorageByName
      *
      * @return ResponseInterface
@@ -110,7 +110,7 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
     /**
      * List snapshots for a volume.
      *
-     * @param ClientInterface                             $client
+     * @param ClientInterface                $client
      * @param RetrieveSnapshotsContract|null $blockStorageSnapshots
      *
      * @return ResponseInterface
@@ -129,7 +129,7 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
     /**
      * Create a snapshot from a volume.
      *
-     * @param ClientInterface                          $client
+     * @param ClientInterface             $client
      * @param CreateSnapshotContract|null $blockStorageSnapshot
      *
      * @return ResponseInterface
@@ -148,7 +148,7 @@ class BlockStorageManager implements ListContract, ResourceContract, RetrieveCon
     /**
      * Delete a volume by name.
      *
-     * @param ClientInterface                        $client
+     * @param ClientInterface           $client
      * @param DeleteByNameContract|null $blockStorageByName
      *
      * @return ResponseInterface

@@ -68,7 +68,8 @@ class CreateDropletsRequest extends RequestModel implements ModelInterface, Crea
 
     /**
      * CreateDropletsRequest constructor.
-     * @param array $names
+     *
+     * @param array  $names
      * @param string $region
      * @param string $size
      * @param string $image

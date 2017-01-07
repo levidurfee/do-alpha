@@ -40,7 +40,7 @@ class AccountTest extends PHPUnit_Framework_TestCase
 
     public function testGetAccountInfo()
     {
-        $account = new AccountManager;
+        $account = new AccountManager();
         $response = $account->retrieve($this->client);
         $json = json_decode($response->getBody()->getContents());
         $this->assertTrue($json->account->email_verified);

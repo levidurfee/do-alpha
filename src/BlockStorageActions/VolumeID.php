@@ -29,8 +29,9 @@ trait VolumeID
 
     /**
      * VolumeID constructor.
-     * @param int $volume_id
-     * @param int $droplet_id
+     *
+     * @param int    $volume_id
+     * @param int    $droplet_id
      * @param string $region
      */
     public function __construct(int $volume_id, int $droplet_id, string $region)
