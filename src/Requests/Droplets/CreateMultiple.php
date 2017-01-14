@@ -6,11 +6,9 @@ use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
 use wappr\digitalocean\Contracts\RequestContract;
 
 /**
- * Class CreateMultiple
+ * Class CreateMultiple.
  *
  * This request is for creating multiple droplets.
- *
- * @package wappr\digitalocean\Requests\Droplets
  */
 class CreateMultiple extends RequestContract implements CreateMultipleContract
 {
@@ -81,7 +79,7 @@ class CreateMultiple extends RequestContract implements CreateMultipleContract
     /**
      * CreateDroplet constructor. These fields are required to create a multiple droplets.
      *
-     * @param array $names   The names of the droplets.
+     * @param array  $names  The names of the droplets
      * @param string $region The region the droplet will be created
      * @param string $size   The size of the droplet
      * @param string $image  The image you want installed

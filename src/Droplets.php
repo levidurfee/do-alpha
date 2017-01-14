@@ -7,8 +7,7 @@ use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 
 /**
- * Class Droplets
- * @package wappr\digitalocean
+ * Class Droplets.
  */
 class Droplets extends ManagerContract
 {
@@ -16,6 +15,7 @@ class Droplets extends ManagerContract
 
     /**
      * @param CreateDropletContract $createDroplet
+     *
      * @return mixed
      */
     public function create(CreateDropletContract $createDroplet)
@@ -25,6 +25,7 @@ class Droplets extends ManagerContract
 
     /**
      * @param CreateMultipleContract $createMultiple
+     *
      * @return mixed
      */
     public function createMultiple(CreateMultipleContract $createMultiple)
