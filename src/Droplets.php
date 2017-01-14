@@ -2,20 +2,34 @@
 
 namespace wappr\digitalocean;
 
+use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
 use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 
+/**
+ * Class Droplets
+ * @package wappr\digitalocean
+ */
 class Droplets extends ManagerContract
 {
     protected $endpoint = 'droplets';
 
-    public function create(CreateDropletContract $createDropletContract)
+    /**
+     * @param CreateDropletContract $createDroplet
+     * @return mixed
+     */
+    public function create(CreateDropletContract $createDroplet)
     {
-        return $this->client->post($this->endpoint, $createDropletContract);
+        return $this->client->post($this->endpoint, $createDroplet);
     }
 
-    public function createMultiple()
+    /**
+     * @param CreateMultipleContract $createMultiple
+     * @return mixed
+     */
+    public function createMultiple(CreateMultipleContract $createMultiple)
     {
+        return $this->client->post($this->endpoint, $createMultiple);
     }
 
     public function listAll()
