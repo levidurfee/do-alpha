@@ -3,6 +3,7 @@
 namespace wappr\digitalocean;
 
 use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
+use wappr\digitalocean\Contracts\Droplets\ListAllContract;
 use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 
@@ -33,8 +34,14 @@ class Droplets extends ManagerContract
         return $this->client->post($this->endpoint, $createMultiple);
     }
 
-    public function listAll()
+    /**
+     * @param ListAllContract $listAllContract
+     *
+     * @return mixed
+     */
+    public function listAll(ListAllContract $listAllContract)
     {
+        return $this->client->post($this->endpoint, $listAllContract);
     }
 
     public function listByTag()
