@@ -12,18 +12,39 @@ use wappr\digitalocean\Contracts\RequestContract;
  */
 class Client implements ClientContract
 {
+    /**
+     * @var httpClient
+     */
     public $httpClient;
 
+    /**
+     * @var bool
+     */
     public $debug = false;
 
+    /**
+     * @var string
+     */
     protected $version = '0.11.0';
 
+    /**
+     * @var string
+     */
     protected $apiUrl = 'https://api.digitalocean.com';
 
+    /**
+     * @var string
+     */
     protected $apiVersion = '2';
 
+    /**
+     * @var array|false|string
+     */
     protected $apiToken;
 
+    /**
+     * Client constructor.
+     */
     public function __construct()
     {
         $this->httpClient = new httpClient(['base_uri' => $this->apiUrl.'/v'.$this->apiVersion.'/']);
@@ -31,6 +52,12 @@ class Client implements ClientContract
         $this->apiToken = getenv('DO_API_TOKEN');
     }
 
+    /**
+     * @param $endpoint
+     * @param RequestContract $requestContract
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
     public function post($endpoint, RequestContract $requestContract)
     {
         $request = [
@@ -51,6 +78,12 @@ class Client implements ClientContract
         return $response;
     }
 
+    /**
+     * @param $endpoint
+     * @param RequestContract $requestContract
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
     public function get($endpoint, RequestContract $requestContract)
     {
         $request = [
@@ -58,7 +91,7 @@ class Client implements ClientContract
             'query' => [
                 'page' => 1,
                 'per_page' => 500,
-                $requestContract->fetch()
+                $requestContract->fetch(),
             ],
             'headers' => [
                 'Content-Type' => 'application/json',
