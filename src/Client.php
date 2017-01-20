@@ -50,4 +50,28 @@ class Client implements ClientContract
 
         return $response;
     }
+
+    public function get($endpoint, RequestContract $requestContract)
+    {
+        $request = [
+            'auth' => [$this->apiToken, ':'],
+            'query' => [
+                'page' => 1,
+                'per_page' => 500,
+                $requestContract->fetch()
+            ],
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ],
+            'debug' => $this->debug,
+        ];
+
+        try {
+            $response = $this->httpClient->request('GET', $endpoint, $request);
+        } catch (RequestException $e) {
+            $response = $e->getResponse();
+        }
+
+        return $response;
+    }
 }
