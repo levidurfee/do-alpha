@@ -2,7 +2,7 @@
 
 namespace wappr\digitalocean\Contracts\Droplets;
 
-interface CreateDropletContract
+interface CreateContract
 {
     public function __construct($name, $region, $size, $image);
 }

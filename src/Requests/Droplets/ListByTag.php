@@ -10,7 +10,7 @@ class ListByTag extends RequestContract implements ListByTagContract
     /**
      * @var string
      */
-    protected $tag_name;
+    public $tag_name;
 
     /**
      * ListByTagContract constructor.

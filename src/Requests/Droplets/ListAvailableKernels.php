@@ -13,7 +13,7 @@ class ListAvailableKernels extends RequestContract implements ListAvailableKerne
     /**
      * @var int
      */
-    protected $droplet_id;
+    public $droplet_id;
 
     /**
      * ListAvailableKernels constructor.
