@@ -4,6 +4,7 @@ namespace wappr\digitalocean;
 
 use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
 use wappr\digitalocean\Contracts\Droplets\ListAllContract;
+use wappr\digitalocean\Contracts\Droplets\ListAvailableKernelsContract;
 use wappr\digitalocean\Contracts\Droplets\ListByTagContract;
 use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
@@ -45,13 +46,27 @@ class Droplets extends ManagerContract
         return $this->client->get($this->endpoint, $listAllContract);
     }
 
+    /**
+     * @param ListByTagContract $listByTag
+     *
+     * @return mixed
+     */
     public function listByTag(ListByTagContract $listByTag)
     {
         return $this->client->get($this->endpoint, $listByTag);
     }
 
-    public function listAvailableKernels()
+    /**
+     * @param ListAvailableKernelsContract $listAvailableKernels
+     *
+     * @return mixed
+     */
+    public function listAvailableKernels(ListAvailableKernelsContract $listAvailableKernels)
     {
+        return $this->client->get(
+            $this->endpoint.'/'.$listAvailableKernels->getDropletId().'/kernels',
+            $listAvailableKernels
+        );
     }
 
     public function listSnapshots()
