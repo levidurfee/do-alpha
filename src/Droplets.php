@@ -7,7 +7,7 @@ use wappr\digitalocean\Contracts\Droplets\ListAllContract;
 use wappr\digitalocean\Contracts\Droplets\ListAvailableKernelsContract;
 use wappr\digitalocean\Contracts\Droplets\ListByTagContract;
 use wappr\digitalocean\Contracts\ManagerContract;
-use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
+use wappr\digitalocean\Contracts\Droplets\CreateContract;
 
 /**
  * Class Droplets.
@@ -17,11 +17,11 @@ class Droplets extends ManagerContract
     protected $endpoint = 'droplets';
 
     /**
-     * @param CreateDropletContract $createDroplet
+     * @param CreateContract $createDroplet
      *
      * @return mixed
      */
-    public function create(CreateDropletContract $createDroplet)
+    public function create(CreateContract $createDroplet)
     {
         return $this->client->post($this->endpoint, $createDroplet);
     }
