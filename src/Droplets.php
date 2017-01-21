@@ -6,6 +6,7 @@ use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
 use wappr\digitalocean\Contracts\Droplets\ListAllContract;
 use wappr\digitalocean\Contracts\Droplets\ListAvailableKernelsContract;
 use wappr\digitalocean\Contracts\Droplets\ListByTagContract;
+use wappr\digitalocean\Contracts\Droplets\ListSnapshotsContract;
 use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Contracts\Droplets\CreateContract;
 
@@ -69,8 +70,17 @@ class Droplets extends ManagerContract
         );
     }
 
-    public function listSnapshots()
+    /**
+     * @param ListSnapshotsContract $listSnapshots
+     *
+     * @return mixed
+     */
+    public function listSnapshots(ListSnapshotsContract $listSnapshots)
     {
+        return $this->client->get(
+            $this->endpoint.'/'.$listSnapshots->getDropletId().'/snapshots',
+            $listSnapshots
+        );
     }
 
     public function listBackups()
