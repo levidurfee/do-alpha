@@ -2,6 +2,7 @@
 
 namespace wappr\digitalocean;
 
+use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
 use wappr\digitalocean\Contracts\Droplets\ListActionsContract;
 use wappr\digitalocean\Contracts\Droplets\ListAllContract;
@@ -10,7 +11,6 @@ use wappr\digitalocean\Contracts\Droplets\ListBackupsContract;
 use wappr\digitalocean\Contracts\Droplets\ListByTagContract;
 use wappr\digitalocean\Contracts\Droplets\ListSnapshotsContract;
 use wappr\digitalocean\Contracts\ManagerContract;
-use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 
 /**
  * Class Droplets.
