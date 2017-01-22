@@ -107,4 +107,32 @@ class Client implements ClientContract
 
         return $response;
     }
+
+    /**
+     * @param $endpoint
+     * @param RequestContract $requestContract
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
+    public function delete($endpoint, RequestContract $requestContract)
+    {
+        $request = [
+            'auth' => [$this->apiToken, ':'],
+            'query' => [
+                $requestContract->fetch(),
+            ],
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ],
+            'debug' => $this->debug,
+        ];
+
+        try {
+            $response = $this->httpClient->request('DELETE', $endpoint, $request);
+        } catch (RequestException $e) {
+            $response = $e->getResponse();
+        }
+
+        return $response;
+    }
 }
