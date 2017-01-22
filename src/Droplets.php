@@ -3,6 +3,7 @@
 namespace wappr\digitalocean;
 
 use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
+use wappr\digitalocean\Contracts\Droplets\ListActionsContract;
 use wappr\digitalocean\Contracts\Droplets\ListAllContract;
 use wappr\digitalocean\Contracts\Droplets\ListAvailableKernelsContract;
 use wappr\digitalocean\Contracts\Droplets\ListBackupsContract;
@@ -97,8 +98,12 @@ class Droplets extends ManagerContract
         );
     }
 
-    public function listActions()
+    public function listActions(ListActionsContract $listActions)
     {
+        return $this->client->get(
+            $this->endpoint.'/'.$listActions->getDropletId().'/actions',
+            $listActions
+        );
     }
 
     public function delete()
