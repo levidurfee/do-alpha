@@ -3,12 +3,12 @@
 namespace wappr\digitalocean\Requests\Droplets;
 
 use wappr\digitalocean\Contracts\RequestContract;
-use wappr\digitalocean\Contracts\Droplets\CreateContract;
+use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 
 /**
  * Class CreateDroplet.
  */
-class CreateDroplet extends RequestContract implements CreateContract
+class CreateDroplet extends RequestContract implements CreateDropletContract
 {
     public $name;
 

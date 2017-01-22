@@ -10,7 +10,7 @@ use wappr\digitalocean\Contracts\Droplets\ListBackupsContract;
 use wappr\digitalocean\Contracts\Droplets\ListByTagContract;
 use wappr\digitalocean\Contracts\Droplets\ListSnapshotsContract;
 use wappr\digitalocean\Contracts\ManagerContract;
-use wappr\digitalocean\Contracts\Droplets\CreateContract;
+use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 
 /**
  * Class Droplets.
@@ -20,11 +20,11 @@ class Droplets extends ManagerContract
     protected $endpoint = 'droplets';
 
     /**
-     * @param CreateContract $createDroplet
+     * @param CreateDropletContract $createDroplet
      *
      * @return mixed
      */
-    public function create(CreateContract $createDroplet)
+    public function create(CreateDropletContract $createDroplet)
     {
         return $this->client->post($this->endpoint, $createDroplet);
     }
