@@ -95,6 +95,7 @@ class Client implements ClientContract
             ],
             'headers' => [
                 'Content-Type' => 'application/json',
+                'User-Agent' => 'wappr\digitalocean:'.$this->version,
             ],
             'debug' => $this->debug,
         ];
@@ -123,6 +124,7 @@ class Client implements ClientContract
             ],
             'headers' => [
                 'Content-Type' => 'application/json',
+                'User-Agent' => 'wappr\digitalocean:'.$this->version,
             ],
             'debug' => $this->debug,
         ];
