@@ -4,6 +4,7 @@ namespace wappr\digitalocean;
 
 use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
+use wappr\digitalocean\Contracts\Droplets\DeleteDropletContract;
 use wappr\digitalocean\Contracts\Droplets\ListActionsContract;
 use wappr\digitalocean\Contracts\Droplets\ListAllContract;
 use wappr\digitalocean\Contracts\Droplets\ListAvailableKernelsContract;
@@ -98,6 +99,11 @@ class Droplets extends ManagerContract
         );
     }
 
+    /**
+     * @param ListActionsContract $listActions
+     *
+     * @return mixed
+     */
     public function listActions(ListActionsContract $listActions)
     {
         return $this->client->get(
@@ -106,8 +112,17 @@ class Droplets extends ManagerContract
         );
     }
 
-    public function delete()
+    /**
+     * @param DeleteDropletContract $deleteDroplet
+     *
+     * @return mixed
+     */
+    public function delete(DeleteDropletContract $deleteDroplet)
     {
+        return $this->client->delete(
+            $this->endpoint.'/'.$deleteDroplet->getDropletId(),
+            $deleteDroplet
+        );
     }
 
     public function deleteByTag()
