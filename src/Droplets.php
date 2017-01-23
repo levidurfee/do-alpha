@@ -4,6 +4,7 @@ namespace wappr\digitalocean;
 
 use wappr\digitalocean\Contracts\Droplets\CreateDropletContract;
 use wappr\digitalocean\Contracts\Droplets\CreateMultipleContract;
+use wappr\digitalocean\Contracts\Droplets\DeleteByTagContract;
 use wappr\digitalocean\Contracts\Droplets\DeleteDropletContract;
 use wappr\digitalocean\Contracts\Droplets\ListActionsContract;
 use wappr\digitalocean\Contracts\Droplets\ListAllContract;
@@ -125,8 +126,14 @@ class Droplets extends ManagerContract
         );
     }
 
-    public function deleteByTag()
+    /**
+     * @param DeleteByTagContract $deleteByTag
+     *
+     * @return mixed
+     */
+    public function deleteByTag(DeleteByTagContract $deleteByTag)
     {
+        return $this->client->delete($this->endpoint, $deleteByTag);
     }
 
     public function listNeighbors()
