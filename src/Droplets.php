@@ -150,7 +150,11 @@ class Droplets extends ManagerContract
         );
     }
 
-    public function listAllNeightbors()
+    /**
+     * @return mixed
+     */
+    public function listAllNeighbors()
     {
+        return $this->client->get('reports/droplet_neighbors');
     }
 }
