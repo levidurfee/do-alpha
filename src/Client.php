@@ -25,7 +25,7 @@ class Client implements ClientContract
     /**
      * @var string
      */
-    protected $version = '0.11.0';
+    protected $version = '0.12.0';
 
     /**
      * @var string
