@@ -11,6 +11,7 @@ use wappr\digitalocean\Contracts\Droplets\ListAllContract;
 use wappr\digitalocean\Contracts\Droplets\ListAvailableKernelsContract;
 use wappr\digitalocean\Contracts\Droplets\ListBackupsContract;
 use wappr\digitalocean\Contracts\Droplets\ListByTagContract;
+use wappr\digitalocean\Contracts\Droplets\ListNeighborsContract;
 use wappr\digitalocean\Contracts\Droplets\ListSnapshotsContract;
 use wappr\digitalocean\Contracts\ManagerContract;
 
@@ -136,8 +137,17 @@ class Droplets extends ManagerContract
         return $this->client->delete($this->endpoint, $deleteByTag);
     }
 
-    public function listNeighbors()
+    /**
+     * @param ListNeighborsContract $listNeighbors
+     *
+     * @return mixed
+     */
+    public function listNeighbors(ListNeighborsContract $listNeighbors)
     {
+        return $this->client->get(
+            $this->endpoint.'/'.$listNeighbors->getDropletId().'/neighbors',
+            $listNeighbors
+        );
     }
 
     public function listAllNeightbors()
