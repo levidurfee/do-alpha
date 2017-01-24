@@ -26,6 +26,21 @@ class DropletActions extends ManagerContract
         return $this->send(TypeHelper::DISABLE_BACKUPS);
     }
 
+    public function reboot()
+    {
+        return $this->send(TypeHelper::REBOOT);
+    }
+
+    public function powerCycle()
+    {
+        return $this->send(TypeHelper::POWER_CYCLE);
+    }
+
+    public function shutdown()
+    {
+        return $this->send(TypeHelper::SHUTDOWN);
+    }
+
     protected function send($action)
     {
         $request = new Basic($action);
