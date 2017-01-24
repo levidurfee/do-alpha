@@ -2,6 +2,6 @@
 
 namespace wappr\digitalocean\Contracts\DropletActions;
 
-interface BasicActionContract
+interface EnableBackupsContract
 {
 }
