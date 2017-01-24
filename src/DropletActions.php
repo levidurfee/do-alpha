@@ -4,14 +4,32 @@ namespace wappr\digitalocean\Requests;
 
 use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Requests\DropletActions\Basic;
+use wappr\digitalocean\Requests\DropletActions\TypeHelper;
 
 class DropletActions extends ManagerContract
 {
     public $droplet_id;
 
-    public function enableBackups($typeHelper, $droplet_id)
+    public function __construct($droplet_id)
     {
-        $request = new Basic($typeHelper);
-        $this->client->post('/droplets/'.$droplet_id.'/actions', $request);
+        parent::__construct();
+        $this->droplet_id = $droplet_id;
+    }
+
+    public function enableBackups()
+    {
+        return $this->send(TypeHelper::ENABLE_BACKUPS);
+    }
+
+    public function disableBackups()
+    {
+        return $this->send(TypeHelper::DISABLE_BACKUPS);
+    }
+
+    protected function send($action)
+    {
+        $request = new Basic($action);
+        $this->client->post('/droplets/'.$this->droplet_id.'/actions', $request);
+        return $this;
     }
 }
