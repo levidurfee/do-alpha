@@ -4,6 +4,7 @@ namespace wappr\digitalocean\Requests;
 
 use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Requests\DropletActions\Basic;
+use wappr\digitalocean\Requests\DropletActions\CreateSnapshot;
 use wappr\digitalocean\Requests\DropletActions\TypeHelper;
 
 class DropletActions extends ManagerContract
@@ -41,10 +42,18 @@ class DropletActions extends ManagerContract
         return $this->send(TypeHelper::SHUTDOWN);
     }
 
+    public function createSnapshot($name = '')
+    {
+        $request = new CreateSnapshot($name);
+
+        return $this->client->post('/droplets/'.$this->droplet_id.'/actions', $request);
+    }
+
     protected function send($action)
     {
         $request = new Basic($action);
         $this->client->post('/droplets/'.$this->droplet_id.'/actions', $request);
+
         return $this;
     }
 }
