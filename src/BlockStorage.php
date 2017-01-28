@@ -3,7 +3,17 @@
 namespace wappr\digitalocean;
 
 use wappr\digitalocean\Contracts\ManagerContract;
+use wappr\digitalocean\Contracts\BlockStorage\CreateBlockStorageContract;
+use wappr\digitalocean\Contracts\BlockStorage\CreateSnapshotBlockStorageContract;
+use wappr\digitalocean\Contracts\BlockStorage\DeleteBlockStorageContract;
+use wappr\digitalocean\Contracts\BlockStorage\DeleteByNameBlockStorageContract;
+use wappr\digitalocean\Contracts\BlockStorage\ListSnapshotsBlockStorageContract;
+use wappr\digitalocean\Contracts\BlockStorage\RetrieveBlockStorageContract;
+use wappr\digitalocean\Contracts\BlockStorage\RetrieveByNameBlockStorageContract;
 
+/**
+ * Class BlockStorage.
+ */
 class BlockStorage extends ManagerContract
 {
     protected $endpoint = 'volumes';
@@ -12,31 +22,66 @@ class BlockStorage extends ManagerContract
     {
     }
 
-    public function create()
+    /**
+     * @param CreateBlockStorageContract $createBlockStorage
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
+    public function create(CreateBlockStorageContract $createBlockStorage)
     {
     }
 
-    public function retrieve()
+    /**
+     * @param RetrieveBlockStorageContract $retrieveBlockStorage
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
+    public function retrieve(RetrieveBlockStorageContract $retrieveBlockStorage)
     {
     }
 
-    public function retrieveByName()
+    /**
+     * @param RetrieveByNameBlockStorageContract $retrieveByNameBlockStorage
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
+    public function retrieveByName(RetrieveByNameBlockStorageContract $retrieveByNameBlockStorage)
     {
     }
 
-    public function listSnapshots()
+    /**
+     * @param ListSnapshotsBlockStorageContract $listSnapshotsBlockStorage
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
+    public function listSnapshots(ListSnapshotsBlockStorageContract $listSnapshotsBlockStorage)
     {
     }
 
-    public function createSnapshot()
+    /**
+     * @param CreateSnapshotBlockStorageContract $createSnapshotBlockStorage
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
+    public function createSnapshot(CreateSnapshotBlockStorageContract $createSnapshotBlockStorage)
     {
     }
 
-    public function delete()
+    /**
+     * @param DeleteBlockStorageContract $deleteBlockStorage
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
+    public function delete(DeleteBlockStorageContract $deleteBlockStorage)
     {
     }
 
-    public function deleteByName()
+    /**
+     * @param DeleteByNameBlockStorageContract $deleteByNameBlockStorage
+     *
+     * @return mixed|null|\Psr\Http\Message\ResponseInterface
+     */
+    public function deleteByName(DeleteByNameBlockStorageContract $deleteByNameBlockStorage)
     {
     }
 }
