@@ -5,6 +5,7 @@ namespace wappr\digitalocean\Requests;
 use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Requests\DropletActions\Basic;
 use wappr\digitalocean\Requests\DropletActions\CreateSnapshot;
+use wappr\digitalocean\Requests\DropletActions\Retrieve;
 use wappr\digitalocean\Requests\DropletActions\TypeHelper;
 
 /**
@@ -83,6 +84,16 @@ class DropletActions extends ManagerContract
         $this->client->post('/droplets/'.$this->droplet_id.'/actions', $request);
 
         return $this;
+    }
+
+    /**
+     * @param $action_id
+     *
+     * @return mixed
+     */
+    public function retrieve($action_id)
+    {
+        return $this->client->post('/droplets/'.$this->droplet_id.'/'.$action_id);
     }
 
     /**
