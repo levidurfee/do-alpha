@@ -73,4 +73,100 @@ class CreateDroplet extends RequestContract implements CreateDropletContract
         $this->size = $size;
         $this->image = $image;
     }
+
+    /**
+     * @param array $ssh_keys
+     *
+     * @return CreateDroplet
+     */
+    public function setSshKeys($ssh_keys)
+    {
+        $this->ssh_keys = $ssh_keys;
+
+        return $this;
+    }
+
+    /**
+     * @param bool $backups
+     *
+     * @return CreateDroplet
+     */
+    public function setBackups($backups)
+    {
+        $this->backups = $backups;
+
+        return $this;
+    }
+
+    /**
+     * @param bool $ipv6
+     *
+     * @return CreateDroplet
+     */
+    public function setIpv6($ipv6)
+    {
+        $this->ipv6 = $ipv6;
+
+        return $this;
+    }
+
+    /**
+     * @param bool $private_networking
+     *
+     * @return CreateDroplet
+     */
+    public function setPrivateNetworking($private_networking)
+    {
+        $this->private_networking = $private_networking;
+
+        return $this;
+    }
+
+    /**
+     * @param string $user_data
+     *
+     * @return CreateDroplet
+     */
+    public function setUserData($user_data)
+    {
+        $this->user_data = $user_data;
+
+        return $this;
+    }
+
+    /**
+     * @param bool $monitoring
+     *
+     * @return CreateDroplet
+     */
+    public function setMonitoring($monitoring)
+    {
+        $this->monitoring = $monitoring;
+
+        return $this;
+    }
+
+    /**
+     * @param array $volume
+     *
+     * @return CreateDroplet
+     */
+    public function setVolume($volume)
+    {
+        $this->volume = $volume;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tags
+     *
+     * @return CreateDroplet
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+
+        return $this;
+    }
 }
