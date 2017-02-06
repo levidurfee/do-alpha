@@ -2,7 +2,6 @@
 
 namespace wappr\digitalocean;
 
-use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Contracts\BlockStorage\CreateBlockStorageContract;
 use wappr\digitalocean\Contracts\BlockStorage\CreateSnapshotBlockStorageContract;
 use wappr\digitalocean\Contracts\BlockStorage\DeleteBlockStorageContract;
@@ -10,6 +9,7 @@ use wappr\digitalocean\Contracts\BlockStorage\DeleteByNameBlockStorageContract;
 use wappr\digitalocean\Contracts\BlockStorage\ListSnapshotsBlockStorageContract;
 use wappr\digitalocean\Contracts\BlockStorage\RetrieveBlockStorageContract;
 use wappr\digitalocean\Contracts\BlockStorage\RetrieveByNameBlockStorageContract;
+use wappr\digitalocean\Contracts\ManagerContract;
 use wappr\digitalocean\Requests\BlockStorage\ListAllBlockStorage;
 
 /**

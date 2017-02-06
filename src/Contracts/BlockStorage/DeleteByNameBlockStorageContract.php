@@ -2,13 +2,15 @@
 
 namespace wappr\digitalocean\Contracts\BlockStorage;
 
+use wappr\digitalocean\Contracts\Requests;
+
 /**
  * Interface DeleteByNameBlockStorageContract
  * @property $drive_name
  * @property $region
  * @package wappr\digitalocean\Contracts\BlockStorage
  */
-interface DeleteByNameBlockStorageContract
+interface DeleteByNameBlockStorageContract extends Requests
 {
     /**
      * DeleteByNameBlockStorage constructor.

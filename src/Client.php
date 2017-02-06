@@ -6,6 +6,7 @@ use GuzzleHttp\Client as httpClient;
 use GuzzleHttp\Exception\RequestException;
 use wappr\digitalocean\Contracts\Client\ClientContract;
 use wappr\digitalocean\Contracts\RequestContract;
+use wappr\digitalocean\Contracts\Requests;
 
 /**
  * Class Client.
@@ -54,11 +55,11 @@ class Client implements ClientContract
 
     /**
      * @param $endpoint
-     * @param RequestContract $requestContract
+     * @param Requests $requestContract
      *
      * @return mixed|null|\Psr\Http\Message\ResponseInterface
      */
-    public function post($endpoint, RequestContract $requestContract)
+    public function post($endpoint, Requests $requestContract)
     {
         $request = [
             'auth' => [$this->apiToken, ':'],
@@ -80,11 +81,11 @@ class Client implements ClientContract
 
     /**
      * @param $endpoint
-     * @param RequestContract $requestContract
+     * @param Requests $requestContract
      *
      * @return mixed|null|\Psr\Http\Message\ResponseInterface
      */
-    public function get($endpoint, RequestContract $requestContract)
+    public function get($endpoint, Requests $requestContract)
     {
         $request = [
             'auth' => [$this->apiToken, ':'],
@@ -111,11 +112,11 @@ class Client implements ClientContract
 
     /**
      * @param $endpoint
-     * @param RequestContract $requestContract
+     * @param Requests $requestContract
      *
      * @return mixed|null|\Psr\Http\Message\ResponseInterface
      */
-    public function delete($endpoint, RequestContract $requestContract)
+    public function delete($endpoint, Requests $requestContract)
     {
         $request = [
             'auth' => [$this->apiToken, ':'],

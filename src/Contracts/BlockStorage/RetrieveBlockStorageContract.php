@@ -2,12 +2,14 @@
 
 namespace wappr\digitalocean\Contracts\BlockStorage;
 
+use wappr\digitalocean\Contracts\Requests;
+
 /**
  * Interface RetrieveBlockStorageContract
  * @property $volume_id
  * @package wappr\digitalocean\Contracts\BlockStorage
  */
-interface RetrieveBlockStorageContract
+interface RetrieveBlockStorageContract extends Requests
 {
     /**
      * RetrieveBlockStorage constructor.
