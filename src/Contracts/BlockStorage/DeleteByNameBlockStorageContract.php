@@ -1,17 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Levi
- * Date: 2/6/2017
- * Time: 2:51 PM
- */
+
 namespace wappr\digitalocean\Contracts\BlockStorage;
 
-
-/**
- * Class DeleteByNameBlockStorage
- * @package wappr\digitalocean\Requests\BlockStorage
- */
 interface DeleteByNameBlockStorageContract
 {
     /**

@@ -2,9 +2,6 @@
 
 namespace wappr\digitalocean\Contracts\BlockStorage;
 
-/**
- * Class CreateBlockStorage.
- */
 interface CreateBlockStorageContract
 {
     /**

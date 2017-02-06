@@ -2,9 +2,6 @@
 
 namespace wappr\digitalocean\Contracts\BlockStorage;
 
-/**
- * Interface CreateSnapshotBlockStorageContract.
- */
 interface CreateSnapshotBlockStorageContract
 {
     /**
