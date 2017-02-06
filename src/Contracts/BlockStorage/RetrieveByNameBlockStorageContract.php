@@ -2,6 +2,12 @@
 
 namespace wappr\digitalocean\Contracts\BlockStorage;
 
+/**
+ * Interface RetrieveByNameBlockStorageContract
+ * @property $drive_name
+ * @property $region
+ * @package wappr\digitalocean\Contracts\BlockStorage
+ */
 interface RetrieveByNameBlockStorageContract
 {
     /**

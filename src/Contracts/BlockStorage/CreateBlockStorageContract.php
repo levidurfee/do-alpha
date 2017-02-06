@@ -2,6 +2,15 @@
 
 namespace wappr\digitalocean\Contracts\BlockStorage;
 
+/**
+ * Interface CreateBlockStorageContract
+ * @property $size_gigabytes
+ * @property $name
+ * @property $description
+ * @property $region
+ * @property $snapshot_id
+ * @package wappr\digitalocean\Contracts\BlockStorage
+ */
 interface CreateBlockStorageContract
 {
     /**

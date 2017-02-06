@@ -2,6 +2,11 @@
 
 namespace wappr\digitalocean\Contracts\BlockStorage;
 
+/**
+ * Interface RetrieveBlockStorageContract
+ * @property $volume_id
+ * @package wappr\digitalocean\Contracts\BlockStorage
+ */
 interface RetrieveBlockStorageContract
 {
     /**
