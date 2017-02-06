@@ -10,6 +10,7 @@ use wappr\digitalocean\Contracts\BlockStorage\DeleteByNameBlockStorageContract;
 use wappr\digitalocean\Contracts\BlockStorage\ListSnapshotsBlockStorageContract;
 use wappr\digitalocean\Contracts\BlockStorage\RetrieveBlockStorageContract;
 use wappr\digitalocean\Contracts\BlockStorage\RetrieveByNameBlockStorageContract;
+use wappr\digitalocean\Requests\BlockStorage\ListAllBlockStorage;
 
 /**
  * Class BlockStorage.
@@ -20,6 +21,7 @@ class BlockStorage extends ManagerContract
 
     public function listAll()
     {
+        return $this->client->get($this->endpoint, new ListAllBlockStorage);
     }
 
     /**
@@ -29,6 +31,7 @@ class BlockStorage extends ManagerContract
      */
     public function create(CreateBlockStorageContract $createBlockStorage)
     {
+        return $this->client->post($this->endpoint, $createBlockStorage);
     }
 
     /**
@@ -38,6 +41,7 @@ class BlockStorage extends ManagerContract
      */
     public function retrieve(RetrieveBlockStorageContract $retrieveBlockStorage)
     {
+        return $this->client->get($this->endpoint.'/'.$retrieveBlockStorage->volume_id, $retrieveBlockStorage);
     }
 
     /**
@@ -47,6 +51,7 @@ class BlockStorage extends ManagerContract
      */
     public function retrieveByName(RetrieveByNameBlockStorageContract $retrieveByNameBlockStorage)
     {
+        return $this->client->get($this->endpoint, $retrieveByNameBlockStorage);
     }
 
     /**
@@ -56,6 +61,7 @@ class BlockStorage extends ManagerContract
      */
     public function listSnapshots(ListSnapshotsBlockStorageContract $listSnapshotsBlockStorage)
     {
+        return $this->client->get($this->endpoint.'/'.$listSnapshotsBlockStorage->volume_id.'/snapshots', $listSnapshotsBlockStorage);
     }
 
     /**
@@ -65,6 +71,7 @@ class BlockStorage extends ManagerContract
      */
     public function createSnapshot(CreateSnapshotBlockStorageContract $createSnapshotBlockStorage)
     {
+        return $this->client->post($this->endpoint.'/'.$createSnapshotBlockStorage->volume_id.'/snapshots', $createSnapshotBlockStorage);
     }
 
     /**
@@ -74,6 +81,7 @@ class BlockStorage extends ManagerContract
      */
     public function delete(DeleteBlockStorageContract $deleteBlockStorage)
     {
+        return $this->client->delete($this->endpoint.'/'.$deleteBlockStorage->volume_id, $deleteBlockStorage);
     }
 
     /**
@@ -83,5 +91,6 @@ class BlockStorage extends ManagerContract
      */
     public function deleteByName(DeleteByNameBlockStorageContract $deleteByNameBlockStorage)
     {
+        return $this->client->delete($this->endpoint, $deleteByNameBlockStorage);
     }
 }
