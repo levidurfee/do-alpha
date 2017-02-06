@@ -6,6 +6,9 @@ use wappr\digitalocean\Client;
 
 abstract class ManagerContract
 {
+    /**
+     * @var Client $client
+     */
     protected $client;
 
     public function __construct($client = null)
