@@ -11,17 +11,5 @@ use wappr\digitalocean\Contracts\RequestContract;
  */
 class DeleteBlockStorage extends RequestContract implements DeleteBlockStorageContract
 {
-    /**
-     * @var
-     */
-    public $volume_id;
-
-    /**
-     * DeleteBlockStorage constructor.
-     * @param $volume_id
-     */
-    public function __construct($volume_id)
-    {
-        $this->volume_id = $volume_id;
-    }
+    use VolumeId;
 }

@@ -11,19 +11,5 @@ use wappr\digitalocean\Contracts\RequestContract;
  */
 class RetrieveBlockStorage extends RequestContract implements RetrieveBlockStorageContract
 {
-    /**
-     * Required
-     *
-     * @var
-     */
-    public $volume_id;
-
-    /**
-     * RetrieveBlockStorage constructor.
-     * @param $volume_id
-     */
-    public function __construct($volume_id)
-    {
-        $this->volume_id = $volume_id;
-    }
+    use VolumeId;
 }

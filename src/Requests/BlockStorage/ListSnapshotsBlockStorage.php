@@ -11,17 +11,5 @@ use wappr\digitalocean\Contracts\RequestContract;
  */
 class ListSnapshotsBlockStorage extends RequestContract implements ListSnapshotsBlockStorageContract
 {
-    /**
-     * @var
-     */
-    public $volume_id;
-
-    /**
-     * ListSnapshotsBlockStorage constructor.
-     * @param $volume_id
-     */
-    public function __construct($volume_id)
-    {
-        $this->volume_id = $volume_id;
-    }
+    use VolumeId;
 }
