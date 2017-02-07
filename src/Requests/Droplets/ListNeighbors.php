@@ -10,26 +10,5 @@ use wappr\digitalocean\Contracts\RequestContract;
  */
 class ListNeighbors extends RequestContract implements ListNeighborsContract
 {
-    /**
-     * @var int
-     */
-    public $droplet_id;
-
-    /**
-     * ListNeighborsContract constructor.
-     *
-     * @param $droplet_id
-     */
-    public function __construct($droplet_id)
-    {
-        $this->droplet_id = $droplet_id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDropletId()
-    {
-        return $this->droplet_id;
-    }
+    use DropletId;
 }

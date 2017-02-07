@@ -17,9 +17,4 @@ interface ListSnapshotsContract extends Requests
      * @param $droplet_id
      */
     public function __construct($droplet_id);
-
-    /**
-     * @return mixed
-     */
-    public function getDropletId();
 }

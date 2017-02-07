@@ -8,6 +8,7 @@ use wappr\digitalocean\Contracts\Droplets\DeleteByTagContract;
 use wappr\digitalocean\Contracts\Droplets\DeleteDropletContract;
 use wappr\digitalocean\Contracts\Droplets\ListActionsContract;
 use wappr\digitalocean\Contracts\Droplets\ListAllContract;
+use wappr\digitalocean\Contracts\Droplets\ListAllNeighbors;
 use wappr\digitalocean\Contracts\Droplets\ListAvailableKernelsContract;
 use wappr\digitalocean\Contracts\Droplets\ListBackupsContract;
 use wappr\digitalocean\Contracts\Droplets\ListByTagContract;
@@ -70,7 +71,7 @@ class Droplets extends ManagerContract
     public function listAvailableKernels(ListAvailableKernelsContract $listAvailableKernels)
     {
         return $this->client->get(
-            $this->endpoint.'/'.$listAvailableKernels->getDropletId().'/kernels',
+            $this->endpoint.'/'.$listAvailableKernels->droplet_id.'/kernels',
             $listAvailableKernels
         );
     }
@@ -83,7 +84,7 @@ class Droplets extends ManagerContract
     public function listSnapshots(ListSnapshotsContract $listSnapshots)
     {
         return $this->client->get(
-            $this->endpoint.'/'.$listSnapshots->getDropletId().'/snapshots',
+            $this->endpoint.'/'.$listSnapshots->droplet_id.'/snapshots',
             $listSnapshots
         );
     }
@@ -96,7 +97,7 @@ class Droplets extends ManagerContract
     public function listBackups(ListBackupsContract $listBackups)
     {
         return $this->client->get(
-            $this->endpoint.'/'.$listBackups->getDropletId().'/backups',
+            $this->endpoint.'/'.$listBackups->droplet_id.'/backups',
             $listBackups
         );
     }
@@ -109,7 +110,7 @@ class Droplets extends ManagerContract
     public function listActions(ListActionsContract $listActions)
     {
         return $this->client->get(
-            $this->endpoint.'/'.$listActions->getDropletId().'/actions',
+            $this->endpoint.'/'.$listActions->droplet_id.'/actions',
             $listActions
         );
     }
@@ -122,7 +123,7 @@ class Droplets extends ManagerContract
     public function delete(DeleteDropletContract $deleteDroplet)
     {
         return $this->client->delete(
-            $this->endpoint.'/'.$deleteDroplet->getDropletId(),
+            $this->endpoint.'/'.$deleteDroplet->droplet_id,
             $deleteDroplet
         );
     }
@@ -145,7 +146,7 @@ class Droplets extends ManagerContract
     public function listNeighbors(ListNeighborsContract $listNeighbors)
     {
         return $this->client->get(
-            $this->endpoint.'/'.$listNeighbors->getDropletId().'/neighbors',
+            $this->endpoint.'/'.$listNeighbors->droplet_id.'/neighbors',
             $listNeighbors
         );
     }
@@ -155,6 +156,6 @@ class Droplets extends ManagerContract
      */
     public function listAllNeighbors()
     {
-        return $this->client->get('reports/droplet_neighbors');
+        return $this->client->get('reports/droplet_neighbors', new ListAllNeighbors());
     }
 }

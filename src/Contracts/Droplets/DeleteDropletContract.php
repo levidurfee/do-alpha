@@ -17,9 +17,4 @@ interface DeleteDropletContract extends Requests
      * @param $droplet_id int
      */
     public function __construct($droplet_id);
-
-    /**
-     * @return int
-     */
-    public function getDropletId();
 }

@@ -4,12 +4,11 @@ namespace wappr\digitalocean\Requests\BlockStorage;
 
 use wappr\digitalocean\Contracts\RequestContract;
 use wappr\digitalocean\Contracts\BlockStorage\CreateBlockStorageContract;
-use wappr\digitalocean\Contracts\Requests;
 
 /**
  * Class CreateBlockStorage.
  */
-class CreateBlockStorage extends RequestContract implements CreateBlockStorageContract, Requests
+class CreateBlockStorage extends RequestContract implements CreateBlockStorageContract
 {
     /* Required */
     public $size_gigabytes;
