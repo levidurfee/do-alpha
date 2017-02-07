@@ -2,10 +2,9 @@
 
 namespace wappr\digitalocean\Contracts\Droplets;
 
-/**
- * Interface DeleteDropletContract.
- */
-interface DeleteDropletContract
+use wappr\digitalocean\Contracts\Requests;
+
+interface DeleteDropletContract extends Requests
 {
     /**
      * DeleteDropletContract constructor.

@@ -2,10 +2,9 @@
 
 namespace wappr\digitalocean\Contracts\Droplets;
 
-/**
- * Interface ListSnapshotsContract.
- */
-interface ListSnapshotsContract
+use wappr\digitalocean\Contracts\Requests;
+
+interface ListSnapshotsContract extends Requests
 {
     /**
      * ListSnapshotsContract constructor.

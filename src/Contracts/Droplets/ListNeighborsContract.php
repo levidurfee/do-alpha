@@ -2,10 +2,9 @@
 
 namespace wappr\digitalocean\Contracts\Droplets;
 
-/**
- * Interface ListNeighborsContract.
- */
-interface ListNeighborsContract
+use wappr\digitalocean\Contracts\Requests;
+
+interface ListNeighborsContract extends Requests
 {
     /**
      * ListNeighborsContract constructor.

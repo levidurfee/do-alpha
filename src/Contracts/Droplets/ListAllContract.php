@@ -2,6 +2,8 @@
 
 namespace wappr\digitalocean\Contracts\Droplets;
 
-interface ListAllContract
+use wappr\digitalocean\Contracts\Requests;
+
+interface ListAllContract extends Requests
 {
 }

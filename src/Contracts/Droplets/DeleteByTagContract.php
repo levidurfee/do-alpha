@@ -2,10 +2,9 @@
 
 namespace wappr\digitalocean\Contracts\Droplets;
 
-/**
- * Interface DeleteByTagContract.
- */
-interface DeleteByTagContract
+use wappr\digitalocean\Contracts\Requests;
+
+interface DeleteByTagContract extends Requests
 {
     /**
      * DeleteByTagContract constructor.

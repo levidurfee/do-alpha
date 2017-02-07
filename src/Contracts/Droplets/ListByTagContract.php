@@ -2,7 +2,9 @@
 
 namespace wappr\digitalocean\Contracts\Droplets;
 
-interface ListByTagContract
+use wappr\digitalocean\Contracts\Requests;
+
+interface ListByTagContract extends Requests
 {
     /**
      * ListByTagContract constructor.

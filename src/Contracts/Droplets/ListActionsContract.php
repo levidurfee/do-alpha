@@ -2,10 +2,9 @@
 
 namespace wappr\digitalocean\Contracts\Droplets;
 
-/**
- * Interface ListActionsContract.
- */
-interface ListActionsContract
+use wappr\digitalocean\Contracts\Requests;
+
+interface ListActionsContract extends Requests
 {
     /**
      * ListActionsContract constructor.
