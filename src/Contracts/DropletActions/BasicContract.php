@@ -2,7 +2,14 @@
 
 namespace wappr\digitalocean\Contracts\DropletActions;
 
-interface BasicContract
+use wappr\digitalocean\Contracts\Requests;
+
+/**
+ * Interface BasicContract.
+ *
+ * @property $type
+ */
+interface BasicContract extends Requests
 {
     public function __construct($type);
 }

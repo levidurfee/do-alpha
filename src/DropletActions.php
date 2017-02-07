@@ -93,7 +93,7 @@ class DropletActions extends ManagerContract
      */
     public function retrieve($action_id)
     {
-        return $this->client->post('/droplets/'.$this->droplet_id.'/'.$action_id);
+        return $this->client->get('/droplets/'.$this->droplet_id.'/'.$action_id, new Retrieve);
     }
 
     /**
