@@ -4,6 +4,11 @@ namespace wappr\digitalocean\Contracts\Droplets;
 
 use wappr\digitalocean\Contracts\Requests;
 
+/**
+ * Interface DeleteDropletContract.
+ *
+ * @property $droplet_id
+ */
 interface DeleteDropletContract extends Requests
 {
     /**

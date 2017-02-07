@@ -4,6 +4,11 @@ namespace wappr\digitalocean\Contracts\Droplets;
 
 use wappr\digitalocean\Contracts\Requests;
 
+/**
+ * Interface ListNeighborsContract.
+ *
+ * @property $droplet_id
+ */
 interface ListNeighborsContract extends Requests
 {
     /**
