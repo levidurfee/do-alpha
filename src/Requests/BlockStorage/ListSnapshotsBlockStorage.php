@@ -6,8 +6,7 @@ use wappr\digitalocean\Contracts\BlockStorage\ListSnapshotsBlockStorageContract;
 use wappr\digitalocean\Contracts\RequestContract;
 
 /**
- * Class ListSnapshotsBlockStorage
- * @package wappr\digitalocean\Requests\BlockStorage
+ * Class ListSnapshotsBlockStorage.
  */
 class ListSnapshotsBlockStorage extends RequestContract implements ListSnapshotsBlockStorageContract
 {

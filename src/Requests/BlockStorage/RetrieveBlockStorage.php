@@ -6,8 +6,7 @@ use wappr\digitalocean\Contracts\BlockStorage\RetrieveBlockStorageContract;
 use wappr\digitalocean\Contracts\RequestContract;
 
 /**
- * Class RetrieveBlockStorage
- * @package wappr\digitalocean\Requests\BlockStorage
+ * Class RetrieveBlockStorage.
  */
 class RetrieveBlockStorage extends RequestContract implements RetrieveBlockStorageContract
 {

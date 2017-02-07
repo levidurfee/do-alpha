@@ -7,7 +7,7 @@ use wappr\digitalocean\Client;
 abstract class ManagerContract
 {
     /**
-     * @var Client $client
+     * @var Client
      */
     protected $client;
 

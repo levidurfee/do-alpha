@@ -7,5 +7,4 @@ use wappr\digitalocean\Contracts\Requests;
 
 class ListAllBlockStorage extends RequestContract implements Requests
 {
-
 }

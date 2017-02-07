@@ -6,8 +6,7 @@ use wappr\digitalocean\Contracts\BlockStorage\DeleteBlockStorageContract;
 use wappr\digitalocean\Contracts\RequestContract;
 
 /**
- * Class DeleteBlockStorage
- * @package wappr\digitalocean\Requests\BlockStorage
+ * Class DeleteBlockStorage.
  */
 class DeleteBlockStorage extends RequestContract implements DeleteBlockStorageContract
 {

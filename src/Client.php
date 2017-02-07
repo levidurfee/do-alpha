@@ -5,7 +5,6 @@ namespace wappr\digitalocean;
 use GuzzleHttp\Client as httpClient;
 use GuzzleHttp\Exception\RequestException;
 use wappr\digitalocean\Contracts\Client\ClientContract;
-use wappr\digitalocean\Contracts\RequestContract;
 use wappr\digitalocean\Contracts\Requests;
 
 /**

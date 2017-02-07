@@ -5,15 +5,16 @@ namespace wappr\digitalocean\Contracts\BlockStorage;
 use wappr\digitalocean\Contracts\Requests;
 
 /**
- * Interface RetrieveByNameBlockStorageContract
+ * Interface RetrieveByNameBlockStorageContract.
+ *
  * @property $drive_name
  * @property $region
- * @package wappr\digitalocean\Contracts\BlockStorage
  */
 interface RetrieveByNameBlockStorageContract extends Requests
 {
     /**
      * RetrieveByNameBlockStorage constructor.
+     *
      * @param $drive_name
      * @param $region
      */

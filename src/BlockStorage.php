@@ -21,7 +21,7 @@ class BlockStorage extends ManagerContract
 
     public function listAll()
     {
-        return $this->client->get($this->endpoint, new ListAllBlockStorage);
+        return $this->client->get($this->endpoint, new ListAllBlockStorage());
     }
 
     /**

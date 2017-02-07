@@ -5,7 +5,7 @@ namespace wappr\digitalocean\Requests\BlockStorage;
 trait VolumeId
 {
     /**
-     * Required
+     * Required.
      *
      * @var
      */
@@ -13,6 +13,7 @@ trait VolumeId
 
     /**
      * RetrieveBlockStorage constructor.
+     *
      * @param $volume_id
      */
     public function __construct($volume_id)

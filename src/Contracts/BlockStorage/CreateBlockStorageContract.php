@@ -5,13 +5,13 @@ namespace wappr\digitalocean\Contracts\BlockStorage;
 use wappr\digitalocean\Contracts\Requests;
 
 /**
- * Interface CreateBlockStorageContract
+ * Interface CreateBlockStorageContract.
+ *
  * @property $size_gigabytes
  * @property $name
  * @property $description
  * @property $region
  * @property $snapshot_id
- * @package wappr\digitalocean\Contracts\BlockStorage
  */
 interface CreateBlockStorageContract extends Requests
 {
